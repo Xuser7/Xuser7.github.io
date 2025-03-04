@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Hexo - XZQ Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Hexo";
+        var mkdocs_page_input_path = "\u6280\u672f\u6587\u6863\\Hexo.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> XZQ Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">技术文档</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../C%E8%AF%AD%E8%A8%80/">C语言</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Hexo</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#github-page-or-gitee-page">Github Page or Gitee Page?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#github-page">准备GitHub Page</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hexo_1">一、Hexo环境配置搭建</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hexo_2">二、Hexo本地创建博客</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">三、生成博客，预览博客，部署博客</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">四、配置个人博客</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">配置主题</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#next">next添加分类页、标签页、个人页</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >嵌入式技术</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF/MCU%E5%BC%80%E5%8F%91/">MCU开发</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF/%E5%A4%84%E7%90%86%E5%99%A8%E6%A6%82%E8%BF%B0/">处理器概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/">网络通信</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >开发工具</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Linux_Use/">Linux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Windows_Use/">Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >How2Use（文件夹）</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/How2Use%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89/How2Use/">How2Use Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">理论文档</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E5%AD%A6%E4%B9%A0%E8%AE%BA/">学习论</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%BB%A4%E6%B3%A2%E7%AE%97%E6%B3%95/">滤波算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >操作系统（文件夹）</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">记录文档</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../%E8%AE%B0%E5%BD%95%E6%96%87%E6%A1%A3/%E6%88%91%E7%9A%84%E4%BA%BA%E7%94%9F/">日记</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >工作经验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E8%AE%B0%E5%BD%95%E6%96%87%E6%A1%A3/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C/%E9%9D%A2%E8%AF%95%E4%B8%93%E4%B8%9A%E9%97%AE%E9%A2%98/">面试专业问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >求职经验Folder</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../%E8%AE%B0%E5%BD%95%E6%96%87%E6%A1%A3/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C/%E6%B1%82%E8%81%8C%E7%BB%8F%E9%AA%8CFolder/%E6%B1%82%E8%81%8C%E7%BB%8F%E9%AA%8C/">求职经验</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">XZQ Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">技术文档</li>
+      <li class="breadcrumb-item active">Hexo</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="hexo">Hexo</h1>
+<p>Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档快速解析渲染成静态的 HTML 网页。</p>
+<p><a href="https://hexo.io/zh-cn/">Hexo</a></p>
+<p><a href="https://sspai.com/post/84847">Hexo+Github搭建免费博客｜基础教程(一)：全网最细致全面的教程</a></p>
+<p><a href="https://tech.yemengstar.com/hexo-tutorial-deploy-githubpages-beginner/">使用GitHub部署静态博客HEXO</a></p>
+<h2 id="github-page-or-gitee-page">Github Page or Gitee Page?</h2>
+<ul>
+<li>
+<p>Gitee Page：</p>
+<p>1 Gitee Page 的开通需要身份证认证</p>
+<p>2 Gitee是有5G空间限制的</p>
+<p>3 部署博客后需要在Gitee仓库手动更新，比较要命</p>
+</li>
+<li>
+<p>Github Page：</p>
+<p>只需要梯子，其他都优势于Gitee</p>
+</li>
+</ul>
+<h3 id="github-page">准备GitHub Page</h3>
+<ul>
+<li>
+<p>创建仓库，请使用<code>&lt;username&gt;.github.io</code>命名你的仓库</p>
+<p>hexo部署后，如果deploy bramch分支与仓库不同，需要配置仓库page指定分支</p>
+</li>
+</ul>
+<h3 id="hexo_1">一、Hexo环境配置搭建</h3>
+<ul>
+<li>
+<p>1.安装Git</p>
+<p>验证cmd：<code>git --version</code></p>
+</li>
+<li>
+<p>2.安装Nodjs</p>
+<p><a href="http://nodejs.cn/download/">Nodjs</a></p>
+<p>验证cmd：<code>npm version</code></p>
+</li>
+</ul>
+<h3 id="hexo_2">二、Hexo本地创建博客</h3>
+<ul>
+<li>
+<p>npm安装hexo</p>
+<p>安装cmd：<code>npm install hexo-cli -g</code></p>
+<p>验证cmd：<code>hexo -version</code></p>
+</li>
+<li>
+<p>hexo初始化：</p>
+<p>方法1.创建一个文件夹，例如../blog，命令行(git)在该路经下使用 <code>hexo init</code></p>
+<p>方法2.<code>hexo init blog</code>，这会在在当前命令行(git)路径下创建一个blog文件夹</p>
+</li>
+<li>
+<p>安装组件：</p>
+<p>在blog路径，命令行(git) <code>npm install</code></p>
+</li>
+</ul>
+<h3 id="_1">三、生成博客，预览博客，部署博客</h3>
+<ul>
+<li>
+<p>预览页面(hexo server)：$ hexo s</p>
+<p>将生成本地连接<code>http://localhost:4000</code>来预览
+<strong><em>这是本地的实时预览，也就是本地的任何修改，都可以马上在这里看见预览效果</em></strong></p>
+</li>
+<li>
+<p>生成页面(hexo generate)：$ hexo g</p>
+<p>生成部署页面 .deploy.git 再通过部署推送到github托管</p>
+</li>
+<li>
+<p>部署页面(hexo deploy):$ hexo d</p>
+<p>需要配置好_config.yml下的deploy，来部署博客，例如</p>
+<pre><code>deploy:
+    type: git
+    repo: git@github.com:Xuser7/Xuser7.github.io.git
+    branch: main
+</code></pre>
+<p>需要确保git ssh可以连通哦，才能部署成功</p>
+</li>
+</ul>
+<h3 id="_2">四、配置个人博客</h3>
+<p>以下举例以 \blog 表示博客文件夹</p>
+<h4 id="_3">配置主题</h4>
+<ol>
+<li>
+<p>在github或者hexo-theme下载你喜欢的主题，将它添加到
+  \blog\themes</p>
+</li>
+<li>
+<p>配置\blog\ _config.yml</p>
+<p>比如theme为next</p>
+<pre><code># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+</code></pre>
+</li>
+</ol>
+<h4 id="next">next添加分类页、标签页、个人页</h4>
+<p><a href="https://www.jianshu.com/p/e17711e44e00">简书-hexo添加分类和标签</a></p>
+<p>例如标签：</p>
+<p>首先配置主题\blog\theme\ _config.yml</p>
+<pre><code>    menu:
+    home: / || fa fa-home
+    tags: /tags/ || fa fa-tags
+    categories: /categories/ || fa fa-th
+    archives: /archives/ || fa fa-archive
+    about: /about/ || fa fa-user
+    #schedule: /schedule/ || fa fa-calendar
+    #sitemap: /sitemap.xml || fa fa-sitemap
+    #commonweal: /404/ || fa fa-heartbeat
+</code></pre>
+<ol>
+<li>
+<p>在blog路径下使用命令</p>
+<pre><code>hexo new page tags
+</code></pre>
+</li>
+<li>
+<p>创建成功命令行会生成路径 blog/source/tags/index.md</p>
+<p>为其添加属性 type: "tags</p>
+<pre><code>---
+title: tags
+date: 2017-05-27 13:47:40
+type: "tags"
+---
+</code></pre>
+</li>
+<li>
+<p>给文章添加tags属性，例如</p>
+<pre><code>---
+title: STM32使用HAL库编写IIC驱动
+date: 2017-05-26 12:12:57
+categories:
+- STM32
+tags:
+- STM32
+- IIC
+---
+</code></pre>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../C%E8%AF%AD%E8%A8%80/" class="btn btn-neutral float-left" title="C语言"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF/MCU%E5%BC%80%E5%8F%91/" class="btn btn-neutral float-right" title="MCU开发">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../C%E8%AF%AD%E8%A8%80/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8A%80%E6%9C%AF/MCU%E5%BC%80%E5%8F%91/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+site_name: XZQ Docs
+
+theme:
+  name: readthedocs
+
+plugins:
+  - search

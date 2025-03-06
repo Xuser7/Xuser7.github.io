@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>处理器概述 - XZQ Docs</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u5904\u7406\u5668\u6982\u8ff0";
+        var mkdocs_page_input_path = "\u6280\u672f\u6587\u6863\\\u5d4c\u5165\u5f0f\u6280\u672f\\\u5904\u7406\u5668\u6982\u8ff0.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> XZQ Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">技术文档</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../C%E8%AF%AD%E8%A8%80/">C语言</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Hexo/">Hexo</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >嵌入式技术</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../MCU%E5%BC%80%E5%8F%91/">MCU开发</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">处理器概述</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#_2">处理器架构</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">处理器封装类型</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/">网络通信</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >开发工具</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Linux_Use/">Linux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Windows_Use/">Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >How2Use（文件夹）</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/How2Use%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89/How2Use/">How2Use Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">理论文档</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E5%AD%A6%E4%B9%A0%E8%AE%BA/">学习论</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%BB%A4%E6%B3%A2%E7%AE%97%E6%B3%95/">滤波算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >操作系统（文件夹）</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">记录文档</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%E8%AE%B0%E5%BD%95%E6%96%87%E6%A1%A3/%E6%88%91%E7%9A%84%E4%BA%BA%E7%94%9F/">日记</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >工作经验</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../%E8%AE%B0%E5%BD%95%E6%96%87%E6%A1%A3/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C/%E9%9D%A2%E8%AF%95%E4%B8%93%E4%B8%9A%E9%97%AE%E9%A2%98/">面试专业问题</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >求职经验Folder</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../%E8%AE%B0%E5%BD%95%E6%96%87%E6%A1%A3/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C/%E6%B1%82%E8%81%8C%E7%BB%8F%E9%AA%8CFolder/%E6%B1%82%E8%81%8C%E7%BB%8F%E9%AA%8C/">求职经验</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">XZQ Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">技术文档</li>
+          <li class="breadcrumb-item">嵌入式技术</li>
+      <li class="breadcrumb-item active">处理器概述</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">处理器概述</h1>
+<h2 id="_2">处理器架构</h2>
+<ul>
+<li>x86架构 CISC指令集</li>
+<li>ARM架构 RISC指令集</li>
+<li>RISC-V架构（开源指令集）</li>
+</ul>
+<h2 id="_3">处理器封装类型</h2>
+<ul>
+<li>SOP封装，直插式</li>
+<li>TQFN封装，引脚贴片</li>
+<li>QFN封装，无引脚贴片</li>
+<li>BGA封装，贴片锡球</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../MCU%E5%BC%80%E5%8F%91/" class="btn btn-neutral float-left" title="MCU开发"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/" class="btn btn-neutral float-right" title="网络通信">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../MCU%E5%BC%80%E5%8F%91/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

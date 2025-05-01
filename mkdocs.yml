@@ -1,0 +1,69 @@
+site_name: XZQ Docs
+
+theme:
+
+  name: material
+
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 切换夜间
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 切换日间
+
+  features:
+    - search.highlight          # 搜索出的文章关键词加入高亮
+    - content.code.copy         # 代码复制
+    - navigation.tabs           # 导航栏
+    - navigation.top            # 返回顶部的按钮 在上滑时出现
+    - navigation.sections      
+    - navigation.expand     
+    #- toc.integrate
+
+plugins:
+  - search:
+      lang: zh
+      separator: '[\s\u200b\-]'
+
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Xuser7
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/13827596?spm_id_from=333.1007.0.0
+
+
+markdown_extensions:
+  - admonition                # 提示框
+  - abbr
+  - attr_list
+  - md_in_html
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  
+  - pymdownx.arithmatex:  # latex支持
+      generic: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  

@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%96%B9%E6%B3%95%E6%A6%82%E8%AE%BA/" class="md-tabs__link">
+        <a href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%96%B9%E6%B3%95%E8%AE%BA%E6%A6%82%E8%BF%B0/" class="md-tabs__link">
           
   
   
@@ -1076,6 +1076,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1312,29 +1321,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Linux/Qt%E5%BC%80%E5%8F%91/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Qt开发
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1527,12 +1513,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%96%B9%E6%B3%95%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../../../%E7%90%86%E8%AE%BA%E6%96%87%E6%A1%A3/%E6%96%B9%E6%B3%95%E8%AE%BA%E6%A6%82%E8%BF%B0/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    方法概论
+    方法论概述
     
   </span>
   
@@ -2577,6 +2563,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2595,19 +2590,21 @@
 
   <h1>RTOS—FreeRTOS</h1>
 
-<p><a href="https://www.freertos.org/">FreeRTOS org</a></p>
-<p><a href="https://blog.csdn.net/qq_61672347/article/details/125748646?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171318107516800182763903%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171318107516800182763903&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-125748646-null-null.142^v100^pc_search_result_base7&amp;utm_term=freertos&amp;spm=1018.2226.3001.4187">FreeRTOS教程CSDN</a></p>
-<ul>
-<li>FreeRTOS 是 开源 的实时操作系统（Real-time operating system, RTOS）</li>
-<li>FreeRTOS 简单、小巧、易用，通常情况下内核占用 4k-9k 字节的空间  </li>
-</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果使用过程中出现未定义标识。 例如 Undefined symbol xQueueCreateCountingSemaphore</p>
-<p>说明应该检查一下相关函数宏定义在FreeRTOS.h中是定义为0，若是请在FreeRTOSConfig.h中定义为1。</p>
+<ul>
+<li>
+<p>FreeRTOS 是 开源 的实时操作系统（Real-time operating system, RTOS）</p>
+</li>
+<li>
+<p>FreeRTOS 简单、小巧、易用，通常情况下内核占用 4k-9k 字节的空间  </p>
+</li>
+</ul>
+<p>如果使用过程中出现未定义标识, 例如 Undefined symbol xQueueCreateCountingSemaphore.</p>
+<p>应该检查一下相关函数宏定义在FreeRTOS.h中是否定义为0，若是请在FreeRTOSConfig.h中定义为1。</p>
 </div>
+<p><a href="https://www.freertos.org/">FreeRTOS org</a></p>
 <h2 id="00-freertos">00 移植FreeRTOS内核<a class="headerlink" href="#00-freertos" title="Permanent link">&para;</a></h2>
-<p><a href="https://blog.csdn.net/qq_36973838/article/details/121754908?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171239934216800182125629%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171239934216800182125629&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-121754908-null-null.142^v100^pc_search_result_base7&amp;utm_term=stm32%E7%A7%BB%E6%A4%8Dfreertos&amp;spm=1018.2226.3001.4187">STM32F103移植FreeRTOS完整过程——CSDN</a></p>
 <h2 id="01-tasks">01 任务 Tasks<a class="headerlink" href="#01-tasks" title="Permanent link">&para;</a></h2>
 <p>任务类似线程，分别对应TCB/PCB，实时 RTOS 调度器负责确保任务调入时的处理器上下文（寄存器值、堆栈内容等）与任务调出时的处理器上下文完全相同。为实现这一点，每个任务都分配有自己的堆栈。</p>
 <ul>
@@ -4032,6 +4029,11 @@
 </ul>
 <p>和裸机一样，可以定义GPIO，或者其他外设的触发中断方式，其触发的中断服务函数也与裸机一样。</p>
 <p>区别只是在中断服务函数中使用了FreeRTOS的通信机制，即调用中断版本的信号量API，通过信号量传递给任务，实现中断。具体代码可以跳转博客</p>
+<h2 id="_31">参考资料<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://blog.csdn.net/qq_61672347/article/details/125748646?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171318107516800182763903%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171318107516800182763903&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-125748646-null-null.142^v100^pc_search_result_base7&amp;utm_term=freertos&amp;spm=1018.2226.3001.4187">FreeRTOS教程CSDN</a></li>
+<li><a href="https://blog.csdn.net/qq_36973838/article/details/121754908?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171239934216800182125629%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171239934216800182125629&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-121754908-null-null.142^v100^pc_search_result_base7&amp;utm_term=stm32%E7%A7%BB%E6%A4%8Dfreertos&amp;spm=1018.2226.3001.4187">STM32F103移植FreeRTOS完整过程——CSDN</a></li>
+</ol>
 
 
 

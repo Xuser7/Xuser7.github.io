@@ -1,0 +1,8 @@
+# 环境变量文件（敏感信息）
+.env
+.env.local
+.env.*.local
+*.key
+
+# MkDocs 构建输出目录
+site/

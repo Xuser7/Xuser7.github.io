@@ -1,7 +1,8 @@
+!!! abstract
 
-MCU (Micro Control Unit) , 包含 CPU 以及一系列外设的IC芯片
+    MCU (Micro Control Unit) , 包含CPU（通常ARM CorexM 架构）及一系列外设的IC芯片
 
-CPU：通常为 ARM CorexM 内核架构的 CPU
+## 零、开发工具链
 
 ## 一、软件分层设计架构
 
@@ -129,17 +130,68 @@ void setting_func(void)
 
 #### 应用升级 IAP
 
-- IAP (In Application Program) / OTA (Over The Air)
+!!! note 
 
-    Bootloader(引导程序)+FlashArea1(APP1应用程序段)+FlashArea2(APP2应用程序备份段)
+    IAP (In Application Program) / OTA (Over The Air)
 
-    为了防止刷新失败，应该有刷新回滚功能，即更新备份段覆盖程序段
+    Bootloader（引导程序）+FlashArea1（APP1应用程序段）+FlashArea2（APP2应用程序备份段）
 
-    主要在于Bootloader的程序编写，次要在于APP程序中断向量表偏移
+    为了防止IAP升级失败，应该有刷新回滚功能，即备份段（若MCU的FLASH空间足够）
 
-    Bootloader：通信UART/CAN，来接收APP的bin文件，并且写入片内Flash/SRAM
+    主要在于Bootloader的程序编写，次要在于APP程序中断向量表偏移，以及Boot与APP间的跳转
 
-    APP：由于Boot程序已经占用了Flash的一些空间，所以需要根据占用来偏移APP程序的所在空间，并且调整中断向量表的偏移
+- Bootloader：用通信来接收APP的bin文件，可以写入片内Flash，或SRAM直接跳转。接收完成后应当校验程序是否完整，才能进行跳转
+
+    ```c
+    //STM32中的简易的BOOT跳转APP
+
+    //确定app程序区首地址 
+    #define FLASH_APP1_ADDR		0x08002000 
+
+    typedef  void (*iapfun)(void);//定义一个函数类型的参数.
+
+    iapfun jump2app; 
+
+    //设置堆栈地址
+    __asm void MSR_MSP(u32 addr) 
+    {
+        MSR MSP, r0 			//set Main Stack value
+        BX r14
+    }
+
+    //跳转到应用程序段
+    //appxaddr:用户代码起始地址.
+    void iap_load_app(u32 appxaddr)
+    {
+        if(((*(vu32*)appxaddr)&0x2FFE0000)==0x20000000)	//检查栈顶地址是否合法.
+        {
+            jump2app=(iapfun)*(vu32*)(appxaddr+4);		//用户代码区第二个字为程序开始地址(复位地址)		
+            MSR_MSP(*(vu32*)appxaddr);					//初始化APP堆栈指针(用户代码区的第一个字用于存放栈顶地址)
+            jump2app();									//跳转到APP.
+        }
+    }
+
+    int main(void)
+    {   
+        SystemInit();//系统时钟初始化
+
+        if(((*(vu32*)(FLASH_APP1_ADDR+4))&0xFF000000)==0x08000000)//判断是否为0X08XXXXXX.
+        {	 
+            iap_load_app(FLASH_APP1_ADDR);//执行FLASH APP代码
+        }
+    }
+    ```
+
+- APP：由于Boot程序已经占用了Flash的一些空间，所以需要根据占用来偏移APP程序的所在空间。另外需要重新定位中断向量表，使得APP程序里中断可以正常运行
+
+    ```c
+    #define APP_START_ADDRESS	(uint32_t)(0x08002000)
+
+    SCB->VTOR = APP_START_ADDRESS; /* Vector Table Relocation in Internal FLASH. */  
+    ```
+
+    需要注意的是 Cortex-M0 的中断向量表重定位，因为M0架构没有重定位寄存器，使用无法使用`SCB->VTOR`来重新定位中断向量表。
+    常规的做法是，RAM中腾处一些固定空间，专门存放复制的中断向量表。然后重新定向到RAM地址（通常0x20000000）
 
 #### 滤波算法
 
@@ -211,7 +263,7 @@ void SysTick_Handler()//滴答中断处理函数
     7） GPIO_Mode_AF_OD 复用开漏输出；IIC
     8） GPIO_Mode_AF_PP 复用推挽输出。UART, SPI
 
-#### EXIT 外部中断
+#### EXIT 外部中断 / INT中断
 
 #### TIM 定时器
 

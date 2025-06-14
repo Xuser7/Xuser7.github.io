@@ -1,17 +1,8 @@
-GUI (Graphic User Interface)
+!!! abstract "GUI (Graphic User Interface)"
 
-## LVGL 
+    [LVGL](https://lvgl.io/)  (Light and Versatile Graphics Library) is the most popular free and open-source embedded graphics library to create beautiful UIs for any MCU, MPU and display type.
 
-LVGL (Light and Versatile Graphics Library) is the most popular free and open-source embedded graphics library to create beautiful UIs for any MCU, MPU and display type.
-
-[LVGL](https://lvgl.io/)  
-
-[LVGL-Docs](https://docs.lvgl.io/master/index.html)
-
-[LVGL-examples](https://docs.lvgl.io/master/examples.html#)
-
-
-### LVGL模拟器
+## LVGL模拟器
 
 [模拟器Github仓库](https://docs.lvgl.io/master/integration/ide/pc-simulator.html)
 
@@ -25,9 +16,9 @@ LVGL (Light and Versatile Graphics Library) is the most popular free and open-so
 
     3.VisualStudio打开LVGL.Simulator.sln，生成解决方案后运行。
 
-### LVGL移植
+## LVGL移植
 
-#### 00移植所需工程
+### 00移植所需工程
 
 1. [LVGL源码](https://github.com/lvgl/lvgl)
 
@@ -39,7 +30,7 @@ LVGL (Light and Versatile Graphics Library) is the most popular free and open-so
 
     3 需要提供一个时基，可以是普通定时器，可以是滴答定时器，实现`lv_tick_inc()`
 
-#### 01选取源码中需要的文件
+### 01选取源码中需要的文件
 
 选取文件如下：（lv_conf_template.h修改名称为lv_conf.h，并且打开宏定义）
 
@@ -57,7 +48,7 @@ LVGL (Light and Versatile Graphics Library) is the most popular free and open-so
 - src 为LVGL的内核代码，全部保留
 - lv_conf.h 为LVGL宏配置
 
-#### 02移动到驱动工程文件夹
+### 02移动到驱动工程文件夹
 
 新建文件夹Middlewares，并且将选取后的文件，移动至Middlewares_LVGL_lvgl下;
 
@@ -98,7 +89,7 @@ Middlewares
         
     ```
 
-#### 03驱动工程添加LVGL源码
+### 03驱动工程添加LVGL源码
 
 keil工程内项目管理添加以下分组，并且向各个分组添加lvgl源码
 
@@ -123,7 +114,7 @@ Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的�
 
 ```
 
-#### 04驱动工程添加头文件路径
+### 04驱动工程添加头文件路径
 
 添加以下头文件路径
 
@@ -137,7 +128,7 @@ Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的�
 
 编译器开启C99模式，编译，查看是否有error。正确的话是没有报错的
 
-#### 05配置输出（屏幕显示）lv_port_disp_template
+### 05配置输出（屏幕显示）lv_port_disp_template
 
 1. 打开`lv_port_disp_template.c`与`.h`的条件编译
 2. 在c文件中包含屏幕硬件驱动的头文件（例`#include "lcd.h"`）
@@ -208,7 +199,7 @@ Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的�
     }
     ```
 
-#### 06配置输入（触摸、鼠标、键盘、编码器、按钮）lv_port_indev_template
+### 06配置输入（触摸、鼠标、键盘、编码器、按钮）lv_port_indev_template
 
 1. 打开`lv_port_indev_template.c`与`.h`的条件编译
 2. 选择并且裁剪输出设备
@@ -278,7 +269,7 @@ Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的�
     }
     ```
   
-#### 07提供时基
+### 07提供时基
 
 - 硬件定时器提供时基
 
@@ -287,7 +278,7 @@ Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的�
   3. 在定时器中断函数（回调）中调用：`lv_tick_inc(x);`
   4. 初始化定时器时，需保证：进入中断的时间间隔 = x 毫秒
 
-#### main创建一个switch测试运行
+### main创建一个switch测试运行
 
 ```c
 #include "sys.h"
@@ -322,7 +313,7 @@ int main(void)
 }
 ```
 
-#### 测试官方demo(lv_demo_widgets)
+### 测试官方demo(lv_demo_widgets)
 
 1. 工程新建分组 Middlewares/lvgl/demos，添加`lv_demo_widgets.c`以及它的所需文件
 
@@ -342,3 +333,9 @@ int main(void)
 4. main.c文件里包含头文件：`#include "lv_demo_widgets.h"`
 
 5. 使用demo`lv_demo_widgets();`
+
+## 参考资料
+
+[LVGL-Docs](https://docs.lvgl.io/master/index.html)
+
+[LVGL-examples](https://docs.lvgl.io/master/examples.html#)

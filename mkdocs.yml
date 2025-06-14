@@ -1,41 +1,48 @@
-site_name: XZQ Docs
+# 网站名称
+site_name: xzq-docs
+# # 添加 git 存储库，导航区展示对应开源项目名称
+# repo_name: Xuser7.github.io
+# # 添加 git 存储库，导航区展示对应开源项目地址
+# repo_url: https://github.com/Xuser7/Xuser7.github.io
+# # 解析为托管文档的子文件夹
+# edit_uri: edit/main/docs/
 
 theme:
 
   name: material
 
+  language: zh
+
+  icon:
+    logo: material/laptop
+
   palette:
     # Palette toggle for light mode
-    - scheme: default
-      primary: teal
-      accent: teal
+    - scheme: xzq-light
       toggle:
         icon: material/weather-night
         name: 切换夜间
     # Palette toggle for dark mode
     - scheme: slate
-      primary: teal
-      accent: teal
+      primary: black
+      accent: black
       toggle:
         icon: material/weather-sunny
         name: 切换日间
 
   features:
-    - search.highlight          # 搜索出的文章关键词加入高亮
-    - content.code.copy         # 代码复制
-    - navigation.tabs           # 导航栏
-    - navigation.top            # 返回顶部的按钮 在上滑时出现
-    - navigation.sections      
-    - navigation.expand     
-    #- toc.integrate
-
-plugins:
-  - search:
-      lang: zh
-      separator: '[\s\u200b\-]'
-
-  # - git-revision-date-localized:
-  #     enable_creation_date: true
+    # 搜索出的文章关键词加入高亮
+    - search.highlight          
+    # 代码复制
+    - content.code.copy 
+    # 导航栏
+    - navigation.tabs         
+    # 返回顶部的按钮  
+    - navigation.top    
+    # 导航栏折叠
+    #- navigation.expand      
+    # 导航栏的章节折叠  
+    #- navigation.sections    
 
 extra:
   social:
@@ -44,9 +51,29 @@ extra:
     - icon: fontawesome/brands/bilibili
       link: https://space.bilibili.com/13827596?spm_id_from=333.1007.0.0
 
+extra_css:
+  # 自定义样式表
+  - stylesheets/extra.css  
+
+plugins:
+  - search:
+      lang: zh
+      separator: '[\s\u200b\-]'
+  
+  - document-dates:
+      position: top            # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
+      type: date               # 时间类型：date datetime timeago，默认：date
+      locale: zh               # 本地化语言：zh zh_tw en es fr de ar ja ko ru，默认：en
+      date_format: '%Y/%m/%d'  # 日期格式，支持所有Python日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
+      time_format: '%H:%M:%S'  # 时间格式（仅在 type=datetime 时有效）
+      exclude:                 # 排除文件列表，默认为空
+        - temp.md              # 排除指定文件
+        - private/*            # 排除 private 目录下的所有文件，包括子目录
+        - drafts/*.md          # 排除当前目录 drafts 下的所有 markdown 文件，不包括子目录
+      show_author: false        # 是否显示作者信息：true false，默认：true
 
 markdown_extensions:
-  - admonition                # 提示框
+  - admonition
   - abbr
   - attr_list
   - md_in_html
@@ -59,11 +86,13 @@ markdown_extensions:
   
   - pymdownx.arithmatex:  # latex支持
       generic: true
-  - toc:
-      permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# extra_javascript:
+#   - javascripts/mathjax.js
+#   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   

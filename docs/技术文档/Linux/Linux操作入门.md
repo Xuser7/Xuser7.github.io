@@ -1,5 +1,11 @@
 
-## Ubuntu
+## Linux 101 (USTC-LUG)
+
+[欢迎 - Linux 101](https://101.lug.ustc.edu.cn/)
+
+中国科学技术大学 Linux User Group，网站内已经对Linux做了比较详细的介绍，本章其余记录均是个人使用记录。
+
+## VMware虚拟机 & Ubuntu镜像
 
 [Ubuntu-获取镜像](https://cn.ubuntu.com/download)
 
@@ -17,13 +23,19 @@
 
     网络：需要网络适配器。先用以太网有线网络连接，或者USB热点。再更新需要的网路适配器，才能使用无线网络
 
-## 常用配置
+## 配置上手
 
-- 更换软件源：
+### 更换软件源
 
-Setting-> about-> Software updates-> Download From-Other-> Select Best Server
+Setting -> about -> Software updates -> Download From-Other -> Select Best Server
 
-## Linux 命令
+## Shell
+
+shell是纯文本文件，命令从上而下，逐行执行。shell脚本文件命名为***.sh
+
+shell脚本首行：`#!/bin/bash`,表示使用bash
+
+### Linux CMD
 
     chmod xxx
     修改文件权限
@@ -37,35 +49,19 @@ Setting-> about-> Software updates-> Download From-Other-> Select Best Server
     service network-manager restart
     重启网卡
 
-## Shell脚本
-
-shell脚本是类似Windows的batch批处理脚本
-
-shell是纯文本文件，命令从上而下，逐行执行。shell脚本文件命名为***.sh
-
-文本的首行为：`#!/bin/bash`,表示使用bash
-
 ## Makefile
 
 [廖雪峰-makefile](https://liaoxuefeng.com/books/makefile/introduction/index.html)
 
 *在Linux环境下，当我们输入make命令时，它就在当前目录查找一个名为Makefile的文件，然后，根据这个文件定义的规则，自动化地执行任意命令，包括编译命令。*
 
-## Linux 下文件传输
 
-1. FTP文件传输 + MobaXterm
-2. SSH + MobaXterm
-3. Samba
-
-    samba是通过网络来进行windows和ubuntu互传文件的
-
-    所以我们必须保证windows和ubuntu直接可以互相ping通。
 
 ## Linux Tools
 
 [MobaXterm](https://mobaxterm.mobatek.net/)
 
-- SSH连接虚拟机：
+### SSH连接虚拟机
 
     1 请打开虚拟机所有网卡,确保windows可以ping成功
 
@@ -74,3 +70,13 @@ shell是纯文本文件，命令从上而下，逐行执行。shell脚本文件�
     指令：sudo apt-get install openssh-server
 
     3 apt安装如果报错，请尝试重启，或者后台终结进程
+
+### Linux 下文件传输
+
+1. FTP文件传输 + MobaXterm
+2. SSH + MobaXterm
+3. Samba
+
+    samba是通过网络来进行windows和ubuntu互传文件的
+
+    所以我们必须保证windows和ubuntu直接可以互相ping通。

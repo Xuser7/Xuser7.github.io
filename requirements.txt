@@ -1,0 +1,8 @@
+#博客框架
+mkdocs>=1.6.1
+#博客主题
+mkdocs-material>=9.6.11
+#中文搜索解析
+jieba
+#日期插件
+mkdocs-document-dates>=3.1.1

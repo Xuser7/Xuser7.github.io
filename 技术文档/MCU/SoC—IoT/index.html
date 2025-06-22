@@ -859,11 +859,11 @@
           <li class="md-nav__item">
   <a href="#esp32-sdk" class="md-nav__link">
     <span class="md-ellipsis">
-      ESP32 SDK开发（性能）
+      ESP32 SDK开发（全面）
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ESP32 SDK开发（性能）">
+    <nav class="md-nav" aria-label="ESP32 SDK开发（全面）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1905,11 +1905,11 @@
           <li class="md-nav__item">
   <a href="#esp32-sdk" class="md-nav__link">
     <span class="md-ellipsis">
-      ESP32 SDK开发（性能）
+      ESP32 SDK开发（全面）
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ESP32 SDK开发（性能）">
+    <nav class="md-nav" aria-label="ESP32 SDK开发（全面）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1982,7 +1982,7 @@
 
   <h1>SoC—IoT</h1>
 
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin'><span data-tippy-content='创建时间: 2025/04/04'><span class='material-icons' data-icon='doc_created'></span>2025/04/04</span><span data-tippy-content='最后更新: 2025/06/16'><span class='material-icons' data-icon='doc_modified'></span>2025/06/16</span></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin'><span data-tippy-content='创建时间: 2025/04/04'><span class='material-icons' data-icon='doc_created'></span>2025/04/04</span><span data-tippy-content='最后更新: 2025/06/22'><span class='material-icons' data-icon='doc_modified'></span>2025/06/22</span></div></div>
 <div class="admonition abstract">
 <p class="admonition-title">SoC (System on Chip)</p>
 <p>IC芯片：CPU + 特定功能模块(TPU等)</p>
@@ -1997,17 +1997,27 @@ ESP32-S3：240MHZ，2.4GHz WIFI，低功耗蓝牙，USB 串口/JTAG 控制器
 ESP32-C6：160MHZ，2.4GHz WIFI，低功耗蓝牙，支持 Thread 和 Zigbee 协议
 </code></pre></div>
 <h3 id="micropython">MicroPython开发（快速）</h3>
-<p>将Micropython固件烧入ESP32，即可开始使用MicroPython开发 <a href="http://micropython.com.cn/en/latet/index-2.html">micropython</a></p>
+<p>将Micropython固件烧入ESP32，即可开始使用 <a href="http://micropython.com.cn/en/latet/index-2.html">micropython</a> 开发</p>
 <ol>
 <li>
-<p>下载Thonny，下载固件（如果是源地买的就用源地固件）<a href="https://github.com/vcc-gnd">github-vccgnd</a></p>
+<p>下载 Thonny编辑器、esp32-flash-download-tool（用于将固件写入板子）、 CH343驱动（识别串口）、源地micropython固件<a href="https://github.com/vcc-gnd">github-vccgnd</a></p>
 </li>
 <li>
-<p>Thonny选项配置解释器，并且烧录固件</p>
+<p>板子写入固件后，即可使用thonny开发了，右下角选择对应的串口，并且选择esp32</p>
+<p><img alt="" src="../ast/thonny-select-serial.png" /></p>
+</li>
+<li>
+<p>编写你的代码，保存到esp32，若存在boot.py，说明代码可以正常写入esp32。若无，请用flash-download-tool擦除flash再写入固件试试。</p>
+<p><img alt="" src="../ast/thonny-mpy-boot.png" /></p>
+</li>
+<li>
+<p>保存为main.py，重启板子即正常运行</p>
 </li>
 </ol>
-<p><img alt="alt text" src="../ast/Thonny.png" /></p>
-<p>注意：重启后自动启动main.py，测试代码不要写在main，否则错误重启死循环​</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>重启后自动启动main.py，测试代码不要写在main，否则错误重启死循环​</p>
+</div>
 <h4 id="-">添加软件包：工具-&gt;管理包</h4>
 <ul>
 <li>
@@ -2029,7 +2039,7 @@ ESP32-C6：160MHZ，2.4GHz WIFI，低功耗蓝牙，支持 Thread 和 Zigbee 协
 <p>暂时只有解压功能</p>
 </li>
 </ul>
-<h3 id="esp32-sdk">ESP32 SDK开发（性能）</h3>
+<h3 id="esp32-sdk">ESP32 SDK开发（全面）</h3>
 <p>VScode + ESP-IDF extension <a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/index.html">ESP-IDF编程指南</a></p>
 <h4 id="esp-idf-toolchain">ESP-IDF ToolChain</h4>
 <ol>

@@ -16,9 +16,9 @@
 
     “少既是多”
 
-    分清主要矛盾，次要矛盾。排列优先级。理清脉络，把握主体。
-    
-    找到实现个人价值的主线。
+    你占有物的同时，物也占有你，人的精力是有限且宝贵的。
+
+    分清主要矛盾，次要矛盾。理清脉络，把握主体。找到实现个人价值的主线。
 
 !!! note "保持好奇 / 2023"
 
@@ -64,4 +64,4 @@
 
     推送到默认远程仓库origin（添加参数修改 --remote-name github.io）
 
-    使用 "mkdocs gh-deploy" 指令不加参数时，需要将git pages的Branch选择为gh-pages分支即可显示页面，另外本地的远程仓库名也需要是origin（git remote）
+    使用 "mkdocs gh-deploy" 指令不加参数时，需要将git pages的Branch选择为gh-pages分支即可显示页面

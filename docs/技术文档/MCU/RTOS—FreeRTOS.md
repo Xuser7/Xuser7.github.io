@@ -1,5 +1,5 @@
 
-!!! note
+!!! abstract "FreeRTOS"
 
     - FreeRTOS 是 开源 的实时操作系统（Real-time operating system, RTOS）
     

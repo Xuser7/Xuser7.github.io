@@ -1,9 +1,12 @@
+!!! abstract "SoC (System on Chip)"
 
-Soc (System on chip)
+    IC芯片：CPU + 特定功能模块(TPU等)
 
-IC芯片：CPU + 特定功能模块(TPU等)
+    本文的SoC指MCU-SoC，与手机SoC（通常为CortexA架构或更高性能）不同
+    
+    即低功耗，低性能，带无线通信的物联网MCU-SoC
 
-## Espressif 32Bit Soc
+## Espressif 32Bit SoC
 
     内核：Tensilica 的Xtensa 内核的双核构架
 
@@ -13,15 +16,23 @@ IC芯片：CPU + 特定功能模块(TPU等)
 
 ### MicroPython开发（快速）
 
-将Micropython固件烧入ESP32，即可开始使用MicroPython开发 [micropython](http://micropython.com.cn/en/latet/index-2.html)
+将Micropython固件烧入ESP32，即可开始使用 [micropython](http://micropython.com.cn/en/latet/index-2.html) 开发
 
-1. 下载Thonny，下载固件（如果是源地买的就用源地固件）[github-vccgnd](https://github.com/vcc-gnd)
+1. 下载 Thonny编辑器、esp32-flash-download-tool（用于将固件写入板子）、 CH343驱动（识别串口）、源地micropython固件[github-vccgnd](https://github.com/vcc-gnd)
 
-2. Thonny选项配置解释器，并且烧录固件
+2. 板子写入固件后，即可使用thonny开发了，右下角选择对应的串口，并且选择esp32
 
-![alt text](Thonny.png)
+    ![](ast/thonny-select-serial.png)
 
-注意：重启后自动启动main.py，测试代码不要写在main，否则错误重启死循环​
+3. 编写你的代码，保存到esp32，若存在boot.py，说明代码可以正常写入esp32。若无，请用flash-download-tool擦除flash再写入固件试试。
+
+    ![](ast/thonny-mpy-boot.png)
+
+4. 保存为main.py，重启板子即正常运行
+
+!!! warning
+
+    重启后自动启动main.py，测试代码不要写在main，否则错误重启死循环​
 
 #### 添加软件包：工具->管理包
 
@@ -45,7 +56,7 @@ IC芯片：CPU + 特定功能模块(TPU等)
 
     暂时只有解压功能
 
-### ESP32 SDK开发（性能）
+### ESP32 SDK开发（全面）
 
 VScode + ESP-IDF extension [ESP-IDF编程指南](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/index.html)
 
@@ -107,3 +118,7 @@ VScode调试：选择通过USB-JTAG即可打开openOCD，配置launch.json，即
     ]
     }
 ```
+
+## Telink BLE SoC
+
+### TLSR825X

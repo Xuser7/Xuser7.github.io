@@ -60,39 +60,56 @@ plugins:
       lang: zh
       separator: '[\s\u200b\-]'
   
-  - document-dates:
-      position: top            # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
-      type: date               # 时间类型：date datetime timeago，默认：date
-      locale: zh               # 本地化语言：zh zh_tw en es fr de ar ja ko ru，默认：en
-      date_format: '%Y/%m/%d'  # 日期格式，支持所有Python日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
-      time_format: '%H:%M:%S'  # 时间格式（仅在 type=datetime 时有效）
-      exclude:                 # 排除文件列表，默认为空
-        - temp.md              # 排除指定文件
-        - private/*            # 排除 private 目录下的所有文件，包括子目录
-        - drafts/*.md          # 排除当前目录 drafts 下的所有 markdown 文件，不包括子目录
-      show_author: false        # 是否显示作者信息：true false，默认：true
+  # - document-dates:
+  #     position: top            # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
+  #     type: date               # 时间类型：date datetime timeago，默认：date
+  #     locale: zh               # 本地化语言：zh zh_tw en es fr de ar ja ko ru，默认：en
+  #     date_format: '%Y/%m/%d'  # 日期格式，支持所有Python日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
+  #     time_format: '%H:%M:%S'  # 时间格式（仅在 type=datetime 时有效）
+  #     exclude:                 # 排除文件列表，默认为空
+  #       - temp.md              # 排除指定文件
+  #       - private/*            # 排除 private 目录下的所有文件，包括子目录
+  #       - drafts/*.md          # 排除当前目录 drafts 下的所有 markdown 文件，不包括子目录
+  #     show_author: false        # 是否显示作者信息：true false，默认：true
+
 
 markdown_extensions:
+  - pymdownx.superfences
+  # Admonitions
   - admonition
-  - abbr
+  - pymdownx.details
+  # Grids
   - attr_list
   - md_in_html
+  # Formatting
+  - pymdownx.critic
   - pymdownx.caret
+  - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  - pymdownx.snippets
-  - pymdownx.details
-  - pymdownx.superfences
-  
-  - pymdownx.arithmatex:  # latex支持
-      generic: true
+  # Code blocks
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
-  - pymdownx.emoji:
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # Diagrams
+  - pymdownx.superfences: # mermaid 思维导图支持
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Icons, Emojis
+  - pymdownx.emoji: #表情支持
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  # Math
+  - pymdownx.arithmatex:
+      generic: true
 
-# extra_javascript:
-#   - javascripts/mathjax.js
-#   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+extra_javascript:
+  # 使用 MathJax 渲染 LaTeX 公式
+  #- javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   

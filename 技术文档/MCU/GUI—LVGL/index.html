@@ -48,24 +48,6 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/user.config.css">
-    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -330,11 +312,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%B8%B8%E8%AE%B0/" class="md-tabs__link">
+        <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%BC%82%E6%B5%81%E5%9C%B0%E5%9B%BE/" class="md-tabs__link">
           
   
   
-  生活记录
+  足迹
 
         </a>
       </li>
@@ -491,7 +473,76 @@
   
   
   <span class="md-ellipsis">
-    ast/0612 win设置路由表实现内网外网同时访问
+    0612 win设置路由表实现内网外网同时访问
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/0613/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0613 关于MCU的存储空间进一步的学习与探索 FLASH(ROM)/SRAM(RAM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/0625/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0625 ClassB 踩坑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test
     
   </span>
   
@@ -1826,7 +1877,7 @@
   
   
   <span class="md-ellipsis">
-    生活记录
+    足迹
     
   </span>
   
@@ -1837,7 +1888,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            生活记录
+            足迹
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1848,12 +1899,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%B8%B8%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%BC%82%E6%B5%81%E5%9C%B0%E5%9B%BE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    游记
+    漂流地图
     
   </span>
   
@@ -2036,7 +2087,6 @@
 
   <h1>GUI—LVGL</h1>
 
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin'><span data-tippy-content='创建时间: 2025/04/04'><span class='material-icons' data-icon='doc_created'></span>2025/04/04</span><span data-tippy-content='最后更新: 2025/06/16'><span class='material-icons' data-icon='doc_modified'></span>2025/06/16</span></div></div>
 <div class="admonition abstract">
 <p class="admonition-title">GUI (Graphic User Interface)</p>
 <p><a href="https://lvgl.io/">LVGL</a>  (Light and Versatile Graphics Library) is the most popular free and open-source embedded graphics library to create beautiful UIs for any MCU, MPU and display type.</p>
@@ -2067,13 +2117,13 @@
 </ol>
 <h3 id="01">01选取源码中需要的文件</h3>
 <p>选取文件如下：（lv_conf_template.h修改名称为lv_conf.h，并且打开宏定义）</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├─demos [ALL]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─example
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  └─porting
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├─src [ALL]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├─lv_conf.h
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─lvgl.h
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├─demos [ALL]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─example
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  └─porting
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├─src [ALL]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├─lv_conf.h
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─lvgl.h
+</span></code></pre></div>
 <ul>
 <li>demos 为官方演示例程，如果不需要可以不作保留</li>
 <li>example 下只保留porting文件夹，负责对接LVGL接口与硬件驱动接口</li>
@@ -2083,64 +2133,64 @@
 <h3 id="02">02移动到驱动工程文件夹</h3>
 <p>新建文件夹Middlewares，并且将选取后的文件，移动至Middlewares_LVGL_lvgl下;</p>
 <p>文件目录应当如下结构：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Middlewares
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>└─LVGL
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   └─lvgl
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>       ├─demos [ALL]
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>       ├─example
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>       │  └─porting
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>       ├─src [ALL]
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>       ├─lv_conf.h
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>       └─lvgl.h
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Middlewares
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>└─LVGL
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   └─lvgl
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>       ├─demos [ALL]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>       ├─example
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>       │  └─porting
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>       ├─src [ALL]
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>       ├─lv_conf.h
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>       └─lvgl.h
+</span></code></pre></div>
 <p><mark>这是为了保证代码头文件引用路径一致。例如../../lvgl.h这种相对路径。</p>
 <p>当然，不嫌麻烦的话，可以自己定义文件结构，但是需要修改头文件引用路径。</p>
 <ul>
 <li>
 <p>Middlewares 文件夹：目的在于收录所有中间层组件，例如可以向其添加FreeRTOS源码，配合LVGL</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Middlewares</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">├─</span><span class="n">LVGL</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">│</span><span class="w">   </span><span class="err">└─</span><span class="n">lvgl</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">demos</span><span class="w"> </span><span class="p">[</span><span class="n">ALL</span><span class="p">]</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">example</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="err">│</span><span class="w">       </span><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="n">porting</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">src</span><span class="w"> </span><span class="p">[</span><span class="n">ALL</span><span class="p">]</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">lv_conf</span><span class="p">.</span><span class="n">h</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="err">│</span><span class="w">       </span><span class="err">└─</span><span class="n">lvgl</span><span class="p">.</span><span class="n">h</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="err">│</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="err">└─</span><span class="n">FreeRTOS</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="err">├─</span><span class="n">FreeRTOS_CORE</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="err">└─</span><span class="n">FreeRTOS_PORT</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Middlewares</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">├─</span><span class="n">LVGL</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">│</span><span class="w">   </span><span class="err">└─</span><span class="n">lvgl</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">demos</span><span class="w"> </span><span class="p">[</span><span class="n">ALL</span><span class="p">]</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">example</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="err">│</span><span class="w">       </span><span class="err">│</span><span class="w">  </span><span class="err">└─</span><span class="n">porting</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">src</span><span class="w"> </span><span class="p">[</span><span class="n">ALL</span><span class="p">]</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">│</span><span class="w">       </span><span class="err">├─</span><span class="n">lv_conf</span><span class="p">.</span><span class="n">h</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="err">│</span><span class="w">       </span><span class="err">└─</span><span class="n">lvgl</span><span class="p">.</span><span class="n">h</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="err">│</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="err">└─</span><span class="n">FreeRTOS</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="err">├─</span><span class="n">FreeRTOS_CORE</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="err">└─</span><span class="n">FreeRTOS_PORT</span>
+</span></code></pre></div>
 </li>
 </ul>
 <h3 id="03lvgl">03驱动工程添加LVGL源码</h3>
 <p>keil工程内项目管理添加以下分组，并且向各个分组添加lvgl源码</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Middlewares/lvgl/example/porting    ————添加 examples/porting文件夹下的lv_port_disp_template.c 和 lv_port_indev_template.c 文件
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Middlewares/lvgl/src/core           ————添加 src/core 文件夹下的全部.c 文件
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Middlewares/lvgl/src/draw           ————添加 draw 文件夹下除 nxp_pxp、nxp_vglite、sdl 和stm32_dma2d 文件夹之外的全部.c 文件
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Middlewares/lvgl/src/extra          ————添加 extra 文件夹下的全部.c 文件，子文件夹较多，需要耐心
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Middlewares/lvgl/src/font           ————添加 font 文件夹下的全部.c 文件
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Middlewares/lvgl/src/gpu            ————添加 draw/stm32_dma2d 和 draw/sdl 文件夹下的全部.c 文件
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Middlewares/lvgl/src/hal            ————添加 hal 文件夹下的全部.c 文件
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Middlewares/lvgl/src/misc           ————添加 misc 文件夹下的全部.c 文件
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的全部.c 文件
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Middlewares/lvgl/example/porting    ————添加 examples/porting文件夹下的lv_port_disp_template.c 和 lv_port_indev_template.c 文件
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Middlewares/lvgl/src/core           ————添加 src/core 文件夹下的全部.c 文件
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Middlewares/lvgl/src/draw           ————添加 draw 文件夹下除 nxp_pxp、nxp_vglite、sdl 和stm32_dma2d 文件夹之外的全部.c 文件
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Middlewares/lvgl/src/extra          ————添加 extra 文件夹下的全部.c 文件，子文件夹较多，需要耐心
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Middlewares/lvgl/src/font           ————添加 font 文件夹下的全部.c 文件
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Middlewares/lvgl/src/gpu            ————添加 draw/stm32_dma2d 和 draw/sdl 文件夹下的全部.c 文件
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Middlewares/lvgl/src/hal            ————添加 hal 文件夹下的全部.c 文件
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Middlewares/lvgl/src/misc           ————添加 misc 文件夹下的全部.c 文件
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Middlewares/lvgl/src/widgets        ————添加 widgets 文件夹下的全部.c 文件
+</span></code></pre></div>
 <h3 id="04">04驱动工程添加头文件路径</h3>
 <p>添加以下头文件路径</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>..\..\Middlewares\LVGL
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>..\..\Middlewares\LVGL\lvgl
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>..\..\Middlewares\LVGL\lvgl\src
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>..\..\Middlewares\LVGL\lvgl\examples\porting
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>..\..\Middlewares\LVGL
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>..\..\Middlewares\LVGL\lvgl
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>..\..\Middlewares\LVGL\lvgl\src
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>..\..\Middlewares\LVGL\lvgl\examples\porting
+</span></code></pre></div>
 <p>编译器开启C99模式，编译，查看是否有error。正确的话是没有报错的</p>
 <h3 id="05lv_port_disp_template">05配置输出（屏幕显示）lv_port_disp_template</h3>
 <ol>
@@ -2148,38 +2198,38 @@
 <li>在c文件中包含屏幕硬件驱动的头文件（例<code>#include "lcd.h"</code>）</li>
 <li>
 <p>实现显示初始化，<code>disp_init(void)</code>，并且设置显示方向</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">disp_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="cm">/*You code here*/</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">LCD_Init</span><span class="p">();</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="n">LCD_Display_Dir</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//横屏</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">disp_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="cm">/*You code here*/</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">LCD_Init</span><span class="p">();</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="n">LCD_Display_Dir</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//横屏</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>配置图形数据缓冲模式 <code>lv_port_disp_init(void)</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">//三种方案，缓冲区越大，对RAM要求越大，选择一个注释剩余</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">//1.十行的缓冲区</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">//2.两份十行的缓冲区</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">//3.两份全屏缓冲区</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm">/* Example for 1) */</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">draw_buf_dsc_1</span><span class="p">;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_1</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">                          </span><span class="cm">/*A buffer for 10 rows*/</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">draw_buf_dsc_1</span><span class="p">,</span><span class="w"> </span><span class="n">buf_1</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">   </span><span class="cm">/*Initialize the display buffer*/</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="cm">/* Example for 2) */</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">draw_buf_dsc_2</span><span class="p">;</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_2_1</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">                        </span><span class="cm">/*A buffer for 10 rows*/</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_2_2</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">                        </span><span class="cm">/*An other buffer for 10 rows*/</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">draw_buf_dsc_2</span><span class="p">,</span><span class="w"> </span><span class="n">buf_2_1</span><span class="p">,</span><span class="w"> </span><span class="n">buf_2_2</span><span class="p">,</span><span class="w"> </span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">   </span><span class="cm">/*Initialize the display buffer*/</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="cm">/* Example for 3) also set disp_drv.full_refresh = 1 below*/</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">draw_buf_dsc_3</span><span class="p">;</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_3_1</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MY_DISP_VER_RES</span><span class="p">];</span><span class="w">            </span><span class="cm">/*A screen sized buffer*/</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_3_2</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MY_DISP_VER_RES</span><span class="p">];</span><span class="w">            </span><span class="cm">/*Another screen sized buffer*/</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">draw_buf_dsc_3</span><span class="p">,</span><span class="w"> </span><span class="n">buf_3_1</span><span class="p">,</span><span class="w"> </span><span class="n">buf_3_2</span><span class="p">,</span><span class="w"> </span><span class="n">MY_DISP_VER_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">LV_VER_RES_MAX</span><span class="p">);</span><span class="w">   </span><span class="cm">/*Initialize the display buffer*/</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">//三种方案，缓冲区越大，对RAM要求越大，选择一个注释剩余</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">//1.十行的缓冲区</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">//2.两份十行的缓冲区</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">//3.两份全屏缓冲区</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm">/* Example for 1) */</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">draw_buf_dsc_1</span><span class="p">;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_1</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">                          </span><span class="cm">/*A buffer for 10 rows*/</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">draw_buf_dsc_1</span><span class="p">,</span><span class="w"> </span><span class="n">buf_1</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">   </span><span class="cm">/*Initialize the display buffer*/</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="cm">/* Example for 2) */</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">draw_buf_dsc_2</span><span class="p">;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_2_1</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">                        </span><span class="cm">/*A buffer for 10 rows*/</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_2_2</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">                        </span><span class="cm">/*An other buffer for 10 rows*/</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">draw_buf_dsc_2</span><span class="p">,</span><span class="w"> </span><span class="n">buf_2_1</span><span class="p">,</span><span class="w"> </span><span class="n">buf_2_2</span><span class="p">,</span><span class="w"> </span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">   </span><span class="cm">/*Initialize the display buffer*/</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="cm">/* Example for 3) also set disp_drv.full_refresh = 1 below*/</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_disp_draw_buf_t</span><span class="w"> </span><span class="n">draw_buf_dsc_3</span><span class="p">;</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_3_1</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MY_DISP_VER_RES</span><span class="p">];</span><span class="w">            </span><span class="cm">/*A screen sized buffer*/</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="k">static</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="n">buf_3_2</span><span class="p">[</span><span class="n">MY_DISP_HOR_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MY_DISP_VER_RES</span><span class="p">];</span><span class="w">            </span><span class="cm">/*Another screen sized buffer*/</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="n">lv_disp_draw_buf_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">draw_buf_dsc_3</span><span class="p">,</span><span class="w"> </span><span class="n">buf_3_1</span><span class="p">,</span><span class="w"> </span><span class="n">buf_3_2</span><span class="p">,</span><span class="w"> </span><span class="n">MY_DISP_VER_RES</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">LV_VER_RES_MAX</span><span class="p">);</span><span class="w">   </span><span class="cm">/*Initialize the display buffer*/</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>设置屏幕尺寸（默认横屏）</p>
@@ -2188,26 +2238,26 @@
 </li>
 <li>
 <p>配置像素点颜色填充输出<code>disp_flush()</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">disp_flush</span><span class="p">(</span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">disp_drv</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lv_area_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color_p</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="c1">//    /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="c1">//    int32_t x;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="c1">//    int32_t y;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="c1">//    for(y = area-&gt;y1; y &lt;= area-&gt;y2; y++) {</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="c1">//        for(x = area-&gt;x1; x &lt;= area-&gt;x2; x++) {</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="c1">//            /*Put a pixel to the display. For example:*/</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="c1">//            /*put_px(x, y, *color_p)*/</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="c1">//            color_p++;</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="c1">//        }</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="c1">//    }</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="n">LCD_Color_Fill</span><span class="p">(</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">x1</span><span class="p">,</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">y1</span><span class="p">,</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">x2</span><span class="p">,</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">y2</span><span class="p">,(</span><span class="kt">uint16_t</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">color_p</span><span class="p">);</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="cm">/*IMPORTANT!!!</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="cm">        *Inform the graphics library that you are ready with the flushing*/</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="n">lv_disp_flush_ready</span><span class="p">(</span><span class="n">disp_drv</span><span class="p">);</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">disp_flush</span><span class="p">(</span><span class="n">lv_disp_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">disp_drv</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lv_area_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="n">lv_color_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color_p</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="c1">//    /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="c1">//    int32_t x;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="c1">//    int32_t y;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="c1">//    for(y = area-&gt;y1; y &lt;= area-&gt;y2; y++) {</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="c1">//        for(x = area-&gt;x1; x &lt;= area-&gt;x2; x++) {</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="c1">//            /*Put a pixel to the display. For example:*/</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="c1">//            /*put_px(x, y, *color_p)*/</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="c1">//            color_p++;</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="c1">//        }</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="c1">//    }</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="n">LCD_Color_Fill</span><span class="p">(</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">x1</span><span class="p">,</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">y1</span><span class="p">,</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">x2</span><span class="p">,</span><span class="n">area</span><span class="o">-&gt;</span><span class="n">y2</span><span class="p">,(</span><span class="kt">uint16_t</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">color_p</span><span class="p">);</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="cm">/*IMPORTANT!!!</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="cm">        *Inform the graphics library that you are ready with the flushing*/</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="n">lv_disp_flush_ready</span><span class="p">(</span><span class="n">disp_drv</span><span class="p">);</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 </ol>
 <h3 id="06lv_port_indev_template">06配置输入（触摸、鼠标、键盘、编码器、按钮）lv_port_indev_template</h3>
@@ -2215,68 +2265,68 @@
 <li>打开<code>lv_port_indev_template.c</code>与<code>.h</code>的条件编译</li>
 <li>
 <p>选择并且裁剪输出设备</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">//选择你的输入方式，删除或注释剩余的输入方式的函数定义与声明。以保持c文件阅读性</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">touchpad_is_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_get_xy</span><span class="p">(</span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mouse_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mouse_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">mouse_is_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mouse_get_xy</span><span class="p">(</span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keypad_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keypad_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">keypad_get_key</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encoder_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encoder_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encoder_handler</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">button_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">button_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="k">static</span><span class="w"> </span><span class="kt">int8_t</span><span class="w"> </span><span class="nf">button_get_pressed_id</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">button_is_pressed</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">//选择你的输入方式，删除或注释剩余的输入方式的函数定义与声明。以保持c文件阅读性</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">touchpad_is_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_get_xy</span><span class="p">(</span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mouse_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mouse_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">mouse_is_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mouse_get_xy</span><span class="p">(</span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keypad_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keypad_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">keypad_get_key</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encoder_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encoder_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">encoder_handler</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">button_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">button_read</span><span class="p">(</span><span class="n">lv_indev_drv_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">indev_drv</span><span class="p">,</span><span class="w"> </span><span class="n">lv_indev_data_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="k">static</span><span class="w"> </span><span class="kt">int8_t</span><span class="w"> </span><span class="nf">button_get_pressed_id</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">button_is_pressed</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>在c文件中包含输入设备硬件驱动的头文件（例<code>#include "touch.h"</code>）</p>
 </li>
 <li>
 <p>实现<code>touchpad_init()</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="cm">/*Your code comes here*/</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="n">tp_dev</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="cm">/*Your code comes here*/</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="n">tp_dev</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>配置触摸检测函数<code>touchpad_is_pressed(void)</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">touchpad_is_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="cm">/*Your code comes here*/</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="n">tp_dev</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">tp_dev</span><span class="p">.</span><span class="n">sta</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">TP_PRES_DOWN</span><span class="p">)</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">touchpad_is_pressed</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="cm">/*Your code comes here*/</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="n">tp_dev</span><span class="p">.</span><span class="n">scan</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">tp_dev</span><span class="p">.</span><span class="n">sta</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">TP_PRES_DOWN</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>配置坐标获取函数<code>touchpad_get_xy()</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_get_xy</span><span class="p">(</span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="cm">/*Your code comes here*/</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="c1">//横屏</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lcddev</span><span class="p">.</span><span class="n">width</span><span class="o">-</span><span class="n">tp_dev</span><span class="p">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="p">(</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tp_dev</span><span class="p">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">touchpad_get_xy</span><span class="p">(</span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">lv_coord_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="cm">/*Your code comes here*/</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="c1">//横屏</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lcddev</span><span class="p">.</span><span class="n">width</span><span class="o">-</span><span class="n">tp_dev</span><span class="p">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="p">(</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tp_dev</span><span class="p">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 </ol>
 <h3 id="07">07提供时基</h3>
@@ -2292,37 +2342,37 @@
 <li>初始化定时器时，需保证：进入中断的时间间隔 = x 毫秒</li>
 </ul>
 <h3 id="mainswitch">main创建一个switch测试运行</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sys.h&quot;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;delay.h&quot;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lcd.h&quot;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;touch.h&quot;</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;timer.h&quot;</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lvgl.h&quot;</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lv_port_disp_template.h&quot;</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lv_port_indev_template.h&quot;</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">{</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="n">delay_init</span><span class="p">();</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="n">VIC_PriorityGroupConfig</span><span class="p">(</span><span class="n">NVIC_PriorityGroup_2</span><span class="p">);</span><span class="c1">//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="n">TIM3_Int_Init</span><span class="p">(</span><span class="mi">10-1</span><span class="p">,</span><span class="w"> </span><span class="mi">9000-1</span><span class="p">);</span><span class="c1">//时基</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="n">lv_init</span><span class="p">();</span><span class="w"> </span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="n">lv_port_disp_init</span><span class="p">();</span><span class="w"> </span><span class="c1">//输出初始化</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="n">lv_port_indev_init</span><span class="p">();</span><span class="c1">//输入初始化</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="c1">//创建一个switch</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">    </span><span class="n">lv_obj_t</span><span class="o">*</span><span class="w"> </span><span class="n">switch_obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_switch_create</span><span class="p">(</span><span class="n">lv_scr_act</span><span class="p">());</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span><span class="n">lv_obj_set_size</span><span class="p">(</span><span class="n">switch_obj</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">    </span><span class="n">lv_obj_align</span><span class="p">(</span><span class="n">switch_obj</span><span class="p">,</span><span class="w"> </span><span class="n">LV_ALIGN_CENTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">        </span><span class="n">delay_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">        </span><span class="n">lv_timer_handler</span><span class="p">();</span>
-<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sys.h&quot;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;delay.h&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lcd.h&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;touch.h&quot;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;timer.h&quot;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lvgl.h&quot;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lv_port_disp_template.h&quot;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lv_port_indev_template.h&quot;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">{</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="n">delay_init</span><span class="p">();</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="n">VIC_PriorityGroupConfig</span><span class="p">(</span><span class="n">NVIC_PriorityGroup_2</span><span class="p">);</span><span class="c1">//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="n">TIM3_Int_Init</span><span class="p">(</span><span class="mi">10-1</span><span class="p">,</span><span class="w"> </span><span class="mi">9000-1</span><span class="p">);</span><span class="c1">//时基</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="n">lv_init</span><span class="p">();</span><span class="w"> </span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="n">lv_port_disp_init</span><span class="p">();</span><span class="w"> </span><span class="c1">//输出初始化</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="n">lv_port_indev_init</span><span class="p">();</span><span class="c1">//输入初始化</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="c1">//创建一个switch</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">    </span><span class="n">lv_obj_t</span><span class="o">*</span><span class="w"> </span><span class="n">switch_obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lv_switch_create</span><span class="p">(</span><span class="n">lv_scr_act</span><span class="p">());</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span><span class="n">lv_obj_set_size</span><span class="p">(</span><span class="n">switch_obj</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">);</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">    </span><span class="n">lv_obj_align</span><span class="p">(</span><span class="n">switch_obj</span><span class="p">,</span><span class="w"> </span><span class="n">LV_ALIGN_CENTER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">        </span><span class="n">delay_ms</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">        </span><span class="n">lv_timer_handler</span><span class="p">();</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="p">}</span>
+</span></code></pre></div>
 <h3 id="demolv_demo_widgets">测试官方demo(lv_demo_widgets)</h3>
 <ol>
 <li>
@@ -2435,14 +2485,6 @@
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
-      
-        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
-      
-        <script src="../../../assets/document_dates/core/core.js"></script>
-      
-        <script src="../../../assets/document_dates/user.config.js"></script>
       
     
   </body>

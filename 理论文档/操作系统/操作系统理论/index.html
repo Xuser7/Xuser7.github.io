@@ -48,24 +48,6 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/user.config.css">
-    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -328,11 +310,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%B8%B8%E8%AE%B0/" class="md-tabs__link">
+        <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%BC%82%E6%B5%81%E5%9C%B0%E5%9B%BE/" class="md-tabs__link">
           
   
   
-  生活记录
+  足迹
 
         </a>
       </li>
@@ -489,7 +471,76 @@
   
   
   <span class="md-ellipsis">
-    ast/0612 win设置路由表实现内网外网同时访问
+    0612 win设置路由表实现内网外网同时访问
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/0613/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0613 关于MCU的存储空间进一步的学习与探索 FLASH(ROM)/SRAM(RAM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/0625/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0625 ClassB 踩坑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test
     
   </span>
   
@@ -1941,7 +1992,7 @@
   
   
   <span class="md-ellipsis">
-    生活记录
+    足迹
     
   </span>
   
@@ -1952,7 +2003,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            生活记录
+            足迹
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1963,12 +2014,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%B8%B8%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%BC%82%E6%B5%81%E5%9C%B0%E5%9B%BE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    游记
+    漂流地图
     
   </span>
   
@@ -2268,7 +2319,6 @@
 
   <h1>操作系统理论</h1>
 
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin'><span data-tippy-content='创建时间: 2025/02/15'><span class='material-icons' data-icon='doc_created'></span>2025/02/15</span><span data-tippy-content='最后更新: 2025/04/04'><span class='material-icons' data-icon='doc_modified'></span>2025/04/04</span></div></div>
 <h2 id="_1">一、计算机系统概述</h2>
 <ul>
 <li>
@@ -2315,7 +2365,7 @@
 </li>
 <li>
 <p>1操作系统运行机制</p>
-<div class="highlight"><pre><span></span><code>时钟管理
+<div class="language-text highlight"><pre><span></span><code>时钟管理
 中断机制
 原语
 系统控制的数据结构和处理PCB
@@ -2323,14 +2373,14 @@
 </li>
 <li>
 <p>2中断和异常</p>
-<div class="highlight"><pre><span></span><code>切换用户态和核心态，当用户进程调用系统调用时，从用户态进入内核态。
+<div class="language-text highlight"><pre><span></span><code>切换用户态和核心态，当用户进程调用系统调用时，从用户态进入内核态。
 1中断的异常和定义
 2中断处理的过程
 </code></pre></div>
 </li>
 <li>
 <p>3系统调用</p>
-<div class="highlight"><pre><span></span><code>系统调用大致分类
+<div class="language-text highlight"><pre><span></span><code>系统调用大致分类
 1设备管理 设备的请求或释放，设备的启动等
 2文件管理 文件的读写，创建，删除等
 3进程控制 进程的创建，撤销，删除等
@@ -2341,11 +2391,11 @@
 <li>
 <p>小记</p>
 <p>1并行性和并发性：</p>
-<div class="highlight"><pre><span></span><code>并行：多核运行多任务，指两个或者多个事件在同一时刻发生（微观）
+<div class="language-text highlight"><pre><span></span><code>并行：多核运行多任务，指两个或者多个事件在同一时刻发生（微观）
 并发：单核时间片轮转运行多任务，指两个或多个时间在同一时间片段发生（宏观）
 </code></pre></div>
 <p>2特权指令与非特权指令</p>
-<div class="highlight"><pre><span></span><code>核心态：特权指令与非特权指令。
+<div class="language-text highlight"><pre><span></span><code>核心态：特权指令与非特权指令。
 用户态：非特权指令
 </code></pre></div>
 </li>
@@ -2356,7 +2406,7 @@
 <li>
 <p>概念：与程序的区别</p>
 <p>为了使参与并发执行的程序能独立运行，必须为之配置一个专门的数据结构，称之为进程控制块（ProcessControlBlock）。系统利用PCB来描述进程的基本情况和运行状态，进而控制和管理进程。<em>PCB是进程存在的唯一标志</em>。</p>
-<div class="highlight"><pre><span></span><code>1进程是程序的一次执行过程
+<div class="language-text highlight"><pre><span></span><code>1进程是程序的一次执行过程
 2进程是一个程序及其数据在处理机上顺序执行所发生的活动
 3进程是具有独立功能的程序在一个数据集合上运行的过程，是系统资源分配和调度的一个独立单位。
 </code></pre></div>
@@ -2366,7 +2416,7 @@
 </li>
 <li>
 <p>状态：运行态、就绪态、阻塞态、结束态、创建态</p>
-<div class="highlight"><pre><span></span><code>1运行态：进程在CPU上运行
+<div class="language-text highlight"><pre><span></span><code>1运行态：进程在CPU上运行
 2就绪态：进程获得了除CPU外的一切资源，得到CPU资源后即可运行。
 3阻塞态：进程正在等待某一事件而暂停运行
 4结束态：进程从系统中消失。
@@ -2403,14 +2453,14 @@
 </li>
 <li>
 <p>调度方式：剥夺式、非剥夺式</p>
-<div class="highlight"><pre><span></span><code>非剥夺调度（非抢占方式），当一个进程正在处理机上执行时，即使有某个更为重要或紧迫的进程进入就绪队列，仍然让正在执行的进程继续执行，直到该进程完成或其他因素进入阻塞态，才能把处理机分配给更重要或紧迫的进程
+<div class="language-text highlight"><pre><span></span><code>非剥夺调度（非抢占方式），当一个进程正在处理机上执行时，即使有某个更为重要或紧迫的进程进入就绪队列，仍然让正在执行的进程继续执行，直到该进程完成或其他因素进入阻塞态，才能把处理机分配给更重要或紧迫的进程
 
 剥夺调度（抢占方式）。指当一个进程在处理机上执行时，若有某个更重要或紧迫的进程需要使用处理机，则立即停止正在执行的进程，将处理机分配给更重要或紧迫的进程
 </code></pre></div>
 </li>
 <li>
 <p>调度准则：CPU利用率、吞吐量、周转时间、等待时间、响应时间</p>
-<div class="highlight"><pre><span></span><code>周转时间 = 作业完成时间-作业提交时间
+<div class="language-text highlight"><pre><span></span><code>周转时间 = 作业完成时间-作业提交时间
 
 平均周转时间 =（作业1周转时间+...+作业n周转时间）/n
 
@@ -2462,83 +2512,83 @@
 </li>
 <li>
 <p>信号量实现同步</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">S</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//初始化信号量</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">P1</span><span class="p">(){</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">      </span><span class="n">执行动作</span><span class="p">;</span><span class="w"> </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//告诉P2进程，动作执行完成</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="p">...</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">P2</span><span class="p">(){</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="p">...</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//检查动作是否执行完成</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="n">执行动作</span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="p">...</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">S</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//初始化信号量</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">P1</span><span class="p">(){</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">      </span><span class="n">执行动作</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//告诉P2进程，动作执行完成</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="p">...</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">P2</span><span class="p">(){</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="p">...</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//检查动作是否执行完成</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="n">执行动作</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="p">...</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>信号量实现互斥</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">S</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">//初始化信号量</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">P1</span><span class="p">(){</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="err">···</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//准备开始访问临界资源，加锁</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="n">进程P1的临界区</span><span class="err">；</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//访问结束，解锁</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="p">...</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">P2</span><span class="p">(){</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="err">···</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">P</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//准备开始访问临界资源，加锁</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">进程P2的临界区</span><span class="err">；</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">V</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//访问结束，解锁</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">...</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">S</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">//初始化信号量</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">P1</span><span class="p">(){</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="err">···</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//准备开始访问临界资源，加锁</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="n">进程P1的临界区</span><span class="err">；</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//访问结束，解锁</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="p">...</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">P2</span><span class="p">(){</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="err">···</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">P</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//准备开始访问临界资源，加锁</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">进程P2的临界区</span><span class="err">；</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">V</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span><span class="c1">//访问结束，解锁</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>实现前驱关系图</p>
 <p>如图给出一个前驱图，为保证S1-S2,S1-S3前驱关系，分别设置信号量a1，a2。为保证S2-S4，S2-S5前驱关系，分别设置信号量b1，b2。保证S3-S6，设置信号量c。保证S4-S6，设置信号量d。保证S5-S6，设置信号量e</p>
 <p><img alt="前驱关系" src="../%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">a1</span><span class="o">=</span><span class="n">a2</span><span class="o">=</span><span class="n">b1</span><span class="o">=</span><span class="n">b2</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//初始化信号量</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">S1</span><span class="p">(){</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="p">...</span><span class="err">；</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span><span class="c1">//S1已经运行完成</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">S2</span><span class="p">(){</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span><span class="c1">//检查S1是否运行完成</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="p">...</span><span class="err">；</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span><span class="c1">//S2已经运行完成</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">S3</span><span class="p">(){</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span><span class="c1">//检查S1是否运行完成</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">      </span><span class="p">...;</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="c1">//S3已经运行完成</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">S4</span><span class="p">(){</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span><span class="c1">//检查S2是否运行完成</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">      </span><span class="p">...;</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="c1">//S4已经运行完成</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p">}</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="n">S5</span><span class="p">(){</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span><span class="w"> </span><span class="c1">//检查S2是否运行完成</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">      </span><span class="p">...;</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="c1">//S5已经运行完成</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="p">}</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
-<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="n">S6</span><span class="p">(){</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="c1">//检查S3是否运行完成</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="c1">//检查S4是否运行完成</span>
-<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="c1">//检查S5是否运行完成</span>
-<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">      </span><span class="p">..;</span>
-<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">a1</span><span class="o">=</span><span class="n">a2</span><span class="o">=</span><span class="n">b1</span><span class="o">=</span><span class="n">b2</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//初始化信号量</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">S1</span><span class="p">(){</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="p">...</span><span class="err">；</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span><span class="c1">//S1已经运行完成</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">S2</span><span class="p">(){</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span><span class="c1">//检查S1是否运行完成</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="p">...</span><span class="err">；</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span><span class="c1">//S2已经运行完成</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">S3</span><span class="p">(){</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">a2</span><span class="p">);</span><span class="c1">//检查S1是否运行完成</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">      </span><span class="p">...;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="c1">//S3已经运行完成</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">S4</span><span class="p">(){</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">b1</span><span class="p">);</span><span class="c1">//检查S2是否运行完成</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">      </span><span class="p">...;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="c1">//S4已经运行完成</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p">}</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="n">S5</span><span class="p">(){</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span><span class="w"> </span><span class="c1">//检查S2是否运行完成</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">      </span><span class="p">...;</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="n">V</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="c1">//S5已经运行完成</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="p">}</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="n">S6</span><span class="p">(){</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="c1">//检查S3是否运行完成</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="c1">//检查S4是否运行完成</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">      </span><span class="n">P</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="c1">//检查S5是否运行完成</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">      </span><span class="p">..;</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>经典问题：生产者消费者、读者写者、哲学家进餐、吸烟者</p>
@@ -2546,63 +2596,63 @@
 <li>
 <p>生产者-消费者问题</p>
 <p>一组生产者进程和一组消费者进程共享一个初始为空、大小为n的缓冲区，只有缓冲区不满时，生产者才能把消息放入缓存区，否则必须等待；只有缓冲区不空时，消费者才能从中取出消息，否则必须等待。缓冲区是临界资源，只允许一个生产者放入消息，或一个消费者取出消息。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">mutex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//临界区互斥信号量</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="c1">//空闲缓冲区</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">full</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="c1">//缓冲区初始化为空</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">producer</span><span class="p">(){</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">          </span><span class="n">生产数据</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">empty</span><span class="p">);</span><span class="w"> </span><span class="c1">//获取空缓冲区单元</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//进入临界区</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">          </span><span class="n">放入数据</span><span class="err">；</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//离开临界区，释放互斥信号量</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">full</span><span class="p">);</span><span class="w"> </span><span class="c1">//满缓冲区数加1</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">consumer</span><span class="p">(){</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">full</span><span class="p">);</span><span class="w"> </span><span class="c1">//获取满缓冲区单元</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//进入临界区</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">          </span><span class="n">取出数据</span><span class="err">；</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//离开临界区，释放互斥信号量</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">empty</span><span class="p">);</span><span class="w"> </span><span class="c1">//空缓冲区数+1</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">          </span><span class="n">消费数据</span><span class="err">；</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">mutex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//临界区互斥信号量</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="c1">//空闲缓冲区</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">full</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="c1">//缓冲区初始化为空</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">producer</span><span class="p">(){</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">          </span><span class="n">生产数据</span><span class="p">;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">empty</span><span class="p">);</span><span class="w"> </span><span class="c1">//获取空缓冲区单元</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//进入临界区</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">          </span><span class="n">放入数据</span><span class="err">；</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//离开临界区，释放互斥信号量</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">full</span><span class="p">);</span><span class="w"> </span><span class="c1">//满缓冲区数加1</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">}</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">consumer</span><span class="p">(){</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">full</span><span class="p">);</span><span class="w"> </span><span class="c1">//获取满缓冲区单元</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//进入临界区</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">          </span><span class="n">取出数据</span><span class="err">；</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w"> </span><span class="c1">//离开临界区，释放互斥信号量</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">empty</span><span class="p">);</span><span class="w"> </span><span class="c1">//空缓冲区数+1</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">          </span><span class="n">消费数据</span><span class="err">；</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>读者-写者问题</p>
 <p>读者和写者两组并发进程，共享一个文件，当两个或以上的读进程同时访问共享数据时不会产生副作用，但若某个写进程和其他进程同时访问共享数据时则可能导致数据不一致错误。所以要求：1允许多个读者可以同时对文件执行读操作 2只允许一个写者往文件中写信息 3任一写者在完成写操作之前不允许其他读者或写者工作 4写者写操作前，应让已有的读者和写者全部退出</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//用于记录当前的读者数量</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">mutex</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//用于保护更新count变量时的互斥</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">rw</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//用于保护读者和写者互斥地访问文件</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">writer</span><span class="p">(){</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//互斥访问共享文件</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">          </span><span class="n">写入</span><span class="p">;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//释放共享文件</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">reader</span><span class="p">(){</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//互斥访问count变量</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="c1">//当第一个读进程读共享文件时</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">              </span><span class="n">P</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//阻止写进程</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">          </span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="c1">//读者计数器加1</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//释放互斥变量count</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">          </span><span class="n">读取</span><span class="p">;</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//互斥访问count变量</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">          </span><span class="n">count</span><span class="o">--</span><span class="p">;</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="c1">//当最后一个读进程读完共享文件</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">              </span><span class="n">V</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//允许写进程写</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//释放互斥变量count</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//用于记录当前的读者数量</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">mutex</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//用于保护更新count变量时的互斥</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">semaphore</span><span class="w"> </span><span class="n">rw</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="c1">//用于保护读者和写者互斥地访问文件</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">writer</span><span class="p">(){</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//互斥访问共享文件</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">          </span><span class="n">写入</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//释放共享文件</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">reader</span><span class="p">(){</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//互斥访问count变量</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="c1">//当第一个读进程读共享文件时</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">              </span><span class="n">P</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//阻止写进程</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">          </span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="c1">//读者计数器加1</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//释放互斥变量count</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">          </span><span class="n">读取</span><span class="p">;</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="n">P</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//互斥访问count变量</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">          </span><span class="n">count</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">          </span><span class="k">if</span><span class="p">(</span><span class="n">count</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="c1">//当最后一个读进程读完共享文件</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">              </span><span class="n">V</span><span class="p">(</span><span class="n">rw</span><span class="p">);</span><span class="c1">//允许写进程写</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">          </span><span class="n">V</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="c1">//释放互斥变量count</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="p">}</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>哲学家进餐问题（待补充）</p>
@@ -2628,7 +2678,7 @@
 </li>
 <li>
 <p>预防死锁（只需破坏死锁产生的4个必要条件之一即可）</p>
-<div class="highlight"><pre><span></span><code>1破坏互斥条件
+<div class="language-text highlight"><pre><span></span><code>1破坏互斥条件
 
 2破坏不剥夺条件
 
@@ -2640,7 +2690,7 @@
 <li>
 <p>避免死锁</p>
 <p>1系统安全状态：在系统进行资源分配之前，先计算此次分配的安全性</p>
-<div class="highlight"><pre><span></span><code>列出最大需求矩阵Max，分配矩阵Allocation
+<div class="language-text highlight"><pre><span></span><code>列出最大需求矩阵Max，分配矩阵Allocation
 需求矩阵 Need=Max-Allocation
 现存资源向量Work
 
@@ -2650,7 +2700,7 @@
 四、若此时安全序列中已有所有进程，则系统处于安全状态，否则系统处于不安全状态。
 </code></pre></div>
 <p>2银行家算法（最著名的死锁避免算法）：顾名思义，把操作系统视作银行家，操作系统管理的资源相当于银行家管理的资金，进程向操作系统请求资源相当于用户向银行贷款。</p>
-<div class="highlight"><pre><span></span><code>Requesti是进程Pi的请求向量，Requesti[j]=K表示进程Pi需要j类资源K个。当Pi发出资源请求后，系统按照下述步骤进行检查：
+<div class="language-text highlight"><pre><span></span><code>Requesti是进程Pi的请求向量，Requesti[j]=K表示进程Pi需要j类资源K个。当Pi发出资源请求后，系统按照下述步骤进行检查：
 
 一、Requesti[j]&lt;=Need[i,j]，则转向步骤2；否则认为出错。因为所需要的资源数超出它所宣布的最大值
 二、若Requesti[j]&lt;=available[j]，则转向步骤3；否则表示尚无足够资源，Pi需等待
@@ -3185,14 +3235,6 @@
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
-      
-        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
-      
-        <script src="../../../assets/document_dates/core/core.js"></script>
-      
-        <script src="../../../assets/document_dates/user.config.js"></script>
       
     
   </body>

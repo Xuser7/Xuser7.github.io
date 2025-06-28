@@ -48,24 +48,6 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
-    
-      <link rel="stylesheet" href="../../../assets/document_dates/user.config.css">
-    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -328,11 +310,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%B8%B8%E8%AE%B0/" class="md-tabs__link">
+        <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%BC%82%E6%B5%81%E5%9C%B0%E5%9B%BE/" class="md-tabs__link">
           
   
   
-  生活记录
+  足迹
 
         </a>
       </li>
@@ -489,7 +471,76 @@
   
   
   <span class="md-ellipsis">
-    ast/0612 win设置路由表实现内网外网同时访问
+    0612 win设置路由表实现内网外网同时访问
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/0613/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0613 关于MCU的存储空间进一步的学习与探索 FLASH(ROM)/SRAM(RAM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/0625/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0625 ClassB 踩坑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Blog/2025/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test
     
   </span>
   
@@ -1767,7 +1818,7 @@
   
   
   <span class="md-ellipsis">
-    生活记录
+    足迹
     
   </span>
   
@@ -1778,7 +1829,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            生活记录
+            足迹
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1789,12 +1840,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E6%B8%B8%E8%AE%B0/" class="md-nav__link">
+      <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%BC%82%E6%B5%81%E5%9C%B0%E5%9B%BE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    游记
+    漂流地图
     
   </span>
   
@@ -1920,7 +1971,6 @@
 
   <h1>Chapter1 绪论</h1>
 
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin'><span data-tippy-content='创建时间: 2025/05/25'><span class='material-icons' data-icon='doc_created'></span>2025/05/25</span><span data-tippy-content='最后更新: 2025/05/25'><span class='material-icons' data-icon='doc_modified'></span>2025/05/25</span></div></div>
 <div class="arithmatex">\[
 绪论
 \begin{cases}
@@ -1942,13 +1992,13 @@
 </li>
 <li>
 <p>数据元素：数据的基本单位，通常作为一个整体进行考虑和处理。一个数据元素由若干数据项组成，数据项是构成数据元素最小的不可分割单位。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//例如，该“学生”数据元素。由学号，名字，性别数据项组成</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span><span class="n">student</span>
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//例如，该“学生”数据元素。由学号，名字，性别数据项组成</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span><span class="n">student</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>数据结构：数据元素相互之间存在一种或多种特定关系，这种数据元素相互之间的关系称为结构。数据的逻辑结构和存储结构是密不可分的，一个算法的设计取决于选定的逻辑结构，而算法的实现依赖于采用的存储结构</p>
@@ -2083,14 +2133,6 @@
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
-      
-        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
-      
-        <script src="../../../assets/document_dates/core/core.js"></script>
-      
-        <script src="../../../assets/document_dates/user.config.js"></script>
       
     
   </body>

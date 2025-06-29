@@ -13,7 +13,7 @@
   --md-primary-fg-color--light: #769c18;
   --md-primary-fg-color--dark: #364d30;
   --md-primary-bg-color: #ffffff;/* 导航栏字体 */
-  --md-primary-bg-color--light: #364d30;/* 导航栏搜索 */
+  --md-primary-bg-color--light: #cccbcb;/* 导航栏搜索 */
   
   /* 网页链接 */
   --md-typeset-a-color: var(--md-primary-fg-color);

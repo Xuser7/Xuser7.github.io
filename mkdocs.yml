@@ -1,5 +1,5 @@
 # 网站名称
-site_name: xzq-docs
+site_name: xzqDocs
 # # 添加 git 存储库，导航区展示对应开源项目名称
 # repo_name: Xuser7.github.io
 # # 添加 git 存储库，导航区展示对应开源项目地址
@@ -36,13 +36,13 @@ theme:
     # 代码复制
     - content.code.copy 
     # 导航栏
-    - navigation.tabs         
-    # 返回顶部的按钮  
-    - navigation.top    
-    # 导航栏折叠
-    #- navigation.expand      
-    # 导航栏的章节折叠  
-    #- navigation.sections    
+    - navigation.tabs
+    # # 返回顶部的按钮  
+    # - navigation.top    
+    # # 导航栏折叠
+    # - navigation.expand
+    # # 导航栏的章节折叠
+    # - navigation.sections
 
 extra:
   social:
@@ -59,7 +59,7 @@ plugins:
   - search:
       lang: zh
       separator: '[\s\u200b\-]'
-  
+
   # - document-dates:
   #     position: top            # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
   #     type: date               # 时间类型：date datetime timeago，默认：date

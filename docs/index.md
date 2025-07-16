@@ -1,6 +1,16 @@
-# About
+---
+title:  Home
+# 隐藏的模块
+hide:
+    - navigation # 隐藏左边导航
+    - toc #隐藏右边导航
+    #- footer #隐藏翻页
+    #- feedback  #隐藏反馈
+---
 
-!!! abstract "Welcome to xzq-docs !"
+![](SwissMountain.jpg)
+
+#
 
 ## 人生信条
 
@@ -20,14 +30,6 @@
 
     分清主要矛盾，次要矛盾。理清脉络，把握主体。找到实现个人价值的主线。
 
-!!! note "保持好奇 / 2023"
-
-    “不求甚解”
-
-    头一回听说的事物先模糊了解，切勿以为无用。
-    
-    这些小点会在脑网中形成系统连结，再有进一步深入理解。
-
 !!! note "体验人生 / 2025"
 
     “惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭”
@@ -38,12 +40,24 @@
 
     既然只是短暂的拥有它们，那便只顾尽情体验，尽情感受。
 
+!!! note "时常记录 / 2025"
+
+    “没有记录，就没有发生”
+
+    人脑的存储时效性是很短的，除了很重要的时刻，大部分瞬间都是这个月忘掉上个月的。
+
+    所以应当善于利用电子存储那些日常，回忆来会有新感悟。
+
+    这些记录会像海上灯塔一样，为你指引在人生这片茫茫大海中的方向。不忘初心。
+
+
 ## 技术格言
 
-!!! quote "2025"
+!!! quote "好程序员关心的是数据结构和它们之间的关系"
 
-    “烂程序员关心的是代码。好程序员关心的是数据结构和它们之间的关系“————Linus Torvalds / [Linux](https://github.com/torvalds/linux)
+    Bad programmers worry about the code. Good programmers worry about data structures and their relationships. ——Linus Torvalds [# Linux](https://github.com/torvalds/linux)
 
+    
 ## 运动爱好
 
 - 跑酷：初中时期的爱好。朴素、实用的极限运动，激活了我的很多人生分支，虽然已经不练习了，但仍热爱跑酷。

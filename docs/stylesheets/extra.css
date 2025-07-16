@@ -1,3 +1,7 @@
+.md-grid {
+  max-width: 1440px; 
+}
+
 [data-md-color-scheme="xzq-light"] {
   /* 背景色使用HSV易于理解改动，因为背景一套色彩需要调整（亮度V，色调H和饱和度S不用变） */
   /* 点击色块可以切换颜色选项 */
@@ -13,7 +17,7 @@
   --md-primary-fg-color--light: #769c18;
   --md-primary-fg-color--dark: #364d30;
   --md-primary-bg-color: #ffffff;/* 导航栏字体 */
-  --md-primary-bg-color--light: #364d30;/* 导航栏搜索 */
+  --md-primary-bg-color--light: #cccbcb;/* 导航栏搜索 */
   
   /* 网页链接 */
   --md-typeset-a-color: var(--md-primary-fg-color);

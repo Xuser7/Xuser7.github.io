@@ -2410,7 +2410,7 @@ Bit 22 VREFEN: VREFINT enable
 <p>为了让VREFINT数据转换出来，我需要让原语句的<code>LL_DMA_SetDataLength</code>中<code>NbData+1</code>。</p>
 <p>再修改转换的数据个数即NbData后，ADC_Buffer[]中，就多了一行数值，我确定是VREFINT</p>
 <h3 id="vref12v">VREF是准确的1.2V！</h3>
-<p>解决了一切，但VREF的值很奇怪，在12bit分辨率的ADC下，即最大值0xffffff = 4096 = 3.3v（VDD）</p>
+<p>解决了一切，但VREF的值很奇怪，在12bit分辨率的ADC下，即最大值0x0fff = 4096 = 3.3v（VDD）</p>
 <p>若VREF是精确的1.2V，那么ADC取到的值就应该是4096*(1.2/3.3) = 1489 上下浮动，实际确实1200上下浮动。</p>
 <p>很纳闷，是底层配置不对？还是VREF根本不准确？冷静思考后，我想应该排查单片机的供电电压是否准确，即VDD是否是3.3V</p>
 <p>由于调试时单片机是JLINK供电的，那么VDD只会与JLINK相关，拆开JLINK外壳，发现给单片机供电的跳线帽是5V的选项，不是3.3V</p>

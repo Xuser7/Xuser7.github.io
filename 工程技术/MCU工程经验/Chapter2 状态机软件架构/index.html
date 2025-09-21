@@ -1496,12 +1496,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/0%20DEV%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/DEV%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    0 DEV工具
+    DEV工具
     
   </span>
   
@@ -1519,12 +1519,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/1%20%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/windows%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    1 博客搭建
+    Windows操作
     
   </span>
   
@@ -1542,12 +1542,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/2%20windows%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    2 windows操作
+    博客搭建
     
   </span>
   
@@ -2555,7 +2555,10 @@
 <p><img alt="" src="../ast/tskstate_freertos.png" /></p>
 <h2 id="3">3状态机实例</h2>
 <ul>
-<li>让任意IO口成为UART-TX的魔法：TIM定时器中断+经典状态机：</li>
+<li>
+<p>让任意IO口成为UART-TX的魔法：TIM定时器中断+经典状态机：</p>
+<p>使用中断模拟通讯时序，但是中断间隔的us级别甚至ns级别的。那么时序数据需要提前准备好，而不是中断任务结束一次产生一次数据，这样会使得时序数据间隔太大。可以开设一个队列对需要模拟的时序数据入队，只需要进中断时处理并且出队即可。保持数据时序一致的同时，数据间隔最小，效率最高</p>
+</li>
 </ul>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//8bit的数据，用于传输</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">byte_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xff</span><span class="p">;</span>

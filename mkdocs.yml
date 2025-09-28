@@ -37,8 +37,8 @@ theme:
     - content.code.copy 
     # 导航栏
     - navigation.tabs
-    # # 返回顶部的按钮  
-    # - navigation.top    
+    # 返回顶部的按钮  
+    - navigation.top    
     # # 导航栏折叠
     # - navigation.expand
     # # 导航栏的章节折叠

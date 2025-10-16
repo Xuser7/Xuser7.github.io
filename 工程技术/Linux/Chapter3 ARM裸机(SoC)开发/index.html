@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../IoT%E2%80%94BLE/">
+        <link rel="prev" href="../Chapter2%20Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/">
       
       
-        <link rel="next" href="../RTOS%E2%80%94FreeRTOS/">
+        <link rel="next" href="../../MCU%E5%B7%A5%E7%A8%8B%E7%BB%8F%E9%AA%8C/Chapter0%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%93%BE/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>IoT—WIFI - xzqDocs</title>
+        <title>Chapter3 ARM裸机(SoC)开发 - xzqDocs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wifi-ble-soc-espressif-32bit" class="md-skip">
+        <a href="#ftp" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IoT—WIFI
+              Chapter3 ARM裸机(SoC)开发
             
           </span>
         </div>
@@ -858,6 +858,8 @@
                 
   
   
+    
+  
   
   
     
@@ -868,11 +870,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -888,7 +890,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -902,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Chapter1%20Linux%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../Chapter1%20Linux%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8/" class="md-nav__link">
         
   
   
@@ -925,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Chapter2%20Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+      <a href="../Chapter2%20Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="md-nav__link">
         
   
   
@@ -936,6 +938,85 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter3 ARM裸机(SoC)开发
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter3 ARM裸机(SoC)开发
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP传输文件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      交叉编译工具链
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1094,8 +1175,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1106,11 +1185,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -1118,7 +1197,7 @@
   
   
   <span class="md-ellipsis">
-    MCU开源框架
+    MCU开源软件
     
   </span>
   
@@ -1126,10 +1205,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            MCU开源框架
+            MCU开源软件
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1140,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GUI%E2%80%94LVGL/" class="md-nav__link">
+      <a href="../../MCU%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/GUI%E2%80%94LVGL/" class="md-nav__link">
         
   
   
@@ -1163,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IoT%E2%80%94BLE/" class="md-nav__link">
+      <a href="../../MCU%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/IoT%E2%80%94BLE/" class="md-nav__link">
         
   
   
@@ -1183,30 +1262,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    IoT—WIFI
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../MCU%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/IoT%E2%80%94WIFI/" class="md-nav__link">
         
   
   
@@ -1217,96 +1276,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wifi-ble-soc-espressif-32bit" class="md-nav__link">
-    <span class="md-ellipsis">
-      WIFI &amp; BLE SoC —— Espressif 32Bit
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="WIFI &amp; BLE SoC —— Espressif 32Bit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#micropython" class="md-nav__link">
-    <span class="md-ellipsis">
-      MicroPython开发（快速）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MicroPython开发（快速）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    <span class="md-ellipsis">
-      添加软件包：工具-&gt;管理包
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esp32-sdk" class="md-nav__link">
-    <span class="md-ellipsis">
-      ESP32 SDK开发（全面）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ESP32 SDK开发（全面）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp-idf-toolchain" class="md-nav__link">
-    <span class="md-ellipsis">
-      ESP-IDF ToolChain
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debug-with-vscode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debug with VScode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1319,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../RTOS%E2%80%94FreeRTOS/" class="md-nav__link">
+      <a href="../../MCU%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/RTOS%E2%80%94FreeRTOS/" class="md-nav__link">
         
   
   
@@ -1342,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../RTOS%E2%80%94RTThread/" class="md-nav__link">
+      <a href="../../MCU%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/RTOS%E2%80%94RTThread/" class="md-nav__link">
         
   
   
@@ -2472,6 +2441,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%B5%99%E6%B1%9F/%E6%9D%AD%E5%B7%9E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    杭州
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%B6%B3%E8%BF%B9/%E6%B5%99%E6%B1%9F/%E9%87%91%E5%8D%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    金华
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2512,74 +2527,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wifi-ble-soc-espressif-32bit" class="md-nav__link">
+  <a href="#ftp" class="md-nav__link">
     <span class="md-ellipsis">
-      WIFI &amp; BLE SoC —— Espressif 32Bit
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="WIFI &amp; BLE SoC —— Espressif 32Bit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#micropython" class="md-nav__link">
-    <span class="md-ellipsis">
-      MicroPython开发（快速）
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="MicroPython开发（快速）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    <span class="md-ellipsis">
-      添加软件包：工具-&gt;管理包
+      FTP传输文件
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esp32-sdk" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      ESP32 SDK开发（全面）
+      交叉编译工具链
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="ESP32 SDK开发（全面）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp-idf-toolchain" class="md-nav__link">
-    <span class="md-ellipsis">
-      ESP-IDF ToolChain
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debug-with-vscode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debug with VScode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2599,113 +2560,52 @@
 
 
 
-  <h1>IoT—WIFI</h1>
+  <h1>Chapter3 ARM裸机(SoC)开发</h1>
 
-<div class="admonition abstract">
-<p class="admonition-title">IoT(Internet of Things)——WIFI</p>
-</div>
-<h2 id="wifi-ble-soc-espressif-32bit">WIFI &amp; BLE SoC —— Espressif 32Bit</h2>
-<div class="language-text highlight"><pre><span></span><code>内核：Tensilica 的Xtensa 内核的双核构架
+<p>!!! abstract ARM裸机、SoC</p>
+<div class="language-text highlight"><pre><span></span><code>通常来说ARM裸机开发指的是对可以运行Linux系统的SoC进行BSP板载适配开发，而SoC和MCU的区别个人认为主要在MMU（memory management unit）器件上，MMU的存在使得SoC可以运行Linux。因为现代MCU有些性能已经如主频，RAM资源等等已经和高性能SoC大差不差了。
 
-ESP32-C3：160MHZ，2.4GHz WIFI，低功耗蓝牙
-ESP32-S3：240MHZ，2.4GHz WIFI，低功耗蓝牙，USB 串口/JTAG 控制器
-ESP32-C6：160MHZ，2.4GHz WIFI，低功耗蓝牙，支持 Thread 和 Zigbee 协议
+而决定芯片是否有MMU器件，主要在内核架构上，MCU常见内核为CortexM，而SoC常见内核为CortexA，故内核架构也间接区分开了MCU和SoC。主要因素还是在于芯片是否存在MMU器件。
 </code></pre></div>
-<h3 id="micropython">MicroPython开发（快速）</h3>
-<p>将Micropython固件烧入ESP32，即可开始使用 <a href="http://micropython.com.cn/en/latet/index-2.html">micropython</a> 开发</p>
+<h2 id="ftp">FTP传输文件</h2>
+<p>在开发过程中我们经常需要从windows环境向linux环境传输文件，最简单的办法是，linux下开启FTP服务，windows下再使用MobaXterm的FTP传输</p>
 <ol>
 <li>
-<p>下载 Thonny编辑器、esp32-flash-download-tool（用于将固件写入板子）、 CH343驱动（识别串口）、源地micropython固件<a href="https://github.com/vcc-gnd">github-vccgnd</a></p>
-</li>
-<li>
-<p>板子写入固件后，即可使用thonny开发了，右下角选择对应的串口，并且选择esp32</p>
-<p><img alt="" src="../ast/thonny-select-serial.png" /></p>
-</li>
-<li>
-<p>编写你的代码，保存到esp32，若存在boot.py，说明代码可以正常写入esp32。若无，请用flash-download-tool擦除flash再写入固件试试。</p>
-<p><img alt="" src="../ast/thonny-mpy-boot.png" /></p>
-</li>
-<li>
-<p>保存为main.py，重启板子即正常运行</p>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>重启后自动启动main.py，测试代码不要写在main，否则错误重启死循环​</p>
-</div>
-<h4 id="-">添加软件包：工具-&gt;管理包</h4>
-<ul>
-<li>
-<p>machine 硬件</p>
-<p>SPI(id, baudrate, polarity, phase, bits, firstbit, sck, mosi, miso)</p>
-<p>id请查看datasheet分组</p>
-<p>注意：sck，mosi，miso都需要定义，否则报错</p>
-</li>
-<li>
-<p>usocket 套接字</p>
-<p><a href="https://mpython.readthedocs.io/zh/master/library/pythonStd/usocket.html">mpython -usocket</a></p>
-</li>
-<li>
-<p>requests HTTP请求</p>
-<p>使用requests进行HTTP爬虫</p>
-</li>
-<li>
-<p>zlib 二进制流解压/压缩库</p>
-<p>暂时只有解压功能</p>
-</li>
-</ul>
-<h3 id="esp32-sdk">ESP32 SDK开发（全面）</h3>
-<p>VScode + ESP-IDF extension <a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/index.html">ESP-IDF编程指南</a></p>
-<h4 id="esp-idf-toolchain">ESP-IDF ToolChain</h4>
-<ol>
-<li>
-<p>ESP-IDF Offline Installer </p>
-<p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/get-started/windows-setup.html">Windows 平台工具链的标准设置 </a></p>
-<p><a href="https://blog.csdn.net/weixin_43842462/article/details/123295842">vscode+espidf开发环境搭建(实现单步调试)</a></p>
-</li>
-<li>
-<p>VScode ESP-IDF extension (not recommend)</p>
-<p>不建议，此方法无openOCD驱动，则无法打开openOCD，需要自己配置</p>
-<p><a href="https://www.cnblogs.com/jianzhan/p/ESP32-C3-JTAG.html">ESP32-C3 JTAG调试笔记</a></p>
-</li>
-</ol>
-<p>工具链安装好就可以使用 VScode IDF extension，如果找不到开发板串口，请检查USB驱动</p>
-<h4 id="debug-with-vscode">Debug with VScode</h4>
-<p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/jtag-debugging/index.html">JTAG 调试</a></p>
-<p><a href="https://blog.csdn.net/weixin_43842462/article/details/123295842">vscode+espidf开发环境搭建(实现单步调试)</a></p>
-<p>VScode调试：选择通过USB-JTAG即可打开openOCD，配置launch.json，即可调试。</p>
-<p>如果打开调试失败/出问题，请尝试重启openOCD</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="c1">//修改launch.json为</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GDB&quot;</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">&quot;miDebuggerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${command:espIdf.getXtensaGdb}&quot;</span><span class="p">,</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/${command:espIdf.getProjectName}.elf&quot;</span><span class="p">,</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&quot;windows&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}\\build\\${command:espIdf.getProjectName}.elf&quot;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p">},</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PATH&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${config:idf.customExtraPaths}&quot;</span><span class="w"> </span><span class="p">}],</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;target remote :3333&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;set remote hardware-watchpoint-limit 2&quot;</span><span class="p">},</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mon reset halt&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thb app_main&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;flushregs&quot;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">&quot;externalConsole&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">&quot;logging&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="nt">&quot;engineLogging&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="p">}</span>
+<p>Ubuntu下开启FTP服务</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>打开Ubuntu的终端窗口，然后执行如下命令来安装FTP服务
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt-get install vsftpd 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>修改ftp配置文件，打开写权限
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo vi /etc/vsftpd.conf
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># Uncomment this to allow local users to log in.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>local_enable=YES
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>#
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a># Uncomment this to enable any form of FTP write command.
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>write_enable=YES
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>修改完vsftpd.conf 以后保存退出，使用如下命令重启FTP服务
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>sudo /etc/init.d/vsftpd restart 
 </span></code></pre></div>
+</li>
+<li>
+<p>windows下使用MobaXterm创建FTP会话</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>session -&gt; ftp
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>填写Ubuntu的ip地址，ifconfig可以查看，一定要能ping通哦
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>username就是ubuntu下的用户名，进入会话后密码就是ubuntu下的密码
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>如果访问连接成功了，就可以开始互传文件
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>如果出现传输失败550，请确保ftp文件修改正确并且重启FTP服务
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>如果出现传输失败553，可能是当前的ubuntu用户权限不够，可以切换用户或者chmod 777一劳永逸
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Directory /opt opened. Showing file list...
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Error EElFTPSUnacceptedReplyError: Unaccepted server reply code 553 to command STOR
+</span></code></pre></div>
+</li>
+</ol>
+<h2 id="_1">交叉编译工具链</h2>
+<p>我们需要一个在X86架构（主流PC架构）上运行，可以编译ARM架构代码的GCC编译器，这个编译器就叫做交叉编译器</p>
 
 
 

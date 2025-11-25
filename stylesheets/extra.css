@@ -1,6 +1,12 @@
+/* 页面内容宽度设置 */
 .md-grid {
   max-width: 1440px; 
 }
+
+/* :root {
+    --md-text-font:"Roboto";
+    --md-code-font:"Roboto Mono";
+} */
 
 [data-md-color-scheme="xzq-light"] {
   /* 背景色使用HSV易于理解改动，因为背景一套色彩需要调整（亮度V，色调H和饱和度S不用变） */

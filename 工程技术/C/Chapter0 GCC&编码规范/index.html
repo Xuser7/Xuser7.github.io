@@ -1358,7 +1358,7 @@
   
   
   <span class="md-ellipsis">
-    工作经验
+    Windows
     
   </span>
   
@@ -1368,6 +1368,124 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/windows%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Windows操作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    博客搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    开发工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    工作经验
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             工作经验
           </label>
@@ -1432,124 +1550,6 @@
   
   <span class="md-ellipsis">
     面试记录
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    开发工具
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
-            <span class="md-nav__icon md-icon"></span>
-            开发工具
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/DEV%E5%B7%A5%E5%85%B7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    DEV工具
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/windows%E6%93%8D%E4%BD%9C/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Windows操作
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    博客搭建
     
   </span>
   
@@ -2653,7 +2653,13 @@
 <p>Windows:</p>
 <div class="language-text highlight"><pre><span></span><code>编辑器：VSCode
 gcc编译器：MSYS2
-gcc添加至环境变量
+1. 安装msys2，ucrt64窗口安装toolchain
+2. pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+3. 路径 &#39;msys64\ucrt64\bin&#39; 添加到环境变量
+4. gcc --version、g++ --version、gdb --version 确保这些都正确添加
+
+MSYS2是一个集成了大量的GNU工具链、工具和库的开源软件包集合。
+它提供了一个类似于Linux的shell环境，可以在Windows系统中编译和运行许多Linux应用程序和工具。
 </code></pre></div>
 <p>Linux:</p>
 <div class="language-text highlight"><pre><span></span><code>编辑器：VSCode
@@ -2668,11 +2674,13 @@ gcc编译器：sudo apt install gcc
 <ol>
 <li>
 <p>arm-none-eabi-gcc</p>
-<p>（ARM architecture，novendor，nottarget an operating system，complies with the ARM EABI）用于编译 ARM 架构的裸机系统（包括 ARM Linux 的 boot、kernel，不适用编译 Linux 应用 Application），一般适合 ARM7、Cortex-M 和 Cortex-R 内核的芯片使用，所以不支持那些跟操作系统关系密切的函数。</p>
+<p>(ARM architecture, no vendor, not target an operating system, complies with the ARM EABI)</p>
+<p>用于编译 ARM 架构的裸机系统（包括 ARM Linux 的 boot、kernel，不适用编译 Linux 应用 Application），一般适合 ARM7、Cortex-M 和 Cortex-R 内核的芯片使用，所以不支持那些跟操作系统关系密切的函数。</p>
 </li>
 <li>
 <p>arm-none-linux-gnueabi-gcc</p>
-<p>(ARM architecture, no vendor, creates binaries that run on the Linux operating system,and uses the GNU EABI)主要用于基于ARM架构的Linux系统，可用于编译 ARM 架构的 u-boot、Linux内核、linux应用等。arm-none-linux-gnueabi基于GCC，使用Glibc库，经过 Codesourcery 公司优化过推出的编译器。arm-none-linux-gnueabi-xxx 交叉编译工具的浮点运算非常优秀。一般ARM9、ARM11、Cortex-A 内核，带有 Linux 操作系统的会用到。</p>
+<p>(ARM architecture, no vendor, creates binaries that run on the Linux operating system, and use the GNU EABI)</p>
+<p>主要用于基于ARM架构的Linux系统，可用于编译 ARM 架构的 u-boot、Linux内核、Linux应用等。arm-none-linux-gnueabi基于GCC，使用Glibc库，经过 Codesourcery 公司优化过推出的编译器。arm-none-linux-gnueabi-xxx 交叉编译工具的浮点运算非常优秀。一般ARM9、ARM11、Cortex-A 内核，带有 Linux 操作系统的会用到。</p>
 </li>
 <li>
 <p>ABI 和 EABI</p>

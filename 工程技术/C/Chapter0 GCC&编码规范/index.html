@@ -953,14 +953,29 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+    <nav class="md-nav" aria-label="2.优秀编码准则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
-      3.注释规范
+      2.1 变量管理规范
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 注释要点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2714,14 +2729,29 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+    <nav class="md-nav" aria-label="2.优秀编码准则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
-      3.注释规范
+      2.1 变量管理规范
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 注释要点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3402,6 +3432,11 @@ hard： armhf架构（对应的编译器 arm-linux-gnueabihf-gcc ）采用的默
 </tbody>
 </table>
 <h2 id="2">2.优秀编码准则</h2>
+<div class="admonition note">
+<p class="admonition-title">为什么需要优雅地写代码？</p>
+<p>合理的，逻辑清晰的软件架构可以节省开发时间，节省调试时间，以及减少程序的bug。</p>
+<p>代码运行正确性，可维护性都会提高，而且个人编程思维长进也藏在其中</p>
+</div>
 <ol>
 <li>维护性：一般需要解耦合度，降低各功能代码块间的耦合度</li>
 <li>复用性：需要将各功能代码块进行封装，用到时直接调用</li>
@@ -3410,12 +3445,33 @@ hard： armhf架构（对应的编译器 arm-linux-gnueabihf-gcc ）采用的默
 <li>健壮性：考虑各异常情况，尽量使代码任何时候都能工作，否则抛出异常</li>
 <li>可读性：例如if else 嵌套不要超过三层。语法不要复杂嵌套，例如多级指针</li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">为什么需要优雅地写代码？</p>
-<p>合理的，逻辑清晰的软件架构可以节省开发时间，节省调试时间，以及减少程序的bug。</p>
-<p>代码运行正确性，可维护性都会提高，而且个人编程思维长进也藏在其中</p>
-</div>
-<h2 id="3">3.注释规范</h2>
+<h3 id="21">2.1 变量管理规范</h3>
+<ol>
+<li>
+<p>限制变量可见域：</p>
+<p>1）将extern 变量，尽量修改为static变量。如果提供接口给外部使用，谨慎提供写操作接口，并规范写全局变量的方式和时机。</p>
+<p>2）如果没在别的函数访问的变量，就改为函数局部变量。</p>
+</li>
+<li>
+<p>封装成一个结构体：</p>
+<p>1）多个相关或者同类全局变量，封装成结构体成员放到各自模块，按相同方式初始、读、写，方便统一管理，避免杂乱无章的访问方式；</p>
+<p>2）结构体传递（参数传递、函数返回），在安全的情况下，使用指针传递；</p>
+</li>
+<li>
+<p>用函数/inline函数/宏函数等 封装对全局变量的操作，减少全局变量的编写次数</p>
+<p>（等你要修改某几个全局变量的时候，就知道痛苦了）</p>
+</li>
+<li>
+<p>安全访问全局变量</p>
+<p>1）中断服务程序访问的全局变量，加上volatile强制到内存读取数据；</p>
+<p>2）多个执行流（如中断程序和普通程序同时）访问的全局变量，要考虑并发问题，比如使用原子类型，原子操作，设置临界区等；</p>
+</li>
+<li>
+<p>统一命名风格，方便阅读和搜索</p>
+</li>
+</ol>
+<p><a href="https://zhuanlan.zhihu.com/p/434507911">见此知乎文章评论区</a></p>
+<h3 id="21_1">2.1 注释要点</h3>
 <p>注释多不一定好，太多了会阻碍阅读的流畅性，首要（写优雅的代码，可读性强的代码，结构好的代码），次要（特殊行的注释，快速引导的注释，例如函数引导）</p>
 
 

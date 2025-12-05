@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../IoT%E2%80%94BLE/">
+        <link rel="prev" href="../BLE/">
       
       
-        <link rel="next" href="../../Windows/windows%E6%93%8D%E4%BD%9C/">
+        <link rel="next" href="../../Windows/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>WIFI&BLE - xzqDocs</title>
+        <title>ESP32 - xzqDocs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wifi-ble-soc-espressif-32bit" class="md-skip">
+        <a href="#espressif-32bit-wifi-ble-soc" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WIFI&BLE
+              ESP32
             
           </span>
         </div>
@@ -1281,12 +1281,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../IoT%E2%80%94BLE/" class="md-nav__link">
+      <a href="../BLE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    IoT—BLE
+    BLE
     
   </span>
   
@@ -1316,7 +1316,7 @@
   
   
   <span class="md-ellipsis">
-    WIFI&BLE
+    ESP32
     
   </span>
   
@@ -1329,7 +1329,7 @@
   
   
   <span class="md-ellipsis">
-    WIFI&BLE
+    ESP32
     
   </span>
   
@@ -1350,16 +1350,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wifi-ble-soc-espressif-32bit" class="md-nav__link">
+  <a href="#espressif-32bit-wifi-ble-soc" class="md-nav__link">
     <span class="md-ellipsis">
-      WIFI &amp; BLE SoC —— Espressif 32Bit
+      Espressif 32Bit —— WIFI &amp; BLE SoC
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="WIFI &amp; BLE SoC —— Espressif 32Bit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#micropython" class="md-nav__link">
     <span class="md-ellipsis">
       MicroPython开发（快速）
@@ -1382,8 +1381,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#esp32-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       ESP32 SDK开发（全面）
@@ -1408,11 +1407,6 @@
       Debug with VScode
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1486,12 +1480,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Windows/windows%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+      <a href="../../Windows/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Windows操作
+    博客搭建
     
   </span>
   
@@ -1509,12 +1503,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Windows/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../Windows/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    博客搭建
+    常用操作
     
   </span>
   
@@ -2630,16 +2624,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wifi-ble-soc-espressif-32bit" class="md-nav__link">
+  <a href="#espressif-32bit-wifi-ble-soc" class="md-nav__link">
     <span class="md-ellipsis">
-      WIFI &amp; BLE SoC —— Espressif 32Bit
+      Espressif 32Bit —— WIFI &amp; BLE SoC
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="WIFI &amp; BLE SoC —— Espressif 32Bit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#micropython" class="md-nav__link">
     <span class="md-ellipsis">
       MicroPython开发（快速）
@@ -2662,8 +2655,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#esp32-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       ESP32 SDK开发（全面）
@@ -2695,11 +2688,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -2717,43 +2705,69 @@
 
 
 
-  <h1>WIFI&BLE</h1>
+  <h1>ESP32</h1>
 
 <div class="admonition abstract">
 <p class="admonition-title">SoC</p>
 <p>MCU = CPU + RAM + ROM + 简单外设（UART / TIM / ADC 等等）</p>
 <p>SoC = MCU + 复杂功能外设（基带芯片 / GPU / NPU 等等）</p>
 </div>
-<h2 id="wifi-ble-soc-espressif-32bit">WIFI &amp; BLE SoC —— Espressif 32Bit</h2>
-<div class="language-text highlight"><pre><span></span><code>内核：Tensilica 的Xtensa 内核的双核构架
+<h2 id="espressif-32bit-wifi-ble-soc">Espressif 32Bit —— WIFI &amp; BLE SoC</h2>
+<div class="language-text highlight"><pre><span></span><code>内核：Tensilica 的 Xtensa 内核的双核构架
 
 ESP32-C3：160MHZ，2.4GHz WIFI，低功耗蓝牙
 ESP32-S3：240MHZ，2.4GHz WIFI，低功耗蓝牙，USB 串口/JTAG 控制器
 ESP32-C6：160MHZ，2.4GHz WIFI，低功耗蓝牙，支持 Thread 和 Zigbee 协议
 </code></pre></div>
-<h3 id="micropython">MicroPython开发（快速）</h3>
+<h2 id="micropython">MicroPython开发（快速）</h2>
 <p>将Micropython固件烧入ESP32，即可开始使用 <a href="http://micropython.com.cn/en/latet/index-2.html">micropython</a> 开发</p>
 <ol>
 <li>
-<p>下载 Thonny编辑器、esp32-flash-download-tool（用于将固件写入板子）、 CH343驱动（识别串口）、源地micropython固件<a href="https://github.com/vcc-gnd">github-vccgnd</a></p>
+<p>下载 Thonny编辑器、esp32-flash-download-tool（用于将固件写入板子）、 CH343驱动（识别串口）、micropython固件(支持micropython开发)</p>
+<p><a href="https://github.com/vcc-gnd/YD-ESP32-S3">github-vccgnd esp32 s3</a></p>
+<p><a href="https://docs.espressif.com/projects/esp-test-tools/zh_CN/latest/esp32/production_stage/tools/flash_download_tool.html">esp32-flash-download-tool</a></p>
+<p><a href="https://www.wch.cn/downloads/category/67.html">南京沁恒-驱动程序</a></p>
+<p><a href="https://micropython.org/download/?port=esp32">micropython-esp32</a></p>
 </li>
 <li>
-<p>板子写入固件后，即可使用thonny开发了，右下角选择对应的串口，并且选择esp32</p>
+<p>将固件烧入ESP32，让它支持Micropython开发</p>
+<p><img alt="" src="../ast/esp32-flash-download-tool.png" /></p>
+</li>
+<li>
+<p>板子烧入固件后，可以用thonny开发了，右下角选择esp32，找到设备对应的串口</p>
 <p><img alt="" src="../ast/thonny-select-serial.png" /></p>
 </li>
 <li>
-<p>编写你的代码，保存到esp32，若存在boot.py，说明代码可以正常写入esp32。若无，请用flash-download-tool擦除flash再写入固件试试。</p>
+<p>编写你的代码，保存到esp32，若存在boot.py，说明代码可以正常写入esp32。若无，请用esp32-flash-download-tool擦除flash再写入固件试试。</p>
 <p><img alt="" src="../ast/thonny-mpy-boot.png" /></p>
 </li>
 <li>
-<p>保存为main.py，重启板子即正常运行</p>
+<p>保存为main.py，重启板子默认运行，开始释放你的创造力吧。</p>
 </li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>重启后自动启动main.py，测试代码不要写在main，否则错误重启死循环​</p>
+<p>重启后自动启动main.py，bug代码不要保存为main.py，否则错误重启死循环​</p>
 </div>
-<h4 id="-">添加软件包：工具-&gt;管理包</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#-----------------EXAMPLE-----------------</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#ESP32 作为AP  即wifi热点</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">network</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">##配置ESP32为AP模式</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">ssid</span> <span class="o">=</span> <span class="s1">&#39;ESP32_AP&#39;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">authmode</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># WPA2-PSK</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">##创建WLAN对象</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">wlan</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">STAIF</span><span class="p">)</span>  <span class="c1"># 默认情况下，STAIF接口已创建，但我们将其禁用</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">wlan</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 禁用STA接口</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">apif</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">APIF</span><span class="p">)</span>  <span class="c1"># 创建AP接口</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">ap_if</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">ap_if</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">essid</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span> <span class="n">authmode</span><span class="o">=</span><span class="n">authmode</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AP mode started with SSID:&#39;</span><span class="p">,</span> <span class="n">ssid</span><span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Password:&#39;</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="-">添加软件包：工具-&gt;管理包</h3>
 <ul>
 <li>
 <p>machine 硬件</p>
@@ -2774,9 +2788,9 @@ ESP32-C6：160MHZ，2.4GHz WIFI，低功耗蓝牙，支持 Thread 和 Zigbee 协
 <p>暂时只有解压功能</p>
 </li>
 </ul>
-<h3 id="esp32-sdk">ESP32 SDK开发（全面）</h3>
+<h2 id="esp32-sdk">ESP32 SDK开发（全面）</h2>
 <p>VScode + ESP-IDF extension <a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/index.html">ESP-IDF编程指南</a></p>
-<h4 id="esp-idf-toolchain">ESP-IDF ToolChain</h4>
+<h3 id="esp-idf-toolchain">ESP-IDF ToolChain</h3>
 <ol>
 <li>
 <p>ESP-IDF Offline Installer </p>
@@ -2790,41 +2804,41 @@ ESP32-C6：160MHZ，2.4GHz WIFI，低功耗蓝牙，支持 Thread 和 Zigbee 协
 </li>
 </ol>
 <p>工具链安装好就可以使用 VScode IDF extension，如果找不到开发板串口，请检查USB驱动</p>
-<h4 id="debug-with-vscode">Debug with VScode</h4>
+<h3 id="debug-with-vscode">Debug with VScode</h3>
 <p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/jtag-debugging/index.html">JTAG 调试</a></p>
 <p><a href="https://blog.csdn.net/weixin_43842462/article/details/123295842">vscode+espidf开发环境搭建(实现单步调试)</a></p>
 <p>VScode调试：选择通过USB-JTAG即可打开openOCD，配置launch.json，即可调试。</p>
 <p>如果打开调试失败/出问题，请尝试重启openOCD</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="c1">//修改launch.json为</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GDB&quot;</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">&quot;miDebuggerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${command:espIdf.getXtensaGdb}&quot;</span><span class="p">,</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/${command:espIdf.getProjectName}.elf&quot;</span><span class="p">,</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&quot;windows&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}\\build\\${command:espIdf.getProjectName}.elf&quot;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p">},</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PATH&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${config:idf.customExtraPaths}&quot;</span><span class="w"> </span><span class="p">}],</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;target remote :3333&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;set remote hardware-watchpoint-limit 2&quot;</span><span class="p">},</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mon reset halt&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thb app_main&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;flushregs&quot;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">],</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">&quot;externalConsole&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">&quot;logging&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="nt">&quot;engineLogging&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="c1">//修改launch.json为</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GDB&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nt">&quot;miDebuggerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${command:espIdf.getXtensaGdb}&quot;</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/${command:espIdf.getProjectName}.elf&quot;</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nt">&quot;windows&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}\\build\\${command:espIdf.getProjectName}.elf&quot;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PATH&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${config:idf.customExtraPaths}&quot;</span><span class="w"> </span><span class="p">}],</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;target remote :3333&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;set remote hardware-watchpoint-limit 2&quot;</span><span class="p">},</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mon reset halt&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thb app_main&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;flushregs&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="p">],</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">        </span><span class="nt">&quot;externalConsole&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="nt">&quot;logging&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">            </span><span class="nt">&quot;engineLogging&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
 
 

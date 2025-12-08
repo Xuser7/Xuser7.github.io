@@ -12,7 +12,7 @@
         <link rel="prev" href="../../%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/RTOS%E2%80%94RTThread/">
       
       
-        <link rel="next" href="../Chapter1%20%E6%9C%89%E5%88%B7%E7%94%B5%E6%9C%BA%E4%B8%89%E7%8E%AF%E4%B8%B2%E7%BA%A7PID/">
+        <link rel="next" href="../Chapter1%20%E4%B8%89%E7%8E%AF%E4%B8%B2%E8%81%94%E6%8E%A7%E5%88%B6/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -1775,12 +1775,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chapter1%20%E6%9C%89%E5%88%B7%E7%94%B5%E6%9C%BA%E4%B8%89%E7%8E%AF%E4%B8%B2%E7%BA%A7PID/" class="md-nav__link">
+      <a href="../Chapter1%20%E4%B8%89%E7%8E%AF%E4%B8%B2%E8%81%94%E6%8E%A7%E5%88%B6/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Chapter1 有刷电机三环串级PID
+    Chapter1 三环串联控制
     
   </span>
   
@@ -2343,6 +2343,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/chapter5%20%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter5 树与二叉树
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="md-nav__link">
         
   
@@ -2812,7 +2835,7 @@
 <p>微分控制作用一个很大的缺陷是容易引入高频噪声，所有在<strong>干扰信号比较严重的流量控制系统</strong>中不宜引入微分控制作用。</p>
 <h2 id="pid_1">离散化PID算法</h2>
 <p>由于计算机的运算是离散的，要想实现数字PID控制首先需要将连续函数进行离散化。</p>
-<p><img alt="" src="pid.png" /></p>
+<p><img alt="" src="../ast/PID.png" /></p>
 <p>如图，PID控制即对偏差的控制，如果偏差为0，则比例环节不起作用，只有存在偏差时，比例环节才起作用。</p>
 <p>积分环节主要是用来消除静差，所谓静差，就是系统稳定后输出值和设定值之间的差值，积分环节实际上就是偏差累计的过程，把累计的误差加到原有系统上以抵消系统造成的静差；</p>
 <p>而微分信号则反应了偏差信号的变化规律，也可以说是变化趋势，根据偏差信号的变化趋势来进行超前调节，从而增加了系统的预知性；</p>
@@ -2989,7 +3012,6 @@
 </span></code></pre></div>
 <h2 id="_3">参考资料</h2>
 <p><a href="https://doc.embedfire.com/motor/motor_tutorial/zh/latest/improve_part/PID_detailed.html">野火电机应用开发指南——PID算法的通俗解说</a></p>
-<p><a href="https://www.cnblogs.com/Yannnnnn/p/17790806.html">STM32驱动 有刷电机 位置，速度，电流，三环控制</a></p>
 
 
 

@@ -3337,6 +3337,17 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175" href="#__codelineno-0-175"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176" href="#__codelineno-0-176"></a>
 </span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177" href="#__codelineno-0-177"></a><span class="p">}</span>
+</span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178" href="#__codelineno-0-178"></a><span class="cm">/**</span>
+</span><span id="__span-0-179"><a id="__codelineno-0-179" name="__codelineno-0-179" href="#__codelineno-0-179"></a><span class="cm"> * @brief 有时希望短按后持续按下，不再进行长按判断的等待，立马触发event</span>
+</span><span id="__span-0-180"><a id="__codelineno-0-180" name="__codelineno-0-180" href="#__codelineno-0-180"></a><span class="cm"> */</span>
+</span><span id="__span-0-181"><a id="__codelineno-0-181" name="__codelineno-0-181" href="#__codelineno-0-181"></a><span class="kt">void</span><span class="w"> </span><span class="nf">key_goto_longpress_immediately</span><span class="p">(</span><span class="n">KeyFsm</span><span class="o">*</span><span class="w"> </span><span class="n">key_fsm</span><span class="p">)</span>
+</span><span id="__span-0-182"><a id="__codelineno-0-182" name="__codelineno-0-182" href="#__codelineno-0-182"></a><span class="p">{</span>
+</span><span id="__span-0-183"><a id="__codelineno-0-183" name="__codelineno-0-183" href="#__codelineno-0-183"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">KEY_STATE_PRESSED</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">key_fsm</span><span class="o">-&gt;</span><span class="n">fsm_state</span><span class="p">)</span>
+</span><span id="__span-0-184"><a id="__codelineno-0-184" name="__codelineno-0-184" href="#__codelineno-0-184"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-185"><a id="__codelineno-0-185" name="__codelineno-0-185" href="#__codelineno-0-185"></a><span class="w">        </span><span class="n">key_fsm</span><span class="o">-&gt;</span><span class="n">fsm_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KEY_STATE_LONG_PRESS</span><span class="p">;</span>
+</span><span id="__span-0-186"><a id="__codelineno-0-186" name="__codelineno-0-186" href="#__codelineno-0-186"></a><span class="w">        </span><span class="n">key_fsm</span><span class="o">-&gt;</span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KEY_EVENT_LONG_PRESS</span><span class="p">;</span>
+</span><span id="__span-0-187"><a id="__codelineno-0-187" name="__codelineno-0-187" href="#__codelineno-0-187"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-188"><a id="__codelineno-0-188" name="__codelineno-0-188" href="#__codelineno-0-188"></a><span class="p">}</span>
 </span></code></pre></div>
 <h4 id="keyscanh">keyscan.h</h4>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#ifndef __KEYSCAN_H__</span>
@@ -3386,8 +3397,9 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="n">KeyEvent</span><span class="w"> </span><span class="nf">key_scan_get_event</span><span class="p">(</span><span class="n">KeyFsm</span><span class="o">*</span><span class="w"> </span><span class="n">key_fsm</span><span class="p">);</span>
 </span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="c1">// 按键扫描函数，应定期调用</span>
 </span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="kt">void</span><span class="w"> </span><span class="nf">key_scan</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="cp">#endif</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="c1">// 短按立刻跳转长按</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="kt">void</span><span class="w"> </span><span class="nf">key_goto_longpress_immediately</span><span class="p">(</span><span class="n">KeyFsm</span><span class="o">*</span><span class="w"> </span><span class="n">key_fsm</span><span class="p">);</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="cp">#endif</span>
 </span></code></pre></div>
 <h3 id="12-menu">1.2 Menu 多级菜单</h3>
 <p>使用结构体定义菜单类，并且使用结构体指针跳转菜单层级</p>

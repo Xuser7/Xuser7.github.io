@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../Python/Chapter0%20%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%26%E5%8C%85%E7%AE%A1%E7%90%86/">
+        <link rel="prev" href="../../Python/Chapter0%20%E5%8C%85%E7%AE%A1%E7%90%86%26%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/">
       
       
         <link rel="next" href="../ESP32/">
@@ -596,6 +596,29 @@
   
   <span class="md-ellipsis">
     0804——telink SDK二次开发 主设备向从设备写数据踩坑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8D%9A%E5%AE%A2%E9%80%9F%E8%AE%B0/2025/1225/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1225——25年底的技术总结与思考
     
   </span>
   
@@ -1279,12 +1302,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/Chapter0%20%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%26%E5%8C%85%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../Python/Chapter0%20%E5%8C%85%E7%AE%A1%E7%90%86%26%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Chapter0 环境管理&包管理
+    Chapter0 包管理&环境管理
     
   </span>
   
@@ -1475,9 +1498,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ncsnrf-connect-sdk" class="md-nav__link">
+  <a href="#nrf-connect-sdkncs" class="md-nav__link">
     <span class="md-ellipsis">
-      NCS(nRF Connect SDK)
+      nRF Connect SDK(NCS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nrf5-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      nRF5 SDK
     </span>
   </a>
   
@@ -1511,15 +1543,6 @@
   <a href="#tlsr825x-telink-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       TLSR825X —— Telink SDK
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#telink_825x-aithinker-repo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Telink_825x —— AiThinker Repo
     </span>
   </a>
   
@@ -2884,9 +2907,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ncsnrf-connect-sdk" class="md-nav__link">
+  <a href="#nrf-connect-sdkncs" class="md-nav__link">
     <span class="md-ellipsis">
-      NCS(nRF Connect SDK)
+      nRF Connect SDK(NCS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nrf5-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      nRF5 SDK
     </span>
   </a>
   
@@ -2920,15 +2952,6 @@
   <a href="#tlsr825x-telink-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       TLSR825X —— Telink SDK
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#telink_825x-aithinker-repo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Telink_825x —— AiThinker Repo
     </span>
   </a>
   
@@ -2993,8 +3016,19 @@
 </li>
 </ol>
 <h2 id="3-nordic-soc">3. Nordic SoC</h2>
-<h3 id="ncsnrf-connect-sdk">NCS(nRF Connect SDK)</h3>
+<h3 id="nrf-connect-sdkncs">nRF Connect SDK(NCS)</h3>
 <p><a href="https://www.cnblogs.com/iini/p/14174427.html">开发你的第一个nRF Connect SDK(NCS)/Zephyr应用程序</a></p>
+<ul>
+<li>
+<p>nRF Connect SDK入手</p>
+<p>1 下载JLink</p>
+<p>2 下载nRFUtil，并且添加到环境变量</p>
+<p>3 VScode安装 nRF Connect VS Code Extension Pack</p>
+<p>4 在nRF Connect界面安装 toolchain 和 SDK</p>
+</li>
+</ul>
+<h3 id="nrf5-sdk">nRF5 SDK</h3>
+<p><a href="https://www.cnblogs.com/iini/p/9043565.html">Nordic nRF5 SDK开发环境搭建(nRF51/nRF52芯片平台)</a></p>
 <h2 id="4-telink-soc">4. Telink SoC</h2>
 <div class="admonition tips">
 <p class="admonition-title">开发建议</p>
@@ -3002,6 +3036,7 @@
 <p>TelinkSDK是官方的，相比AiThinker这种代理商，代码更权威更完善。比如单连接SDK Demo，多连接SDK Demo都配有官方说明文档。能学得更深入。</p>
 <p>AiThinker是有AT固件的Demo，最开始用BLE都是AT指令开发的，比较熟悉，可以固件AT指令顺藤摸瓜熟悉功能。</p>
 </div>
+<p><a href="https://github.com/Ai-Thinker-Open/Telink_825X_SDK">Ai-Thinker-Open Telink_825X_SDK</a></p>
 <h3 id="tlsr825x-ide">TLSR825X —— IDE</h3>
 <p>Telink IDE和Telink Studio是有区别的，TelinkIDE针对TLSR8（例如TLSR8258），而TelinkStudio针对TLSR9</p>
 <p>TLSR8不像TLSR9支持调试，所以TLSR8只能用print打印来交互调试，故编写UART交互对于TLSR8开发是极为重要的。</p>
@@ -3078,9 +3113,6 @@
 <p>再添加上uart_send、dma_receive_fifo、uart_dma_irq_handle，和receive_fifo解析函数，就满足了我们的debug需求</p>
 </li>
 </ul>
-<h3 id="telink_825x-aithinker-repo">Telink_825x —— AiThinker Repo</h3>
-<p>Aithinker的SDK很久没更新维护了，所以还是以TelinkSDK为主</p>
-<p><a href="https://github.com/Ai-Thinker-Open/Telink_825X_SDK">Ai-Thinker-Open Telink_825X_SDK</a></p>
 
 
 

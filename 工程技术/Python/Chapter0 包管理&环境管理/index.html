@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter0 环境管理&包管理 - xzqDocs</title>
+        <title>Chapter0 包管理&环境管理 - xzqDocs</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter0 环境管理&包管理
+              Chapter0 包管理&环境管理
             
           </span>
         </div>
@@ -596,6 +596,29 @@
   
   <span class="md-ellipsis">
     0804——telink SDK二次开发 主设备向从设备写数据踩坑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8D%9A%E5%AE%A2%E9%80%9F%E8%AE%B0/2025/1225/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1225——25年底的技术总结与思考
     
   </span>
   
@@ -1293,7 +1316,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter0 环境管理&包管理
+    Chapter0 包管理&环境管理
     
   </span>
   
@@ -1306,7 +1329,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter0 环境管理&包管理
+    Chapter0 包管理&环境管理
     
   </span>
   
@@ -1329,9 +1352,33 @@
         <li class="md-nav__item">
   <a href="#pip-python" class="md-nav__link">
     <span class="md-ellipsis">
-      pip (python第三方包管理)
+      pip (python包管理)
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      anaconda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="anaconda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anaconda_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      anaconda入手
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2687,9 +2734,33 @@
         <li class="md-nav__item">
   <a href="#pip-python" class="md-nav__link">
     <span class="md-ellipsis">
-      pip (python第三方包管理)
+      pip (python包管理)
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      anaconda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="anaconda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anaconda_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      anaconda入手
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2709,13 +2780,53 @@
 
 
 
-  <h1>Chapter0 环境管理&包管理</h1>
+  <h1>Chapter0 包管理&环境管理</h1>
 
-<h2 id="pip-python">pip (python第三方包管理)</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>xxx-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple<span class="w"> </span><span class="c1">#清华软件源</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>unistall<span class="w"> </span>xxx<span class="w"> </span>xxx<span class="w"> </span>xxx<span class="w"> </span>...<span class="w"> </span>xxx<span class="w"> </span><span class="c1">#移除多个库</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&lt;requirement.txt&gt;<span class="w"> </span><span class="c1">#查询第三方库(导出)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>-r<span class="w"> </span>&lt;requirements.txt&gt;<span class="w"> </span>-y<span class="w"> </span><span class="c1">#(根据导出卸载)</span>
+<p>实际项目开发中，不同项目可能需要第三方包的不同版本，迫使我们需要根据实际需求不断进行更新或卸载相应的包，而如果我们直接使用本地的Python环境，会导致整体的开发环境相当混乱而不易管理。这个时候就需要引入虚拟环境的概念，将各个开发环境隔离开来，可以各个独立管理而不糅杂。</p>
+<h2 id="pip-python">pip (python包管理)</h2>
+<p>pip 是一个现代的，通用的 Python 包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。</p>
+<p>注：pip 已内置于 Python 3.4 和 2.7 及以上版本，其他版本需另行安装。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># pip安装依赖包时，需要下载源，由于中国局域网hhh，但有解决办法</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># 1 打开你的梯子代理，当然要消耗流量咯</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 2 更换为国内软件源 ：</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>xxx<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>unistall<span class="w"> </span>xxx<span class="w"> </span>xxx<span class="w"> </span>xxx<span class="w"> </span>...<span class="w"> </span>xxx<span class="w"> </span><span class="c1">#移除多个库</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&lt;requirement.txt&gt;<span class="w"> </span><span class="c1">#查询第三方库(导出)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>-r<span class="w"> </span>&lt;requirements.txt&gt;<span class="w"> </span>-y<span class="w"> </span><span class="c1">#(根据导出卸载)</span>
+</span></code></pre></div>
+<h2 id="anaconda">anaconda</h2>
+<p>简单来说，Anaconda是一个开源的Python发行版，专为科学计算（数据分析、机器学习、深度学习等）设计。</p>
+<ul>
+<li>
+<p>它最大的优势在于：</p>
+<p>1 预装了数百个常用科学计算包（numpy、pandas、scipy等），省去了单独安装的麻烦</p>
+<p>2 内置conda包管理器，解决了依赖问题（这个痛点Python开发者都懂）</p>
+<p>3 虚拟环境管理功能，可以为不同项目创建隔离环境，避免版本冲突</p>
+<p>4 跨平台兼容性，Windows、macOS和Linux均可使用相同的工作流</p>
+<p>5 内置Jupyter Notebook，极大提升了数据分析和交互式编程体验</p>
+</li>
+</ul>
+<p>正是这些特性，使得Anaconda成为数据科学家、机器学习工程师、科研人员和学生的首选工具</p>
+<h3 id="anaconda_1">anaconda入手</h3>
+<p><a href="https://www.anaconda.com/download">Downloads - Anaconda</a></p>
+<p>下载anaconda，并且安装，添加anaconda到环境变量，并且查看指令是否正常使用即可。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#检查anaconda版本 </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>​conda<span class="w"> </span>-V
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#查看当前存在哪些虚拟环境 </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>​conda<span class="w"> </span>env<span class="w"> </span>list
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#查看当前环境安装了哪些包 </span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>​conda<span class="w"> </span>list
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">#-----------------------------------------------------------------------</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#激活虚拟环境 </span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>​activate<span class="w"> </span><span class="o">{</span>env_name<span class="o">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#创建虚拟环境 </span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>​conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env_name<span class="o">}</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span>x.x
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">#删除虚拟环境 </span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>​<span class="w"> </span>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env_name<span class="o">}</span><span class="w"> </span>--all
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1">#克隆环境将env1克隆为</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>​env2<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env2<span class="o">}</span><span class="w"> </span>--clone<span class="w"> </span><span class="o">{</span>env1<span class="o">}</span>
 </span></code></pre></div>
 
 

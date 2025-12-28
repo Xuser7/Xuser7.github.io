@@ -606,6 +606,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8D%9A%E5%AE%A2%E9%80%9F%E8%AE%B0/2025/1225/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1225——25年底的技术总结与思考
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1237,15 +1260,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#lks-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      lks scope
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1385,12 +1399,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/Chapter0%20%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%26%E5%8C%85%E7%AE%A1%E7%90%86/" class="md-nav__link">
+      <a href="../../Python/Chapter0%20%E5%8C%85%E7%AE%A1%E7%90%86%26%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Chapter0 环境管理&包管理
+    Chapter0 包管理&环境管理
     
   </span>
   
@@ -2793,15 +2807,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#lks-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      lks scope
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2868,35 +2873,45 @@
 <h3 id="segger-jlink">SEGGER JLink</h3>
 <ul>
 <li>
+<p>JScope </p>
+<p><a href="https://blog.csdn.net/qq_23852045/article/details/108837881">调试神器---＞JScope</a></p>
+<p>J-Scope、可以在目标MCU运行时，实时分析数据并图形化显示的软件。</p>
+<p>它不需要SWO或目标上的任何额外引脚等功能，使用可用的标准调试端口JTAG\SWD。</p>
+<p>J-Scope能够以类似示波器的方式显示多个变量的值。通过读取elf\obj\out\axf文件，允许选择多个变量进行可视化。</p>
+<ol>
+<li>
+<p>HSS模式</p>
+<p>HSS模式是通过采样周期定时从内存文件中读取变量的值，所以采样周期和可执行文件是必须的。</p>
+<p>为了更加准确有效的采集到对的数据，最好用volatile声明变量。</p>
+<p>优点：随时可连接MCU，不影响MCU正常运行，因为不需添加任何代码，所以也不会占用MCU紧张的资源。</p>
+<p>缺点：速度慢，采样速率基本固定在1khz左右，因此仅仅适合采样变量变化速率低于1khz的情况，
+因为数据是根据采样率来的，所以实时性不是太准，不够低速率下影响不大。</p>
+<p>如图，再选中工程中的elf\obj\out\axf文件，即可开始调试，IAR对应.out，MDK对应.axf</p>
+<p><img alt="" src="../ast/jscope_hss.png" /></p>
+</li>
+<li>
+<p>RTT模式</p>
+<p>RTT模式下，所有的数据和时间戳均是有MCU来提供。</p>
+<p>优点：比HSS更高的数据吞吐量，最高可达2MB/S，不过这个是由MCU上使用的缓冲区大小决定，
+即使只有512字节的小缓冲区也可以达到1MB/S，够用了；J-Scope数据采集与MCU的应用程序执行同步，
+因为应用程序决定何时以及如何采样数据；不需要知道变量位置，
+RTT缓冲区的位置由J-Scope自动检测；时间戳等数据可以被添加到数据样本中。</p>
+<p>缺点：稍微比较麻烦，需要移植RTT代码，占用mcu资源，大概需要1.4kb左右的flash，1KB左右的RAM。</p>
+</li>
+</ol>
+</li>
+<li>
 <p>JLink RTT </p>
 <p><a href="https://www.cnblogs.com/snowsad/p/12076740.html">调试备忘录-J-Link RTT的使用（原理 + 教程 + 应用 + 代码）</a></p>
 <p>RTT(Real Time Transfer)是一种用于嵌入式中与用户进行交互的技术，它结合了SWO和半主机的优点，具有极高的性能。</p>
 <p>使用RTT可以从MCU非常快速输出调试信息和数据，且不影响MCU实时性。这个功能可以用于很多支持J-Link的设备和MCU，兼容性强。</p>
 </li>
 <li>
-<p>JScope </p>
-<p><a href="https://blog.csdn.net/qq_23852045/article/details/108837881">调试神器---＞JScope</a></p>
-<p>J-Scope、可以在目标MCU运行时，实时分析数据并图形化显示的软件。它不需要SWO或目标上的任何额外引脚等功能，但使用可用的标准调试端口。J-Scope可以以类似示波器的方式显示多个变量的值。它读取elf或axf文件并允许选择多个变量进行可视化。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HSS模式是通过采样周期定时从内存文件中读取变量的值，所以采样周期和可执行文件是必须的，
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>为了更加准确有效的采集到对的数据，最好用volatile声明变量。
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>优点：随时可连接MCU，不影响MCU正常运行，因为不需添加任何代码，所以也不会占用MCU紧张的资源。
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>缺点：速度慢，采样速率基本固定在1khz左右，因此仅仅适合采样变量变化速率低于1khz的情况，
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>因为数据是根据采样率来的，所以实时性不是太准，不够低速率下影响不大。
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RTT模式下，所有的数据和时间戳均是有MCU来提供。
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>优点：比HSS更高的数据吞吐量，最高可达2MB/S，不过这个是由MCU上使用的缓冲区大小决定，
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>即使只有512字节的小缓冲区也可以达到1MB/S，够用了；J-Scope数据采集与MCU的应用程序执行同步，
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>因为应用程序决定何时以及如何采样数据；不需要知道变量位置，
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>RTT缓冲区的位置由J-Scope自动检测；时间戳等数据可以被添加到数据样本中。
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>缺点：稍微比较麻烦，需要移植RTT代码，占用mcu资源，大概需要1.4kb左右的flash，1KB左右的RAM。
-</span></code></pre></div>
+<p>lks scope</p>
+<p><a href="https://www.lksmcu.com/index.php/Tools/">南京凌鸥创芯</a></p>
+<p>一款国产的上位机跟踪软件，和JScope一样的功能，但是更方便、界面更完善，推荐使用</p>
 </li>
 </ul>
-<h3 id="lks-scope">lks scope</h3>
-<p>一款国产的上位机跟踪软件，和JScope一样的功能，但是更方便、界面更完善，推荐使用</p>
-<p><a href="https://www.lksmcu.com/index.php/Tools/">南京凌鸥创芯</a></p>
 
 
 

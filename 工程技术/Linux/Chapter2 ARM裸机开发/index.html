@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../Chapter2%20Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/">
+        <link rel="prev" href="../Chapter1%20Linux%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8/">
       
       
         <link rel="next" href="../../MCU/Chapter0%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%93%BE/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter3 ARM裸机(SoC)开发 - xzqDocs</title>
+        <title>Chapter2 ARM裸机开发 - xzqDocs</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter3 ARM裸机(SoC)开发
+              Chapter2 ARM裸机开发
             
           </span>
         </div>
@@ -1065,29 +1065,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter2%20Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Chapter2 Linux系统编程
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1103,7 +1080,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter3 ARM裸机(SoC)开发
+    Chapter2 ARM裸机开发
     
   </span>
   
@@ -1116,7 +1093,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter3 ARM裸机(SoC)开发
+    Chapter2 ARM裸机开发
     
   </span>
   
@@ -1146,19 +1123,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      交叉编译工具链
+      1. 交叉编译工具链
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="交叉编译工具链">
+    <nav class="md-nav" aria-label="1. 交叉编译工具链">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
+  <a href="#11-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
-      Ubuntu安装交叉编译器
+      1.1 Ubuntu 安装交叉编译器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 使用编译器 编译-链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-makefile-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 使用MakeFile 自动化编译-链接
     </span>
   </a>
   
@@ -2741,19 +2736,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      交叉编译工具链
+      1. 交叉编译工具链
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="交叉编译工具链">
+    <nav class="md-nav" aria-label="1. 交叉编译工具链">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
+  <a href="#11-ubuntu" class="md-nav__link">
     <span class="md-ellipsis">
-      Ubuntu安装交叉编译器
+      1.1 Ubuntu 安装交叉编译器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 使用编译器 编译-链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-makefile-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 使用MakeFile 自动化编译-链接
     </span>
   </a>
   
@@ -2780,7 +2793,7 @@
 
 
 
-  <h1>Chapter3 ARM裸机(SoC)开发</h1>
+  <h1>Chapter2 ARM裸机开发</h1>
 
 <div class="admonition abstract">
 <p class="admonition-title">ARM裸机、SoC</p>
@@ -2824,7 +2837,7 @@
 </span></code></pre></div>
 </li>
 </ol>
-<h2 id="_1">交叉编译工具链</h2>
+<h2 id="1">1. 交叉编译工具链</h2>
 <p>我们需要一个在X86架构（主流PC架构）上运行，可以编译ARM架构代码的GCC编译器，这个编译器就叫做交叉编译器</p>
 <p>交叉编译器中“交叉”的意思就是在一个架构上编译另外一个架构的代码，相当于两种架构“交叉”起来了。</p>
 <ul>
@@ -2835,7 +2848,7 @@
 <p>交叉编译器有很多种，我们使用 Linaro 出品的交叉编译器，Linaro 是一间非营利性质的开放源代码软件工程公司，Linaro 开发了很多软件，最著名的就是 Linaro GCC 编译工具链(编译器)</p>
 <p><a href="https://releases.linaro.org/">releases.linaro</a></p>
 <p><a href="https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/">arm-linux-gnueabihf</a></p>
-<h3 id="ubuntu">Ubuntu安装交叉编译器</h3>
+<h3 id="11-ubuntu">1.1 Ubuntu 安装交叉编译器</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 将交叉编译器复制到/opt 这个目录</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>cp<span class="w"> </span>gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf.tar.xz<span class="w"> </span>/opt/<span class="w"> </span>-f
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
@@ -2848,6 +2861,68 @@
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/bin
 </span></code></pre></div>
 <p>修改好以后就保存退出":wq"，重启系统，交叉编译工具链(编译器)就安装成功了</p>
+<h3 id="12-">1.2 使用编译器 编译-链接</h3>
+<ul>
+<li>
+<p>编译_源文件</p>
+<p>我们是要编译出在 ARM 开发板上运行的可执行文件，所以要使用交叉编译器 arm-linux-gnueabihf-gcc 来编译。</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 将 汇编代码 编译为 目标文件。将 led.s 编译为 led.o。</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>arm-linux-gnueabihf-gcc<span class="w"> </span>-g<span class="w"> </span>-c<span class="w"> </span>led.s<span class="w"> </span>-o<span class="w"> </span>led.o
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 其中“-g”选项是产生调试信息，GDB 能够使用这些调试信息进行代码调试。</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># “-c”选项是编译源文件，但是不链接。</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># “-o”选项是指定编译产生的文件名字，这里我们指定编译完成以后的文件名字为 led.o。</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>链接_编译文件</p>
+<p>MCU开发时，我们编写好代码，然后点击“编译”，MDK 或者 IAR 就会自动帮我们编译好整个工程，最后再点击“下载”就可以将代码下载到开发板中。这是因为链接这个操作 MDK 或者 IAR 已经帮你做好了。可以打开一个 STM32 的工程，然后编译一下，肯定能找到很多.o 文件。</p>
+<p>IAR或者MDK中，我们可以通过 .map 文件查看编译信息。可以打开.map 文件查看一下这些文件的链接地址，一般.o文件是从 0X08000000 开始链接的。而 0X08000000 就是 STM32 内部 ROM 的起始地址，编译出来的指令肯定是要从 0X08000000 这个地址开始存放的。对于STM32 来说 0X08000000 就是它的链接地址，这些.o 文件就是这个链接地址开始依次存放，最终生成一个可以下载的 hex 或者 bin 文件，</p>
+<p>Linux 下用交叉编译器开发 ARM 的是时候就需要自己处理这些，arm-linux-gnueabihf-ld 用来将众多的.o 文件链接到一个指定的链接位置。我们现在需要做的就是确定一下最终的可执行文件其运行起始地址，也就是
+链接地址。</p>
+<p>注意区分“存储地址”和“运行地址”这两个概念，“存储地址”就是可执行文件存储在哪里，可执行文件的存储地址可以随意选择。“运行地址”就是代码运行的时候所处的地址，这个我们在链接的时候就已经确定好了，代码要运行，那就必须处于运行地址处，否则代码肯定运行出错。</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 确定了链接地址以后就可以使用 arm-linux-gnueabihf-ld 将编译出来的 led.o 文件链接到 0X87800000 这个地址</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>arm-linux-gnueabihf-ld<span class="w"> </span>-Ttext<span class="w"> </span>0X87800000<span class="w"> </span>led.o<span class="w"> </span>-o<span class="w"> </span>led.elf
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># 上述命令中-Ttext 就是指定链接地址，“-o”选项指定链接生成的 elf 文件名，这里我们命名为 led.elf。</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>elf文件_格式转换</p>
+<p>ELF （Executable and Linkable Format）文件，也就是在 Linux 中的目标文件，是一种用于二进制文件、可执行文件、目标代码、共享库和核心转储格式文件的文件格式。主要有以下三种类型</p>
+<p>1 可重定位文件（Relocatable File），包含由编译器生成的代码以及数据。链接器会将它与其它目标文件链接起来从而创建可执行文件或者共享目标文件。在 Linux 系统中，这种文件的后缀一般为 .o 。</p>
+<p>2 可执行文件（Executable File），就是我们通常在 Linux 中执行的程序。</p>
+<p>3 共享目标文件（Shared Object File），包含代码和数据，这种文件是我们所称的库文件，一般以 .so 结尾。</p>
+<p>ELF是UNIX系统实验室（USL）作为应用程序二进制接口（Application Binary Interface，ABI）而开发和发布的，也是Linux的主要可执行文件格式。</p>
+<p>由于.elf 文件也不是我们最终烧写到 SD 卡中的可执行文件，我们要烧写的.bin 文件，因此还需要将 led.elf 文件转换为.bin 文件，这里我们就需要用到 arm-linux-gnueabihf-objcopy 这个工具,它更像一个格式转换工具</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>arm-linux-gnueabihf-objcopy<span class="w"> </span>-O<span class="w"> </span>binary<span class="w"> </span>-S<span class="w"> </span>-g<span class="w"> </span>led.elf<span class="w"> </span>led.bin
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># “-O”选项指定以什么格式输出，后面的“binary”表示以二进制格式输出，</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># “-S”表示不要复制源文件中的重定位信息和符号信息</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># “-g”表示不复制源文件中的调试信息。</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>arm-linux-gnueabihf-objdump<span class="w"> </span>-D<span class="w"> </span>led.elf<span class="w"> </span>&gt;<span class="w"> </span>led.dis
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># 大多数情况下我们都是用 C 语言写试验例程的，有时候需要查看其汇编代码来调试代码，</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># 因此就需要进行反汇编，一般可以将 elf 文件反汇编</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># 打开生成的.dis文件，可以发现是汇编代码，而且还可以看到内存分配情况。</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># 在0X87800000 处就是全局标号_start，也就是程序开始的地方。通过 led.dis 这个反汇编文件可以</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># 明显的看出我们的代码已经链接到了以 0X87800000 为起始地址的区域。</span>
+</span></code></pre></div>
+<h3 id="13-makefile-">1.3 使用MakeFile 自动化编译-链接</h3>
+<p>如果我们修改了源文件，那么就需要在重复一次编译-链接-格式转换的这些命令，太麻烦了，这个时候我们就可以使用 Makefile 文件了。把它理解为自动化脚本即可，类似 python 或 bash。</p>
+<div class="language-makefile highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">led.bin</span><span class="o">:</span><span class="n">led</span>.<span class="n">s</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>arm-linux-gnueabihf-gcc<span class="w"> </span>-g<span class="w"> </span>-c<span class="w"> </span>led.s<span class="w"> </span>-o<span class="w"> </span>led.o<span class="w"> </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>arm-linux-gnueabihf-ld<span class="w"> </span>-Ttext<span class="w"> </span>0X87800000<span class="w"> </span>led.o<span class="w"> </span>-o<span class="w"> </span>led.elf<span class="w"> </span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>arm-linux-gnueabihf-objcopy<span class="w"> </span>-O<span class="w"> </span>binary<span class="w"> </span>-S<span class="w"> </span>-g<span class="w"> </span>led.elf<span class="w"> </span>led.bin<span class="w"> </span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>arm-linux-gnueabihf-objdump<span class="w"> </span>-D<span class="w"> </span>led.elf<span class="w"> </span>&gt;<span class="w"> </span>led.dis<span class="w"> </span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nf">clean</span><span class="o">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span>*.o<span class="w"> </span>led.bin<span class="w"> </span>led.elf<span class="w"> </span>led.dis
+</span></code></pre></div>
+<p>创建好 Makefile 以后我们就只需要执行一次 “make” 命令即可完成编译。</p>
+<p>如果我们要清理工程的话执行 “make clean” 即可。</p>
 
 
 

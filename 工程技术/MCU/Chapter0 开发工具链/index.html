@@ -663,7 +663,7 @@
   
   
   <span class="md-ellipsis">
-    工作记录
+    2026
     
   </span>
   
@@ -673,6 +673,78 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2026
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8D%9A%E5%AE%A2%E9%80%9F%E8%AE%B0/2026/0102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0102 —— a ^ b ^ b == a (Tsoding)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    工作记录
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             工作记录
           </label>
@@ -1232,6 +1304,15 @@
   <a href="#segger-jlink" class="md-nav__link">
     <span class="md-ellipsis">
       SEGGER JLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lks_scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      LKS_Scope
     </span>
   </a>
   
@@ -2784,6 +2865,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lks_scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      LKS_Scope
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2863,7 +2953,7 @@
 <p>优点：随时可连接MCU，不影响MCU正常运行，因为不需添加任何代码，所以也不会占用MCU紧张的资源。</p>
 <p>缺点：速度慢，采样速率基本固定在1khz左右，因此仅仅适合采样变量变化速率低于1khz的情况，
 因为数据是根据采样率来的，所以实时性不是太准，不够低速率下影响不大。</p>
-<p>如图，再选中工程中的elf\obj\out\axf文件，即可开始调试，IAR对应.out，MDK对应.axf</p>
+<p>如图，再选中工程中的.elf/.obj/.out/.axf等可执行文件，即可开始调试，IAR对应.out，MDK对应.axf</p>
 <p><img alt="" src="../ast/jscope_hss.png" /></p>
 </li>
 <li>
@@ -2883,12 +2973,10 @@ RTT缓冲区的位置由J-Scope自动检测；时间戳等数据可以被添加�
 <p>RTT(Real Time Transfer)是一种用于嵌入式中与用户进行交互的技术，它结合了SWO和半主机的优点，具有极高的性能。</p>
 <p>使用RTT可以从MCU非常快速输出调试信息和数据，且不影响MCU实时性。这个功能可以用于很多支持J-Link的设备和MCU，兼容性强。</p>
 </li>
-<li>
-<p>lks scope</p>
-<p><a href="https://www.lksmcu.com/index.php/Tools/">南京凌鸥创芯</a></p>
-<p>一款国产的上位机跟踪软件，和JScope一样的功能，但是更方便、界面更完善，推荐使用</p>
-</li>
 </ul>
+<h3 id="lks_scope">LKS_Scope</h3>
+<p><a href="https://www.lksmcu.com/index.php/Tools/">南京凌鸥创芯</a></p>
+<p>一款国产的上位机跟踪软件，和JScope一样的功能，但是可以修改变量，这点jscope不行。推荐使用</p>
 
 
 

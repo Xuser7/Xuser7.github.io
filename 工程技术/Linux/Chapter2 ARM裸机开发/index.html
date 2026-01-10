@@ -1260,6 +1260,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.C定义寄存器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.C定义寄存器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcu" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCU定义示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      反推定义步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2917,6 +2959,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3c" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.C定义寄存器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.C定义寄存器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcu" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCU定义示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      反推定义步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2937,7 +3021,7 @@
 
 <div class="admonition abstract">
 <p class="admonition-title">ARM裸机开发</p>
-<p>ARM裸机开发，也就是不带操作系统开发，就和开发MCU一样，如果有MCU开发经验的话学起来会很容易。</p>
+<p>ARM裸机开发，也就是不带操作系统开发，本文以I.MX6ULL芯片为例进行裸机开发。ARM裸机开发和MCU开发类似，如果有MCU开发经验的话学起来会很容易。</p>
 <p>注意这里的ARM裸机指的是可以运行Linux操作系统的ARM架构，MCU常见的也是ARM架构（也有RISC-V等等架构），如何区架构能不能运行Linux呢？————看芯片架构是否存在MMU（memory management unit）单元。MMU的存在使得Linux可以运行在处理器上。例如MCU常见内核为Cortex-M，不带MMU；MPU、SoC常见内核为Cortex-A，带MMU。</p>
 <hr />
 <p>从ARM裸机开发入手，而非ARM移植Linux下开发，原因如下。</p>
@@ -3042,10 +3126,7 @@
 <p>汇编只是在开始部分用来初始化一下 C 语言环境，比如初始化 DDR、设置堆栈指针 SP 等等，当这些工作都做完以后就可以进入 C 语言环境，也就是运行 C 语言代码，一般都是进入 main 函数。</p>
 <p>所以工程中，我们需要汇编文件和C文件。</p>
 <ul>
-<li>
-<p>1 汇编文件</p>
-<p>汇编文件只是用来完成 C 语言环境搭建。</p>
-</li>
+<li>汇编文件只是用来完成 C 语言环境搭建。</li>
 </ul>
 <div class="language-asm highlight"><span class="filename">start.s</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span><span class="w"> </span><span class="cm">/* 全局标号 */</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm">/*</span>
@@ -3064,11 +3145,8 @@
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nf">b</span><span class="w"> </span><span class="no">main</span><span class="w"> </span><span class="cm">/* 跳转到 main 函数 */</span>
 </span></code></pre></div>
 <ul>
-<li>
-<p>2 C文件</p>
-<p>C 语言文件就是完成我们的业务层代码的，其实就是我们实际例程要完成的功能。其实 STM32 也是这样的，以 STM32F103 为例，其启动文件 startup_stm32f10x_hd.s 这个汇编文件就是完成 C 语言环境搭建的，当然还有一
-些其他的处理，比如中断向量表等等。当 startup_stm32f10x_hd.s 把 C 语言环境初始化完成以后就会进入 C 语言环境。</p>
-</li>
+<li>C 语言文件就是完成我们的业务层代码的，其实就是我们实际例程要完成的功能。其实 STM32 也是这样的，以 STM32F103 为例，其启动文件 startup_stm32f10x_hd.s 这个汇编文件就是完成 C 语言环境搭建的，当然还有一
+些其他的处理，比如中断向量表等等。当 startup_stm32f10x_hd.s 把 C 语言环境初始化完成以后就会进入 C 语言环境。</li>
 </ul>
 <h3 id="elf">elf链接视图</h3>
 <p><a href="https://ctf-wiki.org/executable/elf/structure/basic-info/">ELF文件</a></p>
@@ -3116,6 +3194,155 @@
 <p>ALIGN(4)表示 4 字节对齐。也就是说段“.data”的起始地址要能被 4 整除，一般常见的都是 ALIGN(4)或者 ALIGN(8)，也就是 4 字节或者 8 字节对齐。</p>
 <p>上述脚本将start.o 要被链接到最开始的地方，因为 start.o 里面包含这第一个要执行的命令</p>
 <p>“__bss_start”和“__bss_end”是符号，其实就是对这两个符号进行赋值，其值为定位符“.”，这两个符号用来保存.bss 段的起始地址和结束地址。前面说了.bss 段是定义了但是没有被初始化的变量，我们需要手动对.bss 段的变量清零的，因此我们需要知道.bss 段的起始和结束地址，这样我们直接对这段内存赋 0 即可完成清零。通过赋值，.bss 段的起始地址和结束地址就保存在了“__bss_start”和“__bss_end”中，我们就可以直接在汇编或者 C 文件里面使用这两个符号。</p>
+<h2 id="3c">3.C定义寄存器</h2>
+<h3 id="mcu">MCU定义示例</h3>
+<p>ST 官方为 STM32F103 编写了一个叫做 stm32f10x.h 的文件，在这个文件里面定义了 STM32F103 所有外设寄存器，我们可以使用其定义的寄存器来进行开发，比如我们可以用如下代码来初始化一个 GPIO</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">GPIOE</span><span class="o">-&gt;</span><span class="n">CRL</span><span class="o">&amp;=</span><span class="mh">0XFF0FFFFF</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">GPIOE</span><span class="o">-&gt;</span><span class="n">CRL</span><span class="o">|=</span><span class="mh">0X00300000</span><span class="p">;</span><span class="w"> </span><span class="c1">//PE5 推挽输出</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">GPIOE</span><span class="o">-&gt;</span><span class="n">ODR</span><span class="o">|=</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">//PE5 输出高</span>
+</span></code></pre></div>
+<p>GPIOE的定义如下：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#define GPIOE ((GPIO_TypeDef *) GPIOE_BASE)</span>
+</span></code></pre></div>
+<p>可以得知“GPIOE”是个宏定义，是一个指向地址 GPIOE_BASE 的结构体指针，结构体为GPIO_TypeDef</p>
+<p>GPIO_TypeDef 和 GPIOE_BASE 的定义如下：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#define GPIOE_BASE (APB2PERIPH_BASE + 0x1800)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="cp">#define APB2PERIPH_BASE (PERIPH_BASE + 0x10000)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="cp">#define PERIPH_BASE ((uint32_t)0x40000000)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">{</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">CRL</span><span class="p">;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">CRH</span><span class="p">;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">IDR</span><span class="p">;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ODR</span><span class="p">;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">BSRR</span><span class="p">;</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">BRR</span><span class="p">;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">__IO</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">LCKR</span><span class="p">;</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span><span class="n">GPIO_TypeDef</span><span class="p">;</span>
+</span></code></pre></div>
+<p>GPIOE_BASE 就是 GPIOE 的基地址；GPIO_TypeDef 是个结构体，结构体里面的成员变量有 CRL、CRH、IDR、ODR、BSRR、BRR 和 LCKR，这些都是 GPIO 的寄存器，每个成员变量都是 32 位(4 字节)，这些寄存器在结构体中的位置都是按照其地址值从小到大排序</p>
+<h3 id="_2">反推定义步骤</h3>
+<ol>
+<li>
+<p>根据参考手册RM，编写外设结构体</p>
+<p>例如，根据ReferenceManual（28.5 GPIO Memory Map/Register Definition）定义GPIO外设结构体</p>
+<p>每个寄存器的地址是 32 位，每个成员都使用“volatile”进行了修饰，目的是防止编译器优化。</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cm">/*</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="cm">* GPIO 寄存器结构体</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="cm">*/</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">{</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DR</span><span class="p">;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">GDIR</span><span class="p">;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PSR</span><span class="p">;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ICR1</span><span class="p">;</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ICR2</span><span class="p">;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">IMR</span><span class="p">;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ISR</span><span class="p">;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">EDGE_SEL</span><span class="p">;</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span><span class="n">GPIO_Type</span><span class="p">;</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="cm">/* </span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="cm">* CCM寄存器结构体定义，分为CCM和CCM_ANALOG </span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="cm">*/</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="p">{</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCR</span><span class="p">;</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCDR</span><span class="p">;</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CSR</span><span class="p">;</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCSR</span><span class="p">;</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CACRR</span><span class="p">;</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CBCDR</span><span class="p">;</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CBCMR</span><span class="p">;</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CSCMR1</span><span class="p">;</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CSCMR2</span><span class="p">;</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CSCDR1</span><span class="p">;</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CS1CDR</span><span class="p">;</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CS2CDR</span><span class="p">;</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CDCDR</span><span class="p">;</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CHSCCDR</span><span class="p">;</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CSCDR2</span><span class="p">;</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CSCDR3</span><span class="p">;</span><span class="w">   </span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RESERVED_1</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CDHIPR</span><span class="p">;</span><span class="w">  </span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RESERVED_2</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CLPCR</span><span class="p">;</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CISR</span><span class="p">;</span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CIMR</span><span class="p">;</span>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCOSR</span><span class="p">;</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CGPR</span><span class="p">;</span>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR0</span><span class="p">;</span>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR1</span><span class="p">;</span>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR2</span><span class="p">;</span>
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR3</span><span class="p">;</span>
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR4</span><span class="p">;</span>
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR5</span><span class="p">;</span>
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CCGR6</span><span class="p">;</span>
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RESERVED_3</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="w">    </span><span class="k">volatile</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CMEOR</span><span class="p">;</span><span class="w">    </span>
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="p">}</span><span class="w"> </span><span class="n">CCM_Type</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div>
+<p>在编写寄存器组结构体的时候注意寄存器的地址是否连续，有些外设的寄存器地址可能不是连续的，会有一些保留地址，因此我们需要在结构体中留出这些保留的寄存器。比如 CCM 的CCGR6 寄存器地址为 0X020C4080，而寄存器 CMEOR 的地址为 0X020C4088。按照地址顺序递增的原理，寄存器 CMEOR 的地址应该是 0X020C4084，但是实际上 CMEOR 的地址是0X020C4088，相当于中间跳过了 0X020C4088-0X020C4080=8 个字节，如果寄存器地址连续的话应该只差 4 个字节(32 位)，但是现在差了 8 个字节，所以需要在寄存器 CCGR6 和 CMEOR直接加入一个保留寄存器，这个就是RESERVED_3[1]的来源。如果不添加保留位来占位的话就会导致寄存器地址错位！</p>
+</li>
+<li>
+<p>定义外设寄存器组的基地址</p>
+<p>例如，根据ReferenceManual（2.2 ARM Platform Memory Map）定义GPIO寄存器基地址</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">/*</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cm">* 外设寄存器组的基地址</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cm">*/</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="cp">#define CCM_BASE (0X020C4000)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="cp">#define CCM_ANALOG_BASE (0X020C8000)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="cp">#define IOMUX_SW_MUX_BASE (0X020E0014)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="cp">#define IOMUX_SW_PAD_BASE (0X020E0204)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="cp">#define GPIO1_BASE (0x0209C000)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="cp">#define GPIO2_BASE (0x020A0000)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="cp">#define GPIO3_BASE (0x020A4000)</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="cp">#define GPIO4_BASE (0x020A8000)</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="cp">#define GPIO5_BASE (0x020AC000</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>定义结构体指针用于访问</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">/* </span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cm">* 外设指针 </span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="cm">*/</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="cp">#define CCM                 ((CCM_Type *)CCM_BASE)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="cp">#define CCM_ANALOG          ((CCM_ANALOG_Type *)CCM_ANALOG_BASE)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="cp">#define IOMUX_SW_MUX        ((IOMUX_SW_MUX_Type *)IOMUX_SW_MUX_BASE)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="cp">#define IOMUX_SW_PAD        ((IOMUX_SW_PAD_Type *)IOMUX_SW_PAD_BASE)</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="cp">#define GPIO1               ((GPIO_Type *)GPIO1_BASE)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="cp">#define GPIO2               ((GPIO_Type *)GPIO2_BASE)</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="cp">#define GPIO3               ((GPIO_Type *)GPIO3_BASE)</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="cp">#define GPIO4               ((GPIO_Type *)GPIO4_BASE)</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="cp">#define GPIO5               ((GPIO_Type *)GPIO5_BASE)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>使用定义初始化寄存器</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">/*</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cm">* @description  : 使能I.MX6U所有外设时钟</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="cm">* @param        : 无</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="cm">* @return       : 无</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="cm">*/</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clk_enable</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">{</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="n">CCM</span><span class="o">-&gt;</span><span class="n">CCGR6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0XFFFFFFFF</span><span class="p">;</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="p">}</span>
+</span></code></pre></div>
+</li>
+</ol>
+<h2 id="_3">参考资料</h2>
+<ol>
+<li>【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.6</li>
+</ol>
 
 
 

@@ -526,7 +526,7 @@
   
   
   <span class="md-ellipsis">
-    0613——关于MCU的存储空间进一步的学习与探索
+    0613——MCU的存储空间的学习与探索
     
   </span>
   
@@ -1346,9 +1346,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-cortex-a7" class="md-nav__link">
+  <a href="#52-cortex-a" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Cortex-A7的中断系统
+      5.2 Cortex-A的中断系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-gic" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 GIC中断控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 IRQ汇编原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 中断服务函数
     </span>
   </a>
   
@@ -3111,9 +3138,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-cortex-a7" class="md-nav__link">
+  <a href="#52-cortex-a" class="md-nav__link">
     <span class="md-ellipsis">
-      5.2 Cortex-A7的中断系统
+      5.2 Cortex-A的中断系统
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-gic" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 GIC中断控制器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 IRQ汇编原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 中断服务函数
     </span>
   </a>
   
@@ -3690,7 +3744,451 @@
 <p>当 PE2 引脚的中断触发以后就会调用其对应的中断处理函数 EXTI2_IRQHandler，我们可以在函数 EXTI2_IRQHandler 中添加中断处理代码。同理，I.MX6U 也有中断服务函数，当某个外设中断发生以后就会调用其对应的中断服务函数。</p>
 </li>
 </ol>
-<h3 id="52-cortex-a7">5.2 Cortex-A7的中断系统</h3>
+<h3 id="52-cortex-a">5.2 Cortex-A的中断系统</h3>
+<p>对于 Cortex-M 内核来说，中断向量表列举出了一款芯片所有的中断向量，包括芯片外设的所有中断。</p>
+<p>对于 Cotex-A 内核来说并没有这么做，下表中有个 IRQ 中断， Cortex-A 内核 CPU 的所有外部中断都属于这个 IRQ 中断，当任意一个外部中断发生的时候都会触发 IRQ 中断。在 IRQ 中断服务函数里面就可以读取指定的寄存器来判断发生的具体是什么中断，进而根据具体的中断做出相应的处理。</p>
+<table>
+<thead>
+<tr>
+<th>向量地址</th>
+<th>中断类型</th>
+<th>中断模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0X00</td>
+<td>复位中断(Rest)</td>
+<td>特权模式(SVC)</td>
+</tr>
+<tr>
+<td>0X04</td>
+<td>未定义指令中断(Undefined Instruction)</td>
+<td>未定义指令中止模式(Undef)</td>
+</tr>
+<tr>
+<td>0X08</td>
+<td>软中断(Software Interrupt,SWI)</td>
+<td>特权模式(SVC)</td>
+</tr>
+<tr>
+<td>0X0C</td>
+<td>指令预取中止中断(Prefetch Abort)</td>
+<td>中止模式</td>
+</tr>
+<tr>
+<td>0X10</td>
+<td>数据访问中止中断(Data Abort)</td>
+<td>中止模式</td>
+</tr>
+<tr>
+<td>0X14</td>
+<td>未使用(Not Used)</td>
+<td>未使用</td>
+</tr>
+<tr>
+<td>0X18</td>
+<td>IRQ 中断(IRQ Interrupt)</td>
+<td>外部中断模式(IRQ)</td>
+</tr>
+<tr>
+<td>0X1C</td>
+<td>FIQ 中断(FIQ Interrupt)</td>
+<td>快速中断模式(FIQ)</td>
+</tr>
+</tbody>
+</table>
+<p>①复位中断(Rest)，CPU 复位以后就会进入复位中断，我们可以在复位中断服务函数里面做一些初始化工作，比如初始化 SP 指针、DDR 等等。</p>
+<p>②未定义指令中断(Undefined Instruction)，如果指令不能识别的话就会产生此中断。</p>
+<p>③软中断(Software Interrupt,SWI)，由 SWI 指令引起的中断，Linux 的系统调用会用 SWI指令来引起软中断，通过软中断来陷入到内核空间。</p>
+<p>④指令预取中止中断(Prefetch Abort)，预取指令的出错的时候会产生此中断。</p>
+<p>⑤数据访问中止中断(Data Abort)，访问数据出错的时候会产生此中断。</p>
+<p>⑥IRQ 中断(IRQ Interrupt)，外部中断，前面已经说了，芯片内部的外设中断都会引起此
+中断的发生。</p>
+<p>⑦FIQ 中断(FIQ Interrupt)，快速中断，如果需要快速处理中断的话就可以使用此中断。</p>
+<p>在上面的 7 个中断中，我们常用的就是复位中断和 IRQ 中断</p>
+<div class="language-asm highlight"><span class="filename">start.s</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span><span class="w">                  </span><span class="cm">/* 全局标号 */</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cm">/*</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="cm"> * 描述：  _start函数，首先是中断向量表的创建</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="cm"> * 参考文档:ARM Cortex-A(armV7)编程手册V4.0.pdf P42，3 ARM Processor Modes and Registers（ARM处理器模型和寄存器）</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="cm"> *          ARM Cortex-A(armV7)编程手册V4.0.pdf P165 11.1.1 Exception priorities(异常)</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="cm"> */</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nl">_start:</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">Reset_Handler</span><span class="w">      </span><span class="cm">/* 复位中断*/</span><span class="w">   </span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="no">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">Undefined_Handler</span><span class="w">  </span><span class="cm">/* 未定义中断*/</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">SVC_Handler</span><span class="w">        </span><span class="cm">/* SVC(Supervisor)中断*/</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">PrefAbort_Handler</span><span class="w">  </span><span class="cm">/* 预取终止中断*/</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">DataAbort_Handler</span><span class="w">  </span><span class="cm">/* 数据终止中断*/</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">NotUsed_Handler</span><span class="w">    </span><span class="cm">/* 未使用中断*/</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">IRQ_Handler</span><span class="w">        </span><span class="cm">/* IRQ中断*/</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">FIQ_Handler</span><span class="w">        </span><span class="cm">/* FIQ(快速中断)未定义中断*/</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="cm">/* 复位中断 */</span><span class="w">  </span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="nl">Reset_Handler:</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">    </span><span class="na">...</span><span class="w">                 </span><span class="cm">/* 复位中断具体处理过程 */</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">    </span><span class="nf">b</span><span class="w"> </span><span class="no">main</span><span class="w">              </span><span class="cm">/* 跳转到main函数 */</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="cm">/* 未定义中断 */</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="nl">Undefined_Handler:</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">Undefined_Handler</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">    </span><span class="nf">bx</span><span class="w"> </span><span class="no">r0</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="cm">/* SVC中断 */</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="nl">SVC_Handler:</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">SVC_Handler</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="w">    </span><span class="nf">bx</span><span class="w"> </span><span class="no">r0</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="cm">/* 预取终止中断 */</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="nl">PrefAbort_Handler:</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">PrefAbort_Handler</span>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="w">    </span><span class="nf">bx</span><span class="w"> </span><span class="no">r0</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="cm">/* 数据终止中断 */</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a><span class="nl">DataAbort_Handler:</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">DataAbort_Handler</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="w">    </span><span class="nf">bx</span><span class="w"> </span><span class="no">r0</span>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="cm">/* 未使用的中断 */</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="nl">NotUsed_Handler:</span>
+</span><span id="__span-20-45"><a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">NotUsed_Handler</span>
+</span><span id="__span-20-46"><a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a><span class="w">    </span><span class="nf">bx</span><span class="w"> </span><span class="no">r0</span>
+</span><span id="__span-20-47"><a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a>
+</span><span id="__span-20-48"><a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a><span class="cm">/* IRQ中断！重点！！！！！ */</span>
+</span><span id="__span-20-49"><a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a><span class="nl">IRQ_Handler:</span>
+</span><span id="__span-20-50"><a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a><span class="w">    </span><span class="na">...</span><span class="w">                 </span><span class="cm">/* 复位中断具体处理过程 */</span>
+</span><span id="__span-20-51"><a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a>
+</span><span id="__span-20-52"><a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a><span class="cm">/* FIQ中断 */</span>
+</span><span id="__span-20-53"><a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a><span class="nl">FIQ_Handler:</span>
+</span><span id="__span-20-54"><a id="__codelineno-20-54" name="__codelineno-20-54" href="#__codelineno-20-54"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="no">FIQ_Handler</span>
+</span><span id="__span-20-55"><a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a><span class="w">    </span><span class="nf">bx</span><span class="w"> </span><span class="no">r0</span>
+</span></code></pre></div>
+<h3 id="53-gic">5.3 GIC中断控制器</h3>
+<p>GIC 是 ARM 公司给 Cortex-A/R 内核提供的一个中断控制器，类似 Cortex-M 内核中的NVIC。目前 GIC 有 4 个版本:V1~V4，V1 是最老的版本，已经被废弃了。V2~V4 目前正在大量的使用。GIC V2 是给 ARMv7-A 架构使用的，比如 Cortex-A7、Cortex-A9、Cortex-A15 等，V3 和 V4 是给 ARMv8-A/R 架构使用的，也就是 64 位芯片使用的。</p>
+<ol>
+<li>
+<p>GIC 控制器总览</p>
+<p>当 GIC 接收到外部中断信号以后就会报给 ARM 内核，但是ARM 内核只提供了四个信号给 GIC 来汇报中断情况：VFIQ、VIRQ、FIQ、IRQ</p>
+<p>VFIQ:虚拟快速 FIQ。(针对虚拟化)</p>
+<p>VIRQ:虚拟外部 IRQ。(针对虚拟化)</p>
+<p>FIQ:快速中断 IRQ。</p>
+<p>IRQ:外部中断 IRQ。(以GICV2 中的 IRQ 为例，GIC 将众多的中断源分为三类)</p>
+<p>①、SPI(Shared Peripheral Interrupt),共享中断，顾名思义，所有 Core 共享的中断，这个是最常见的，那些外部中断都属于 SPI 中断(注意！不是 SPI 总线那个中断) 。比如按键中断、串口中断等等，这些中断所有的 Core 都可以处理，不限定特定 Core。</p>
+<p>②、PPI(Private Peripheral Interrupt)，私有中断，我们说了 GIC 是支持多核的，每个核肯定有自己独有的中断。这些独有的中断肯定是要指定的核心处理，因此这些中断就叫做私有中断。</p>
+<p>③、SGI(Software-generated Interrupt)，软件中断，由软件触发引起的中断，通过向寄存器GICD_SGIR 写入数据来触发，系统会使用 SGI 中断来完成多核之间的通信。</p>
+</li>
+<li>
+<p>中断ID</p>
+<p>中断源有很多，为了区分这些不同的中断源肯定要给他们分配一个唯一 ID，这些 ID 就是中断 ID。每一个 CPU 最多支持 1020 个中断 ID，中断 ID 号为 ID0~ID1019。这 1020 个 ID 包含了 PPI、SPI 和 SGI。于</p>
+<p>具体到某个 ID 对应哪个中断那就由半导体厂商根据实际情况去定义了。比如 I.MX6U 的总共使用了 128 个中断 ID，加上前面属于 PPI 和 SGI 的 32 个 ID，I.MX6U 的中断源共有 128+32=160个，这 128 个中断 ID 对应的中断在《I.MX6ULL 参考手册》的“3.2 Cortex A7 interrupts”</p>
+</li>
+<li>
+<p>GIC逻辑分块</p>
+<p>GIC 架构分为了两个逻辑块：Distributor 和 CPU Interface</p>
+<p>Distributor(分发器端)：此逻辑块负责处理各个中断事件的分发问题，也就是中断事件应该发送到哪个 CPU Interface 上去。分发器收集所有的中断源，可以控制每个中断的优先级，它总是将优先级最高的中断事件发送到 CPU 接口端。分发器端要做的主要工作如下：</p>
+<p>①、全局中断使能控制。</p>
+<p>②、控制每一个中断的使能或者关闭。</p>
+<p>③、设置每个中断的优先级。（GIC 控制器最多可以支持 256 个优先级，数字越小，优先级越高！Cortex-A7 内核支持 32 个优先级）</p>
+<p>④、设置每个中断的目标处理器列表。</p>
+<p>⑤、设置每个外部中断的触发模式：电平触发或边沿触发。</p>
+<p>⑥、设置每个中断属于组 0 还是组 1</p>
+<p>CPU Interface(CPU 接口端)：听名字就知道是和 CPU Core 相连接的，因此在每个 CPU Core 都可以在 GIC 中找到一个与之对应的 CPU Interface。CPU 接口端就是分发器和 CPU Core 之间的桥梁，CPU 接口端主要工作如下：</p>
+<p>①、使能或者关闭发送到 CPU Core 的中断请求信号。</p>
+<p>②、应答中断。</p>
+<p>③、通知中断处理完成。</p>
+<p>④、设置优先级掩码，通过掩码来设置哪些中断不需要上报给 CPU Core。</p>
+<p>⑤、定义抢占策略。</p>
+<p>⑥、当多个中断到来的时候，选择优先级最高的中断通知给 CPU Core。</p>
+</li>
+<li>
+<p>CP15协处理器</p>
+<p>我们可以通过操作GIC的寄存器来配置中断、响应中断，但是如何访问GIC寄存器呢？在定义寄存器中我们知道，访问外设寄存器时，需要外设寄存器的基地址，通过基地址偏移来访问各个外设的寄存器。GIC虽然不是外设，但是访问芯片寄存器的方法是一样的，所以我们要先获取GIC的基地址。</p>
+<p>CP15 协处理器一般用于存储系统管理，一共有 16 个 32 位寄存器 c0~c15。CP15 协处理器的访问通过两个指令完成：</p>
+<p>MRC: 将 CP15 协处理器中的寄存器数据读到 ARM 寄存器中。</p>
+<p>MCR: 将 ARM 寄存器的数据写入到 CP15 协处理器寄存器中。</p>
+<p>通过 c0 寄存器可以获取到处理器内核信息；</p>
+<p>通过 c1 寄存器可以使能或禁止 MMU、I/D Cache 等；</p>
+<p>通过 c12 寄存器可以设置中断向量偏移；</p>
+<p>通过 c15 寄存器可以获取 GIC 基地址，这可以让我们通过GIC的基地址偏移来操作GIC的寄存器。</p>
+<p>关于 CP15 的其他寄存器，参考《 ARMArchitectureReference Manual ARMv7-A and ARMv7-R edition.pdf》“B3.17 Oranizationof the CP15 registers in a VMSA implementation”。《Cortex-A7 Technical ReferenceManua.pdf》“Capter 4 System Control”</p>
+</li>
+</ol>
+<h3 id="54-irq">5.4 IRQ汇编原理</h3>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cm">/* IRQ中断！重点！！！！！ */</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nl">IRQ_Handler:</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="cm">/* 保存现场 */</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="p">{</span><span class="no">lr</span><span class="p">}</span><span class="w">                   </span><span class="cm">/* 保存lr地址 */</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="p">{</span><span class="no">r0-r3</span><span class="p">,</span><span class="w"> </span><span class="no">r12</span><span class="p">}</span><span class="w">           </span><span class="cm">/* 保存r0-r3，r12寄存器 */</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="nf">mrs</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="no">spsr</span><span class="w">                </span><span class="cm">/* 读取spsr寄存器 */</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="p">{</span><span class="no">r0</span><span class="p">}</span><span class="w">                   </span><span class="cm">/* 保存spsr寄存器 */</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="cm">/* 获取当前中断号，中断号被保存到了 r0 寄存器中 */</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="nf">mrc</span><span class="w"> </span><span class="no">p15</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">c15</span><span class="p">,</span><span class="w"> </span><span class="no">c0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cm">/* 从CP15的C0寄存器内的值到R1寄存器中</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="cm">                                * 参考文档ARM Cortex-A(armV7)编程手册V4.0.pdf P49</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="cm">                                * Cortex-A7 Technical ReferenceManua.pdf P68 P138</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="cm">                                */</span><span class="w">                          </span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span><span class="no">X2000</span><span class="w">         </span><span class="cm">/* GIC基地址加0X2000，也就是GIC的CPU接口端基地址 */</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span><span class="no">XC</span><span class="p">]</span><span class="w">          </span><span class="cm">/* GIC的CPU接口端基地址加0X0C就是GICC_IAR寄存器，</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="cm">                                 * GICC_IAR寄存器保存这当前发生中断的中断号，我们要根据</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="cm">                                 * 这个中断号来绝对调用哪个中断服务函数</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="cm">                                 */</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">    </span><span class="nf">push</span><span class="w"> </span><span class="p">{</span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span><span class="p">}</span><span class="w">               </span><span class="cm">/* 保存r0,r1 */</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span><span class="nf">cps</span><span class="w"> </span><span class="mi">#0</span><span class="no">x13</span><span class="w">                   </span><span class="cm">/* 进入SVC模式，允许其他中断再次进去 */</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="w">    </span><span class="cm">/* 调用了一个 C 语言函数 system_irqhandler，此函数有一个参数，即中断号。</span>
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="cm">     * 所以我们需要传递一个参数。在汇编调用 C 函数的时候建议形参不要超过 4 个，</span>
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="cm">     * 形参可以由 r0~r3 这四个寄存器来传递，如果形参大于 4 个，那么多出来的参数要使用堆栈进行传递。</span>
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="cm">     * 所以给 r0 寄存器写入中断号就实现了函数 system_irqhandler 的参数传递，</span>
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a><span class="cm">     * 中断的真正处理过程其实是在函数 system_irqhandler 中完成。</span>
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a><span class="cm">     * /</span>
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a><span class="cm">    push {lr}                   /* 保存SVC模式的lr寄存器 */</span>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">r2</span><span class="p">,</span><span class="w"> </span><span class="err">=</span><span class="no">system_irqhandler</span><span class="w">  </span><span class="cm">/* 加载C语言中断处理函数到r2寄存器中*/</span>
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a><span class="w">    </span><span class="nf">blx</span><span class="w"> </span><span class="no">r2</span><span class="w">                      </span><span class="cm">/* 运行C语言中断处理函数，带有一个参数，保存在R0寄存器中 */</span>
+</span><span id="__span-21-34"><a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>
+</span><span id="__span-21-35"><a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a><span class="w">    </span><span class="cm">/* 当一个中断处理完成以后必须向 GICC_EOIR 寄存器写入其中断号表示中断处理完成 */</span>
+</span><span id="__span-21-36"><a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="p">{</span><span class="no">lr</span><span class="p">}</span><span class="w">                    </span><span class="cm">/* 执行完C语言中断服务函数，lr出栈 */</span>
+</span><span id="__span-21-37"><a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a><span class="w">    </span><span class="nf">cps</span><span class="w"> </span><span class="mi">#0</span><span class="no">x12</span><span class="w">                   </span><span class="cm">/* 进入IRQ模式 */</span>
+</span><span id="__span-21-38"><a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="p">{</span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span><span class="p">}</span><span class="w">                </span>
+</span><span id="__span-21-39"><a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a><span class="w">    </span><span class="no">str</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="mi">#0</span><span class="no">X10</span><span class="p">]</span><span class="w">         </span><span class="cm">/* 中断执行完成，写EOIR */</span>
+</span><span id="__span-21-40"><a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a>
+</span><span id="__span-21-41"><a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a><span class="w">    </span><span class="cm">/* 恢复现场 */</span>
+</span><span id="__span-21-42"><a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="p">{</span><span class="no">r0</span><span class="p">}</span><span class="w">                        </span>
+</span><span id="__span-21-43"><a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a><span class="w">    </span><span class="no">msr</span><span class="w"> </span><span class="no">spsr_cxsf</span><span class="p">,</span><span class="w"> </span><span class="no">r0</span><span class="w">           </span><span class="cm">/* 恢复spsr */</span>
+</span><span id="__span-21-44"><a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>
+</span><span id="__span-21-45"><a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a><span class="w">    </span><span class="cm">/* 中断处理完成以后就要重新返回到曾经被中断打断的地方运行 */</span>
+</span><span id="__span-21-46"><a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="p">{</span><span class="no">r0-r3</span><span class="p">,</span><span class="w"> </span><span class="no">r12</span><span class="p">}</span><span class="w">            </span><span class="cm">/* r0-r3,r12出栈 */</span>
+</span><span id="__span-21-47"><a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a><span class="w">    </span><span class="nf">pop</span><span class="w"> </span><span class="p">{</span><span class="no">lr</span><span class="p">}</span><span class="w">                    </span><span class="cm">/* lr出栈 */</span>
+</span><span id="__span-21-48"><a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a><span class="w">    </span><span class="nf">subs</span><span class="w"> </span><span class="no">pc</span><span class="p">,</span><span class="w"> </span><span class="no">lr</span><span class="p">,</span><span class="w"> </span><span class="mi">#4</span><span class="w">             </span><span class="cm">/* 将lr-4赋给pc */</span>
+</span></code></pre></div>
+<p><code>subs pc, lr, #4/* 将lr-4赋给pc */</code>，这里为什么要将lr-4 然后赋给 pc 呢？而不是直接将 lr 赋值给 pc？</p>
+<p>ARM 的指令是三级流水线：取指、译指、执行，pc 指向的是正在取值的地址，这就是很多书上说的 pc=当前执行指令地址+8。示例</p>
+<div class="language-asm highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="err">0</span><span class="nf">X2000</span><span class="w"> </span><span class="no">MOV</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R0</span><span class="w"> </span><span class="c1">;执行</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="err">0</span><span class="nf">X2004</span><span class="w"> </span><span class="no">MOV</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">R3</span><span class="w"> </span><span class="c1">;译指</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="err">0</span><span class="nf">X2008</span><span class="w"> </span><span class="no">MOV</span><span class="w"> </span><span class="no">R4</span><span class="p">,</span><span class="w"> </span><span class="no">R5</span><span class="w"> </span><span class="c1">;取值 PC</span>
+</span></code></pre></div>
+<p>当前正在执行 0X2000地址处的指令“MOV R1, R0”，但是 PC 里面已经保存了 0X2008 地址处的指令“MOV R4, R5”。</p>
+<p>假设此时发生了中断，中断发生的时候保存在 lr 中的是 pc 的值，也就是地址 0X2008。当中断处理完成以后肯定需要回到被中断点接着执行，如果直接跳转到 lr 里面保存的地址处(0X2008)开始运行，那么就有一个指令没有执行，那就是地址 0X2004 处的指令“MOV R2, R3”，显然这
+是一个很严重的错误！所以就需要将 lr-4 赋值给 pc</p>
+<h3 id="55">5.5 中断服务函数</h3>
+<p>start.S 文件中我们在中断服务函数 IRQ_Handler 中调用了 C 函数 system_irqhandler 来处理具体的中断。此函数有一个参数，参数是中断号。</p>
+<p>现在我们来实现函数 system_irqhandler，以及 system_register_irqhandler 中断服务函数注册，用于将自己定义的中断服务函数注册入中断服务函数表<code>sys_irq_handle_t irqTable</code></p>
+<div class="language-c highlight"><span class="filename">bsp_int.h</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#ifndef _BSP_INT_H</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cp">#define _BSP_INT_H</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;imx6ul.h&quot;</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="cm">/* 中断服务函数形式 */</span><span class="w"> </span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">system_irq_handler_t</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">giccIar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">param</span><span class="p">);</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="cm">/* 中断服务函数结构体*/</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">_sys_irq_handle</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="p">{</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="n">system_irq_handler_t</span><span class="w"> </span><span class="n">irqHandler</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 中断服务函数 */</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userParam</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* 中断服务函数参数 */</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="p">}</span><span class="w"> </span><span class="n">sys_irq_handle_t</span><span class="p">;</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="cm">/* 函数声明 */</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="kt">void</span><span class="w"> </span><span class="nf">int_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="kt">void</span><span class="w"> </span><span class="nf">system_irqtable_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="kt">void</span><span class="w"> </span><span class="nf">system_register_irqhandler</span><span class="p">(</span><span class="n">IRQn_Type</span><span class="w"> </span><span class="n">irq</span><span class="p">,</span><span class="w"> </span><span class="n">system_irq_handler_t</span><span class="w"> </span><span class="n">handler</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userParam</span><span class="p">);</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">system_irqhandler</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">giccIar</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="kt">void</span><span class="w"> </span><span class="nf">default_irqhandler</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">giccIar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userParam</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="cp">#endif</span>
+</span></code></pre></div>
+<div class="language-c highlight"><span class="filename">bsp_int.c</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;bsp_int.h&quot;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cm">/* 中断嵌套计数器 */</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">irqNesting</span><span class="p">;</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="cm">/* 中断服务函数表 */</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="k">static</span><span class="w"> </span><span class="n">sys_irq_handle_t</span><span class="w"> </span><span class="n">irqTable</span><span class="p">[</span><span class="n">NUMBER_OF_INT_VECTORS</span><span class="p">];</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="cm">/*</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="cm"> * @description : 中断初始化函数</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="cm"> * @param       : 无</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="cm"> * @return      : 无</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="cm"> */</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="kt">void</span><span class="w"> </span><span class="nf">int_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="p">{</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">    </span><span class="n">GIC_Init</span><span class="p">();</span><span class="w">                         </span><span class="cm">/* 初始化GIC                           */</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">    </span><span class="n">system_irqtable_init</span><span class="p">();</span><span class="w">             </span><span class="cm">/* 初始化中断表                           */</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">    </span><span class="n">__set_VBAR</span><span class="p">((</span><span class="kt">uint32_t</span><span class="p">)</span><span class="mh">0x87800000</span><span class="p">);</span><span class="w">   </span><span class="cm">/* 中断向量表偏移，偏移到起始地址                  */</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="p">}</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="cm">/*</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="cm"> * @description : 初始化中断服务函数表 </span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="cm"> * @param       : 无</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="cm"> * @return      : 无</span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="cm"> */</span>
+</span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="kt">void</span><span class="w"> </span><span class="nf">system_irqtable_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-24-27"><a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="p">{</span>
+</span><span id="__span-24-28"><a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-24-29"><a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">    </span><span class="n">irqNesting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-24-30"><a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a>
+</span><span id="__span-24-31"><a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="w">    </span><span class="cm">/* 先将所有的中断服务函数设置为默认值 */</span>
+</span><span id="__span-24-32"><a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUMBER_OF_INT_VECTORS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-24-33"><a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-24-34"><a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="w">        </span><span class="n">system_register_irqhandler</span><span class="p">((</span><span class="n">IRQn_Type</span><span class="p">)</span><span class="n">i</span><span class="p">,</span><span class="n">default_irqhandler</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-24-35"><a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-24-36"><a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="p">}</span>
+</span><span id="__span-24-37"><a id="__codelineno-24-37" name="__codelineno-24-37" href="#__codelineno-24-37"></a>
+</span><span id="__span-24-38"><a id="__codelineno-24-38" name="__codelineno-24-38" href="#__codelineno-24-38"></a><span class="cm">/*</span>
+</span><span id="__span-24-39"><a id="__codelineno-24-39" name="__codelineno-24-39" href="#__codelineno-24-39"></a><span class="cm"> * @description         : 给指定的中断号注册中断服务函数 </span>
+</span><span id="__span-24-40"><a id="__codelineno-24-40" name="__codelineno-24-40" href="#__codelineno-24-40"></a><span class="cm"> * @param - irq         : 要注册的中断号</span>
+</span><span id="__span-24-41"><a id="__codelineno-24-41" name="__codelineno-24-41" href="#__codelineno-24-41"></a><span class="cm"> * @param - handler     : 要注册的中断处理函数</span>
+</span><span id="__span-24-42"><a id="__codelineno-24-42" name="__codelineno-24-42" href="#__codelineno-24-42"></a><span class="cm"> * @param - usrParam    : 中断服务处理函数参数</span>
+</span><span id="__span-24-43"><a id="__codelineno-24-43" name="__codelineno-24-43" href="#__codelineno-24-43"></a><span class="cm"> * @return              : 无</span>
+</span><span id="__span-24-44"><a id="__codelineno-24-44" name="__codelineno-24-44" href="#__codelineno-24-44"></a><span class="cm"> */</span>
+</span><span id="__span-24-45"><a id="__codelineno-24-45" name="__codelineno-24-45" href="#__codelineno-24-45"></a><span class="kt">void</span><span class="w"> </span><span class="nf">system_register_irqhandler</span><span class="p">(</span><span class="n">IRQn_Type</span><span class="w"> </span><span class="n">irq</span><span class="p">,</span><span class="w"> </span><span class="n">system_irq_handler_t</span><span class="w"> </span><span class="n">handler</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userParam</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-24-46"><a id="__codelineno-24-46" name="__codelineno-24-46" href="#__codelineno-24-46"></a><span class="p">{</span>
+</span><span id="__span-24-47"><a id="__codelineno-24-47" name="__codelineno-24-47" href="#__codelineno-24-47"></a><span class="w">    </span><span class="n">irqTable</span><span class="p">[</span><span class="n">irq</span><span class="p">].</span><span class="n">irqHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span>
+</span><span id="__span-24-48"><a id="__codelineno-24-48" name="__codelineno-24-48" href="#__codelineno-24-48"></a><span class="w">    </span><span class="n">irqTable</span><span class="p">[</span><span class="n">irq</span><span class="p">].</span><span class="n">userParam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userParam</span><span class="p">;</span>
+</span><span id="__span-24-49"><a id="__codelineno-24-49" name="__codelineno-24-49" href="#__codelineno-24-49"></a><span class="p">}</span>
+</span><span id="__span-24-50"><a id="__codelineno-24-50" name="__codelineno-24-50" href="#__codelineno-24-50"></a>
+</span><span id="__span-24-51"><a id="__codelineno-24-51" name="__codelineno-24-51" href="#__codelineno-24-51"></a><span class="cm">/*</span>
+</span><span id="__span-24-52"><a id="__codelineno-24-52" name="__codelineno-24-52" href="#__codelineno-24-52"></a><span class="cm"> * @description         : C语言中断服务函数，irq汇编中断服务函数会</span>
+</span><span id="__span-24-53"><a id="__codelineno-24-53" name="__codelineno-24-53" href="#__codelineno-24-53"></a><span class="cm">                          调用此函数，此函数通过在中断服务列表中查</span>
+</span><span id="__span-24-54"><a id="__codelineno-24-54" name="__codelineno-24-54" href="#__codelineno-24-54"></a><span class="cm">                          找指定中断号所对应的中断处理函数并执行。</span>
+</span><span id="__span-24-55"><a id="__codelineno-24-55" name="__codelineno-24-55" href="#__codelineno-24-55"></a><span class="cm"> * @param - giccIar     : 中断号</span>
+</span><span id="__span-24-56"><a id="__codelineno-24-56" name="__codelineno-24-56" href="#__codelineno-24-56"></a><span class="cm"> * @return              : 无</span>
+</span><span id="__span-24-57"><a id="__codelineno-24-57" name="__codelineno-24-57" href="#__codelineno-24-57"></a><span class="cm"> */</span>
+</span><span id="__span-24-58"><a id="__codelineno-24-58" name="__codelineno-24-58" href="#__codelineno-24-58"></a><span class="kt">void</span><span class="w"> </span><span class="nf">system_irqhandler</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">giccIar</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-24-59"><a id="__codelineno-24-59" name="__codelineno-24-59" href="#__codelineno-24-59"></a><span class="p">{</span>
+</span><span id="__span-24-60"><a id="__codelineno-24-60" name="__codelineno-24-60" href="#__codelineno-24-60"></a>
+</span><span id="__span-24-61"><a id="__codelineno-24-61" name="__codelineno-24-61" href="#__codelineno-24-61"></a><span class="w">   </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">intNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">giccIar</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x3FFUL</span><span class="p">;</span>
+</span><span id="__span-24-62"><a id="__codelineno-24-62" name="__codelineno-24-62" href="#__codelineno-24-62"></a>
+</span><span id="__span-24-63"><a id="__codelineno-24-63" name="__codelineno-24-63" href="#__codelineno-24-63"></a><span class="w">   </span><span class="cm">/* 检查中断号是否符合要求 */</span>
+</span><span id="__span-24-64"><a id="__codelineno-24-64" name="__codelineno-24-64" href="#__codelineno-24-64"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">intNum</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1023</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">intNum</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">NUMBER_OF_INT_VECTORS</span><span class="p">))</span>
+</span><span id="__span-24-65"><a id="__codelineno-24-65" name="__codelineno-24-65" href="#__codelineno-24-65"></a><span class="w">   </span><span class="p">{</span>
+</span><span id="__span-24-66"><a id="__codelineno-24-66" name="__codelineno-24-66" href="#__codelineno-24-66"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-24-67"><a id="__codelineno-24-67" name="__codelineno-24-67" href="#__codelineno-24-67"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-24-68"><a id="__codelineno-24-68" name="__codelineno-24-68" href="#__codelineno-24-68"></a>
+</span><span id="__span-24-69"><a id="__codelineno-24-69" name="__codelineno-24-69" href="#__codelineno-24-69"></a><span class="w">   </span><span class="n">irqNesting</span><span class="o">++</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 中断嵌套计数器加一 */</span>
+</span><span id="__span-24-70"><a id="__codelineno-24-70" name="__codelineno-24-70" href="#__codelineno-24-70"></a>
+</span><span id="__span-24-71"><a id="__codelineno-24-71" name="__codelineno-24-71" href="#__codelineno-24-71"></a><span class="w">   </span><span class="cm">/* 根据传递进来的中断号，在irqTable中调用确定的中断服务函数*/</span>
+</span><span id="__span-24-72"><a id="__codelineno-24-72" name="__codelineno-24-72" href="#__codelineno-24-72"></a><span class="w">   </span><span class="n">irqTable</span><span class="p">[</span><span class="n">intNum</span><span class="p">].</span><span class="n">irqHandler</span><span class="p">(</span><span class="n">intNum</span><span class="p">,</span><span class="w"> </span><span class="n">irqTable</span><span class="p">[</span><span class="n">intNum</span><span class="p">].</span><span class="n">userParam</span><span class="p">);</span>
+</span><span id="__span-24-73"><a id="__codelineno-24-73" name="__codelineno-24-73" href="#__codelineno-24-73"></a>
+</span><span id="__span-24-74"><a id="__codelineno-24-74" name="__codelineno-24-74" href="#__codelineno-24-74"></a><span class="w">   </span><span class="n">irqNesting</span><span class="o">--</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 中断执行完成，中断嵌套寄存器减一 */</span>
+</span><span id="__span-24-75"><a id="__codelineno-24-75" name="__codelineno-24-75" href="#__codelineno-24-75"></a>
+</span><span id="__span-24-76"><a id="__codelineno-24-76" name="__codelineno-24-76" href="#__codelineno-24-76"></a><span class="p">}</span>
+</span><span id="__span-24-77"><a id="__codelineno-24-77" name="__codelineno-24-77" href="#__codelineno-24-77"></a>
+</span><span id="__span-24-78"><a id="__codelineno-24-78" name="__codelineno-24-78" href="#__codelineno-24-78"></a><span class="cm">/*</span>
+</span><span id="__span-24-79"><a id="__codelineno-24-79" name="__codelineno-24-79" href="#__codelineno-24-79"></a><span class="cm"> * @description         : 默认中断服务函数</span>
+</span><span id="__span-24-80"><a id="__codelineno-24-80" name="__codelineno-24-80" href="#__codelineno-24-80"></a><span class="cm"> * @param - giccIar     : 中断号</span>
+</span><span id="__span-24-81"><a id="__codelineno-24-81" name="__codelineno-24-81" href="#__codelineno-24-81"></a><span class="cm"> * @param - usrParam    : 中断服务处理函数参数</span>
+</span><span id="__span-24-82"><a id="__codelineno-24-82" name="__codelineno-24-82" href="#__codelineno-24-82"></a><span class="cm"> * @return              : 无</span>
+</span><span id="__span-24-83"><a id="__codelineno-24-83" name="__codelineno-24-83" href="#__codelineno-24-83"></a><span class="cm"> */</span>
+</span><span id="__span-24-84"><a id="__codelineno-24-84" name="__codelineno-24-84" href="#__codelineno-24-84"></a><span class="kt">void</span><span class="w"> </span><span class="nf">default_irqhandler</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">giccIar</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">userParam</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-24-85"><a id="__codelineno-24-85" name="__codelineno-24-85" href="#__codelineno-24-85"></a><span class="p">{</span>
+</span><span id="__span-24-86"><a id="__codelineno-24-86" name="__codelineno-24-86" href="#__codelineno-24-86"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-24-87"><a id="__codelineno-24-87" name="__codelineno-24-87" href="#__codelineno-24-87"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-24-88"><a id="__codelineno-24-88" name="__codelineno-24-88" href="#__codelineno-24-88"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-24-89"><a id="__codelineno-24-89" name="__codelineno-24-89" href="#__codelineno-24-89"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>default_irqhandler(unsigned int giccIar, void *userParam)只是一个默认的中断服务函数。让程序停留在这里，如果熟悉stm32的话，可以发现hardfault函数也是这样的，用于程序停留分析函数栈</p>
+<div class="language-c highlight"><span class="filename">stm32f10x_it.c</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x_it.h&quot;</span><span class="c1"> </span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">NMI_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">{</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="p">}</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HardFault_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="p">{</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">  </span><span class="cm">/* Go to infinite loop when Hard Fault exception occurs */</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="p">}</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MemManage_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="p">{</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">  </span><span class="cm">/* Go to infinite loop when Memory Manage exception occurs */</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="p">}</span>
+</span><span id="__span-25-22"><a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>
+</span><span id="__span-25-23"><a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
+</span><span id="__span-25-24"><a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="kt">void</span><span class="w"> </span><span class="nf">BusFault_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-25"><a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="p">{</span>
+</span><span id="__span-25-26"><a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="w">  </span><span class="cm">/* Go to infinite loop when Bus Fault exception occurs */</span>
+</span><span id="__span-25-27"><a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-25-28"><a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-25-29"><a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-25-30"><a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a><span class="p">}</span>
+</span><span id="__span-25-31"><a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>
+</span><span id="__span-25-32"><a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a><span class="kt">void</span><span class="w"> </span><span class="nf">UsageFault_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-33"><a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a><span class="p">{</span>
+</span><span id="__span-25-34"><a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a><span class="w">  </span><span class="cm">/* Go to infinite loop when Usage Fault exception occurs */</span>
+</span><span id="__span-25-35"><a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-25-36"><a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-25-37"><a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-25-38"><a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a><span class="p">}</span>
+</span><span id="__span-25-39"><a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a>
+</span><span id="__span-25-40"><a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a><span class="kt">void</span><span class="w"> </span><span class="nf">SVC_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-41"><a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a><span class="p">{</span>
+</span><span id="__span-25-42"><a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a><span class="p">}</span>
+</span><span id="__span-25-43"><a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a>
+</span><span id="__span-25-44"><a id="__codelineno-25-44" name="__codelineno-25-44" href="#__codelineno-25-44"></a><span class="kt">void</span><span class="w"> </span><span class="nf">DebugMon_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-45"><a id="__codelineno-25-45" name="__codelineno-25-45" href="#__codelineno-25-45"></a><span class="p">{</span>
+</span><span id="__span-25-46"><a id="__codelineno-25-46" name="__codelineno-25-46" href="#__codelineno-25-46"></a><span class="p">}</span>
+</span><span id="__span-25-47"><a id="__codelineno-25-47" name="__codelineno-25-47" href="#__codelineno-25-47"></a>
+</span><span id="__span-25-48"><a id="__codelineno-25-48" name="__codelineno-25-48" href="#__codelineno-25-48"></a><span class="kt">void</span><span class="w"> </span><span class="nf">PendSV_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-49"><a id="__codelineno-25-49" name="__codelineno-25-49" href="#__codelineno-25-49"></a><span class="p">{</span>
+</span><span id="__span-25-50"><a id="__codelineno-25-50" name="__codelineno-25-50" href="#__codelineno-25-50"></a><span class="p">}</span>
+</span><span id="__span-25-51"><a id="__codelineno-25-51" name="__codelineno-25-51" href="#__codelineno-25-51"></a>
+</span><span id="__span-25-52"><a id="__codelineno-25-52" name="__codelineno-25-52" href="#__codelineno-25-52"></a><span class="kt">void</span><span class="w"> </span><span class="nf">SysTick_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-25-53"><a id="__codelineno-25-53" name="__codelineno-25-53" href="#__codelineno-25-53"></a><span class="p">{</span>
+</span><span id="__span-25-54"><a id="__codelineno-25-54" name="__codelineno-25-54" href="#__codelineno-25-54"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>有了通用的中断驱动文件，就可以开始使用这些接口，将我们的中断服务函数与系统中断号映射起来。</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cm">/*</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="cm"> * @description         : 初始化外部中断</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="cm"> * @param               : 无</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="cm"> * @return              : 无</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="cm"> */</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">gpio1_io18_exit_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="p">{</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">    </span><span class="n">gpio_pin_config_t</span><span class="w"> </span><span class="n">key_config</span><span class="p">;</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">    </span><span class="cm">/* 1、设置IO复用 */</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">    </span><span class="n">IOMUXC_SetPinMux</span><span class="p">(</span><span class="n">IOMUXC_UART1_CTS_B_GPIO1_IO18</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">          </span><span class="cm">/* 复用为GPIO1_IO18 */</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">    </span><span class="n">IOMUXC_SetPinConfig</span><span class="p">(</span><span class="n">IOMUXC_UART1_CTS_B_GPIO1_IO18</span><span class="p">,</span><span class="mh">0xF080</span><span class="p">);</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="w">    </span><span class="cm">/* 2、初始化GPIO为中断模式 */</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w">    </span><span class="n">key_config</span><span class="p">.</span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kGPIO_DigitalInput</span><span class="p">;</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="w">    </span><span class="n">key_config</span><span class="p">.</span><span class="n">interruptMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kGPIO_IntFallingEdge</span><span class="p">;</span>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="w">    </span><span class="n">key_config</span><span class="p">.</span><span class="n">outputLogic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="w">    </span><span class="n">gpio_init</span><span class="p">(</span><span class="n">GPIO1</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">key_config</span><span class="p">);</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">    </span><span class="c1">//GPIO1_Combined_16_31_IRQn    = 99, /**&lt; Combined interrupt indication for GPIO1 signals 16 - 31. */</span>
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="w">    </span><span class="n">GIC_EnableIRQ</span><span class="p">(</span><span class="n">GPIO1_Combined_16_31_IRQn</span><span class="p">);</span><span class="w">               </span><span class="cm">/* 使能GIC中对应的中断 */</span>
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="w">    </span><span class="n">system_register_irqhandler</span><span class="p">(</span><span class="n">GPIO1_Combined_16_31_IRQn</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">system_irq_handler_t</span><span class="p">)</span><span class="n">gpio1_io18_irqhandler</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w">   </span><span class="cm">/* 注册中断服务函数 */</span>
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="w">    </span><span class="n">gpio_enable_int</span><span class="p">(</span><span class="n">GPIO1</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span><span class="w">                             </span><span class="cm">/* 使能GPIO1_IO18的中断功能 */</span>
+</span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="p">}</span>
+</span><span id="__span-26-25"><a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>
+</span><span id="__span-26-26"><a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="cm">/*</span>
+</span><span id="__span-26-27"><a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a><span class="cm"> * @description         : GPIO1_IO18最终的中断处理函数</span>
+</span><span id="__span-26-28"><a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a><span class="cm"> * @param               : 无</span>
+</span><span id="__span-26-29"><a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a><span class="cm"> * @return              : 无</span>
+</span><span id="__span-26-30"><a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a><span class="cm"> */</span>
+</span><span id="__span-26-31"><a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a><span class="kt">void</span><span class="w"> </span><span class="nf">gpio1_io18_irqhandler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-26-32"><a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-26-33"><a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-26-34"><a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>
+</span><span id="__span-26-35"><a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">gpio_pinread</span><span class="p">(</span><span class="n">GPIO1</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">    </span><span class="cm">/* 按键按下了  */</span>
+</span><span id="__span-26-36"><a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-26-37"><a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a><span class="w">        </span><span class="n">led_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">led_state</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 每次中断led取反 */</span>
+</span><span id="__span-26-38"><a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-26-39"><a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a>
+</span><span id="__span-26-40"><a id="__codelineno-26-40" name="__codelineno-26-40" href="#__codelineno-26-40"></a><span class="w">    </span><span class="n">gpio_clearintflags</span><span class="p">(</span><span class="n">GPIO1</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 清除中断标志位 */</span>
+</span><span id="__span-26-41"><a id="__codelineno-26-41" name="__codelineno-26-41" href="#__codelineno-26-41"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="_1">参考资料</h2>
 <ol>
 <li>【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.6</li>

@@ -812,7 +812,7 @@
         <li class="md-nav__item">
   <a href="#loctek" class="md-nav__link">
     <span class="md-ellipsis">
-      loctek
+      Loctek
     </span>
   </a>
   
@@ -2779,7 +2779,7 @@
         <li class="md-nav__item">
   <a href="#loctek" class="md-nav__link">
     <span class="md-ellipsis">
-      loctek
+      Loctek
     </span>
   </a>
   
@@ -2803,7 +2803,7 @@
 
   <h1>工作日志</h1>
 
-<h2 id="loctek">loctek</h2>
+<h2 id="loctek">Loctek</h2>
 <ul>
 <li>
 <p>2025/1/13 寻找除法的位运算方法，来尝试减少运算时间 </p>
@@ -2811,7 +2811,32 @@
 <p><a href="https://zhuanlan.zhihu.com/p/108566985">LeetCode29 Medium 不用除号实现除法</a></p>
 <p>举个简单的例子，比如15(0b1111) / 3(0b0011) = 5(0b0101)。</p>
 <p>即 5*3 = 15 ，(2^3 * 0 + 2^2 * 1 + 2^1 * 0 +2^0 * 1) * 3 = 15 </p>
-<p>从最大的二次幂数向下遍历即可</p>
+<p>那么可以制作一个这样的数组。依次是[(3 * 2^3), (3 * 2^2), (3 * 2^1), (3 * 2^0)]，而这个数组并不需要真的用乘法算。</p>
+<p>只需要将被除数左移即可，即[(3 &lt;&lt; 3), (3 &lt;&lt; 2), (3 &lt;&lt; 1), (3 &lt;&lt; 0)]，我们知道计算机中，位移运算的速度是很快的。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dividend</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">divisor</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># 判断是否同号</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">flag</span> <span class="o">=</span> <span class="p">(</span><span class="n">dividend</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">divisor</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">dividend</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">divisor</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="c1"># 全部过程使用正数处理，根据flag返回结果的符号</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">dividend</span><span class="p">,</span> <span class="n">divisor</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">dividend</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="c1"># 预处理二进制数组</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">binary</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">33</span><span class="p">)]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="c1"># 第0位即2的零次方乘上除数，所以就是除数本身</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">binary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">divisor</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">33</span><span class="p">):</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="c1"># 后面每一位是前面一位的两倍，因为二进制</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="c1"># &lt;&lt; 是位运算左移操作，等价于*2，但是速度更快</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="k">if</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">dividend</span><span class="p">:</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            <span class="n">dividend</span> <span class="o">-=</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span class="c1"># 答案加上2^i</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>            <span class="n">ret</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">31</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">flag</span> <span class="k">else</span> <span class="o">-</span><span class="n">ret</span>
+</span></code></pre></div>
 </li>
 <li>
 <p>2025/2/26 不用改别人的shit山了，终于自己写项目代码，开始使用APL-FML-HDL分层软件架构</p>

@@ -4040,10 +4040,14 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <h3 id="uart">UART 通信协议</h3>
 <div class="admonition note">
 <p class="admonition-title">Universal Asynchronous Receiver / Transmitter 通用异步收发器</p>
-<p>这可能是MCU嵌入式领域最重要的通信方式了。在开发调试中，最常见最简便的通信方式。</p>
-<p>通信速率：常见 115200 , 19200 , 9600 bps</p>
+<p>这可能是嵌入式最重要的通信方式了。在开发调试中，最常见最简便的通信方式。</p>
+<p>常见波特率：115200bps，19200bps，9600bps。</p>
 <p>全双工：双数据线，RX接收，TX发送，故为全双工（收发同时进行）</p>
 <p>异步：无同步时钟线CLK，故为异步信号，数据传输不稳定、不可靠。</p>
+<hr />
+<p>既然有异步串行收发器，那肯定也有同步串行收发器。</p>
+<p>USART(Universal Synchronous/Asynchronous Receiver/Transmitter)也就是同步/异步串行收发器。</p>
+<p>相比 UART 多了一条时钟线，用于信号同步。一般 USART 是可以作为 UART使用的，也就是不使用其同步的功能</p>
 </div>
 <ul>
 <li>

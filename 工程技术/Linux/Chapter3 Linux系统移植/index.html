@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-u-boot" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1165,6 +1170,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter3 Linux系统移植
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1176,6 +1194,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-u-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. U-Boot介绍
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1284,6 +1328,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../MCU/BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../MCU/Chapter0%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%93%BE/" class="md-nav__link">
         
   
@@ -1359,29 +1426,6 @@
   
   <span class="md-ellipsis">
     Chapter3 事件驱动软件架构
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MCU/IoT%20BLE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IoT BLE
     
   </span>
   
@@ -2726,6 +2770,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-u-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. U-Boot介绍
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2742,7 +2803,13 @@
 
   <h1>Chapter3 Linux系统移植</h1>
 
-
+<div class="admonition abstract">
+<p class="admonition-title">Linux系统适配</p>
+<p>在进行 Linux 驱动开发之前肯定需要先将Linux 系统移植到开发板上去。但和MCU的RTOS移植不同，Linux 的移植要复杂一些。</p>
+<p>在移植 Linux之前我们需要先移植一个 bootloader 代码，这个 bootloader 代码用于启动 Linux 内核，bootloader有很多，常用的就是 U-Boot。移植好 U-Boot 以后再移植 Linux 内核，移植完 Linux 内核以后 Linux 还不能正常启动，还需要再移植一个根文件系统(rootfs)，根文件系统里面包含了一些最常用的命令和文件。</p>
+<p>所以 U-Boot、Linux kernel 和 rootfs 这三者一起构成了一个完整的 Linux 系统，一个可以正常使用、功能完善的 Linux 系统。</p>
+</div>
+<h2 id="1-u-boot">1. U-Boot介绍</h2>
 
 
 

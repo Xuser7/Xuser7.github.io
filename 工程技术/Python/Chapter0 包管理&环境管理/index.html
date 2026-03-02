@@ -1279,6 +1279,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../MCU/BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../MCU/Chapter0%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%93%BE/" class="md-nav__link">
         
   
@@ -1354,29 +1377,6 @@
   
   <span class="md-ellipsis">
     Chapter3 事件驱动软件架构
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../MCU/IoT%20BLE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IoT BLE
     
   </span>
   
@@ -2861,8 +2861,9 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>xxx<span class="w"> </span>-i<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
 </span></code></pre></div>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>unistall<span class="w"> </span>xxx<span class="w"> </span>xxx<span class="w"> </span>xxx<span class="w"> </span>...<span class="w"> </span>xxx<span class="w"> </span><span class="c1">#移除多个库</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&lt;requirement.txt&gt;<span class="w"> </span><span class="c1">#查询第三方库(导出)</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>-r<span class="w"> </span>&lt;requirements.txt&gt;<span class="w"> </span>-y<span class="w"> </span><span class="c1">#(根据导出卸载)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&lt;requirement.txt&gt;<span class="w"> </span><span class="c1">#查询第三方库(并且导出)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span><span class="c1">#(根据导出安装)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>pip<span class="w"> </span>uninstall<span class="w"> </span>-r<span class="w"> </span>&lt;requirements.txt&gt;<span class="w"> </span>-y<span class="w"> </span><span class="c1">#(根据导出卸载)</span>
 </span></code></pre></div>
 <h2 id="anaconda">anaconda</h2>
 <p>简单来说，Anaconda是一个开源的Python发行版，专为科学计算（数据分析、机器学习、深度学习等）设计。</p>
@@ -2893,7 +2894,7 @@
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1">#创建虚拟环境 </span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>​conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env_name<span class="o">}</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span>x.x
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">#删除虚拟环境 </span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>​<span class="w"> </span>conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env_name<span class="o">}</span><span class="w"> </span>--all
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>​conda<span class="w"> </span>remove<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env_name<span class="o">}</span><span class="w"> </span>--all
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1">#克隆环境将env1克隆为</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>​env2<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span><span class="o">{</span>env2<span class="o">}</span><span class="w"> </span>--clone<span class="w"> </span><span class="o">{</span>env1<span class="o">}</span>
 </span></code></pre></div>

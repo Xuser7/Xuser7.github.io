@@ -1281,6 +1281,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../BLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Chapter0%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%93%BE/" class="md-nav__link">
         
   
@@ -1396,9 +1419,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#15-inappprogram" class="md-nav__link">
+  <a href="#15-linklist" class="md-nav__link">
     <span class="md-ellipsis">
-      1.5 InAppProgram 应用升级
+      1.5 LinkList 链表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inappprogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      InAppProgram 应用升级
     </span>
   </a>
   
@@ -1688,29 +1720,6 @@
   
   <span class="md-ellipsis">
     Chapter3 事件驱动软件架构
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../IoT%20BLE/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IoT BLE
     
   </span>
   
@@ -3108,9 +3117,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#15-inappprogram" class="md-nav__link">
+  <a href="#15-linklist" class="md-nav__link">
     <span class="md-ellipsis">
-      1.5 InAppProgram 应用升级
+      1.5 LinkList 链表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inappprogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      InAppProgram 应用升级
     </span>
   </a>
   
@@ -3876,7 +3894,8 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="15-inappprogram">1.5 InAppProgram 应用升级</h3>
+<h3 id="15-linklist">1.5 LinkList 链表</h3>
+<h3 id="inappprogram">InAppProgram 应用升级</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>IAP (In Application Program) / OTA (Over The Air)</p>
@@ -4026,6 +4045,11 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <h4 id="pwr___2">PWR__优化系统功耗</h4>
 <p><a href="https://bbs.huaweicloud.com/blogs/234482">STM32低功耗模式下GPIO如何配置最节能？</a></p>
 <h3 id="29-iwdg">2.9 IWDG 独立看门狗</h3>
+<div class="admonition note">
+<p class="admonition-title">独立看门狗</p>
+<p>独立看门狗————成熟产品必需的外设。在产品的实际使用场景中，会有多种多样的因素，或是程序不当，导致产品死机。想象一下，当电脑卡死时，你最想做的是什么？大部分应该都是想按下那该死的开机键重启电脑吧，和电脑一样，制作出来的小电子产品也可能存在死机的风险，但是此时就没有那个开机键了，更有某些极端情况下，我们接触不到设备，例如安放在高塔上的电子设备。如果发生了死机，如何让它重启再工作呢？</p>
+<p>我们希望有个作用的角色，当程序阻塞卡死时，有个守卫能够发现这个事情并且自动帮我们重新开机。如同守卫大门的狗，每当陌生人来到的时候，可以给我们释放危险信号。看门狗WDG就是为了这个场景而生的。它就像个计数器，我们会给它设定一个目标计数值（初始化看门狗），当 向上/向下 计数溢出时，它会自动触发系统复位。所以我们要在正常运行的程序中，重置看门狗的计数，而使得它不会溢出而触发系统复位，这个动作也叫做（喂狗FeedDog）。如果程序卡死了，那我们这个喂狗动作也被打断，看门狗此时溢出，帮助我们自动完成硬件复位。</p>
+</div>
 <h3 id="210-flash">2.10 FLASH 片内存储</h3>
 <div class="admonition note">
 <p class="admonition-title">Flash latency</p>

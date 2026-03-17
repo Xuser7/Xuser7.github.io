@@ -3468,20 +3468,22 @@
 <ul>
 <li>
 <p>APL 应用层 (Application Layer)</p>
-<p>项目硬件资源之上的代码，例如 scheduler任务调度器，UI交互逻辑等。</p>
+<p>基于各个模块实现业务的代码，例如 任务调度，UI交互逻辑，数据保存 等。</p>
 </li>
 <li>
-<p>FML 设备模块层 (Function Module Layer)</p>
-<p>是对一系列HDL操作的再封装，例如该模块某业务功能，是由一系列硬件驱动动作序列组成的。
-假设定义一个AT24C02(EEPROM)上电数据准确性自检的业务动作（读取数据并比较差异再保存）。
-需要AT24CXX_Read(),AT24CXX_Write(),等动作序列组成AT24CXX_Check()的业务动作。
-将这些HDL层的操作序列封装，就是设备模块层</p>
+<p>FML 功能模块层 (Function Module Layer)</p>
+<p>是对PDL API调用的封装，和模块本身的全部功能定义。</p>
+<p>假定一个EEPROM数据存取功能模块，at24c02.c
+将包含at24cxx_init()、at24cxx_read()、at24cxx_write()、等涉及该模块的全部动作。</p>
+<p>这些模块的动作包含在设备模块层FML，并且向上提供接口。</p>
 </li>
 <li>
-<p>HDL 硬件驱动层(BSP) (Hardware Module Layer)</p>
-<p>是对一系列HAL操作的再封装，例如AT24C02(EEPROM)需要一系列IIC动作序列驱动，ST7789(TFT-LCD)需要一系列SPI动作序列驱动。 
-AT24C02(EEPROM)实现读一个字节的操作，是由若干条IIC动作序列 IIC_Start()，IIC_Send_Byte()，IIC_Wait_Ack()，IIC_Stop() 组成了AT24CXX_ReadOneByte()
-将这些动作封装起来，成为具体设备的固定基本操作，就是硬件驱动层</p>
+<p>PDL 外设驱动层(或BSP) (Peripheral Driver Layer)</p>
+<p>是对HAL API调用的封装，例如外设初始化，外设基本动作等。
+如定时器初始化tim_init、定时器中断函数。串口初始化uart_init、串口中断函数</p>
+<p>假定一个AT24C02(EEPROM)实现读一个字节的操作，at24cxx_read_byte()
+需要 iic_start()，iic_send_byte()，iic_wait_ack()，iic_stop() 一系列动作序列驱动
+这些外设的基本动作包含在外设驱动层中PDL，并且向上提供接口。</p>
 </li>
 <li>
 <p>HAL 硬件抽象层（Hardware Abstract Layer）</p>
@@ -3490,7 +3492,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </li>
 <li>
 <p>UTIL 实用程序（Utility）</p>
-<p>组件层，例如CRC算法，Queue循环队列，排序算法，滤波算法等实用程序。</p>
+<p>组件层，例如crc校验，queue循环队列，排序算法，滤波算法等实用程序。</p>
 </li>
 </ul>
 <p>为什么需要分层？</p>
@@ -4136,8 +4138,8 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <h3 id="uart">UART 通信协议</h3>
 <div class="admonition note">
 <p class="admonition-title">Universal Asynchronous Receiver / Transmitter 通用异步收发器</p>
-<p>这可能是嵌入式最重要的通信方式了。在开发调试中，最常见最简便的通信方式。</p>
-<p>常见波特率：115200bps，19200bps，9600bps。</p>
+<p>这可能是嵌入式最重要的通信方式了。在开发调试中，最常见最简便的通信方式。一个方向只需一条SDA数据线即可</p>
+<p>常见通信速率：115200bps，19200bps，9600bps。</p>
 <p>全双工：双数据线，RX接收，TX发送，故为全双工（收发同时进行）</p>
 <p>异步：无同步时钟线CLK，故为异步信号，数据传输不稳定、不可靠。</p>
 <hr />

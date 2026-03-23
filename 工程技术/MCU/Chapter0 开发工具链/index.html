@@ -3086,13 +3086,13 @@
 <h2 id="3-debug-tool">3. Debug Tool</h2>
 <h3 id="segger-jlink-rtt-viewer">SEGGER JLink RTT Viewer</h3>
 <p><a href="https://www.cnblogs.com/snowsad/p/12076740.html">调试备忘录-J-Link RTT的使用（原理 + 教程 + 应用 + 代码）</a></p>
-<p>RTT(Real Time Transfer)是一种用于嵌入式中与用户进行交互的技术，它结合了SWO和半主机的优点，具有极高的性能。</p>
+<p><a href="https://kb.segger.com/RTT">RTT(Real Time Transfer)</a>是一种用于嵌入式中与用户进行交互的I/O技术，它结合了SWO和半主机的优点，具有极高的性能。</p>
 <p>使用RTT可以从MCU非常快速输出调试信息和数据，且不影响MCU实时性。这个功能可以用于很多支持J-Link的设备和MCU，兼容性强。</p>
 <ol>
-<li>下载Jlink并且安装</li>
-<li>SEGGER\JLink_V632f\Samples\RTT,解压路径里面的压缩包SEGGER_RTT_Vxxx.zip</li>
-<li>将解压完的文件拷贝到代码工程目录中。 </li>
-<li>工程加入文件后，在想要用到RTT的文件中包含#include "SEGGER_RTT.h",然后直接调用SEGGER_RTT_printf()就好了</li>
+<li>下载SEGGER JLink并且安装</li>
+<li><a href="https://github.com/SEGGERMicro/RTT">Github-SEGGERMicro/RTT</a>获取源码，获得SEGGER_RTT.c、SEGGER_RTT.h、SEGGER_RTT_printf.c、SEGGER_RTT_Conf.h</li>
+<li>将上面四份代码文件添加到代码工程目录中。 </li>
+<li>文件添加入工程后，在想要用到RTT的文件中包含#include "SEGGER_RTT.h",然后直接调用SEGGER_RTT_printf()即可</li>
 <li>打开J-Link RTT Viewer 选择好你的芯片型号后，点击确认，开始查看打印</li>
 </ol>
 <h3 id="segger-jlink-jscope">SEGGER JLink  JScope</h3>
@@ -3109,7 +3109,6 @@
 <p>缺点：速度慢，采样速率基本固定在1khz左右，因此仅仅适合采样变量变化速率低于1khz的情况，
 因为数据是根据采样率来的，所以实时性不是太准，不够低速率下影响不大。</p>
 <p>如图，再选中工程中的.elf/.obj/.out/.axf等可执行文件，即可开始调试，IAR对应.out，MDK对应.axf</p>
-<p><img alt="" src="../ast/jscope_hss.png" /></p>
 </li>
 <li>
 <p>RTT模式</p>

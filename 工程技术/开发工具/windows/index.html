@@ -724,6 +724,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%8D%9A%E5%AE%A2%E9%80%9F%E8%AE%B0/2026/0328/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0328——LSM6DSL六轴传感器欧拉角姿态解算记录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1767,6 +1790,15 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       创建还原点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加右键菜单
     </span>
   </a>
   
@@ -3010,6 +3042,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加右键菜单
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3130,6 +3171,17 @@
 <h3 id="_4">创建还原点</h3>
 <p>系统还原点，即在指定的日期和时间内收集重要系统文件（如驱动程序、注册表、系统文件、已安装程序等），可用于将计算机还原到该位置。如果系统文件损坏，可以将计算机恢复到还原点备份的节点。</p>
 <p>搜索"创建还原点"——配置——启用系统保护，最大使用量可以在10%内——创建</p>
+<h3 id="_5">添加右键菜单</h3>
+<p><a href="https://github.com/BluePointLilac/ContextMenuManager">右键菜单管理程序</a></p>
+<p><a href="https://segmentfault.com/a/1190000041622181">Gitbash添加到右键菜单</a></p>
+<ol>
+<li>win+R，输regedit进入注册表</li>
+<li>依次进入HKEY_CLASSES_ROOT —-》 Directory —-》Background —-》 shell</li>
+<li>右键点击shell，选择新建，然后选择项，命名为 Git Bash Here，成功后进入桌面右键发现多了 Git Bash Here.</li>
+<li>添加图标：右键点击shell中你刚刚新建的这个项(Git Bash Here)，选择新建，然后选择字符串值，将名称设置为Icon；找到Git的文件夹，我安装在了D盘，D:\Git\mingw64\share\git，进到里面有个git-for-windows.ico；然后将刚刚新建的字符串值的数据设置为D:\Git\mingw64\share\git\git-for-windows.ico</li>
+<li>在 Git Bash Here 下面新建一个项名字为command
+将数据设置成 D:\Git\bin\bash.exe，这个也和你安装Git的路径有关</li>
+</ol>
 <h2 id="windows-pe">Windows PE</h2>
 <p>维基百科：Windows预先安装环境（Microsoft Windows Preinstallation Environment，简称Windows PE或WinPE）是简化版的Windows XP、Windows Server 2003、Windows Vista、Windows 7、Windows 8、Windows 8.1。WinPE是以光盘或其他可携设备作媒介。WinPE作用是方便大企业作出工作站和服务器的企划、给“原始设备制造商”（OEM）制造自定义的Windows操作系统、替换MS-DOS的磁片。Windows PE可理解为Windows的LiveCD</p>
 <p>简单来说，Windows PE系统就是直接光盘或U盘运行的、功能强大的、精简了的Windows系统。</p>

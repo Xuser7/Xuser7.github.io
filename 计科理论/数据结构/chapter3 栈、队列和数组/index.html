@@ -3454,14 +3454,12 @@
 </ul>
 <h3 id="313">3.1.3   栈的链式存储结构</h3>
 <p>采用链式存储的栈称为链栈，其优点是便于多个栈共享存储空间和提高效率，且不存在栈满上溢的情况，通常用单链表实现，并规定所有操作都是在单链表的表头进行。</p>
-<div class="language-text highlight"><pre><span></span><code>```c
-//栈的链式存储类型
-typedef struct LinkNode{
-    ElemType data;              //数据域
-    struct LinkNode *next;      //指针域
-}LiStack;
-```
-</code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">//栈的链式存储类型</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">LinkNode</span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">ElemType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">              </span><span class="c1">//数据域</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">LinkNode</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w">      </span><span class="c1">//指针域</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span><span class="n">LiStack</span><span class="p">;</span>
+</span></code></pre></div>
 <h2 id="32-fifo">3.2   队列（FIFO）</h2>
 <h3 id="321">3.2.1   队列的基本概念</h3>
 <ul>

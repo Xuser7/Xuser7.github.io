@@ -1503,7 +1503,7 @@
           <li class="md-nav__item">
   <a href="#11-linklist" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 LinkList 链表
+      1.1 LinkList 链表（链式存储线性表）
     </span>
   </a>
   
@@ -1512,43 +1512,52 @@
           <li class="md-nav__item">
   <a href="#12-queue" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 Queue 队列
+      1.2 Queue 队列 （操作受限线性表）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-scheduler" class="md-nav__link">
+  <a href="#13-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 Scheduler 软件定时器
+      1.3 Stack 栈（操作受限线性表）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#14-keyscan" class="md-nav__link">
+  <a href="#14-scheduler" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4 KeyScan 按键扫描
+      1.4 Scheduler 软件定时器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#15-menu" class="md-nav__link">
+  <a href="#15-keyscan" class="md-nav__link">
     <span class="md-ellipsis">
-      1.5 Menu 多级菜单
+      1.5 KeyScan 按键扫描
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#16-logger" class="md-nav__link">
+  <a href="#16-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      1.6 Logger 日志模块
+      1.6 Menu 多级菜单
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logger 日志模块
     </span>
   </a>
   
@@ -3210,7 +3219,7 @@
           <li class="md-nav__item">
   <a href="#11-linklist" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 LinkList 链表
+      1.1 LinkList 链表（链式存储线性表）
     </span>
   </a>
   
@@ -3219,43 +3228,52 @@
           <li class="md-nav__item">
   <a href="#12-queue" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 Queue 队列
+      1.2 Queue 队列 （操作受限线性表）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-scheduler" class="md-nav__link">
+  <a href="#13-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 Scheduler 软件定时器
+      1.3 Stack 栈（操作受限线性表）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#14-keyscan" class="md-nav__link">
+  <a href="#14-scheduler" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4 KeyScan 按键扫描
+      1.4 Scheduler 软件定时器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#15-menu" class="md-nav__link">
+  <a href="#15-keyscan" class="md-nav__link">
     <span class="md-ellipsis">
-      1.5 Menu 多级菜单
+      1.5 KeyScan 按键扫描
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#16-logger" class="md-nav__link">
+  <a href="#16-menu" class="md-nav__link">
     <span class="md-ellipsis">
-      1.6 Logger 日志模块
+      1.6 Menu 多级菜单
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logger 日志模块
     </span>
   </a>
   
@@ -3564,10 +3582,9 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p>2 大道至简，越简单、逻辑越清晰的代码，越不容易犯错，即使出错也越容易纠错。合理的软件架构可以节省开发时间，节省调试时间等，时间就是金钱。</p>
 </div>
 <h2 id="1-apl-application-layer">1. APL (Application Layer)</h2>
-<h3 id="11-linklist">1.1 LinkList 链表</h3>
+<h3 id="11-linklist">1.1 LinkList 链表（链式存储线性表）</h3>
 <p><a href="https://github.com/0x1abin/MultiTimer">0x1abin-MultiTimer</a></p>
 <p><a href="https://github.com/0x1abin/MultiButton">0x1abin-MultiButton</a></p>
-<p><a href="https://github.com/murphyzhao/FlexibleButton">murphyzhao-FlexibleButton</a></p>
 <p>上述项目都有使用到链表来实现。</p>
 <p>例如下面这段MultiTimer添加软件定时器的代码</p>
 <div class="language-c highlight"><span class="filename">MultiTimer.c</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">multiTimerStart</span><span class="p">(</span><span class="n">MultiTimer</span><span class="o">*</span><span class="w"> </span><span class="n">timer</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">timing</span><span class="p">,</span><span class="w"> </span><span class="n">MultiTimerCallback_t</span><span class="w"> </span><span class="n">callback</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">userData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3591,7 +3608,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="12-queue">1.2 Queue 队列</h3>
+<h3 id="12-queue">1.2 Queue 队列 （操作受限线性表）</h3>
 <p>队列queue在MCU中又常常称为环形缓存ringbuffer。</p>
 <p>队列在计算机系统中的应用非常广泛，以下从两个方面来举例阐述</p>
 <ol>
@@ -3642,7 +3659,8 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="13-scheduler">1.3 Scheduler 软件定时器</h3>
+<h3 id="13-stack">1.3 Stack 栈（操作受限线性表）</h3>
+<h3 id="14-scheduler">1.4 Scheduler 软件定时器</h3>
 <p><a href="https://github.com/0x1abin/MultiTimer">0x1abin-MultiTimer</a></p>
 <p>基础的软件定时器实现如下（回调函数+周期时间+最后运行时间戳）</p>
 <div class="language-c highlight"><span class="filename">Scheduler.c</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
@@ -3745,7 +3763,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-2-98"><a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-2-99"><a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="14-keyscan">1.4 KeyScan 按键扫描</h3>
+<h3 id="15-keyscan">1.5 KeyScan 按键扫描</h3>
 <p><a href="https://github.com/0x1abin/MultiButton">0x1abin-MultiButton</a></p>
 <p><a href="https://github.com/murphyzhao/FlexibleButton">murphyzhao-FlexibleButton</a></p>
 <p>MultiButton与FlexibleButton：通过阅读源码可以发现，MultiButton与FlexibleButton架构类似，都是 轮询+状态机 识别按键状态，通过 扫描-设置事件-触发对应事件callback，并不存在架构上的区别，只不过FlexibleButton代码看起来更精简一些</p>
@@ -4030,7 +4048,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p>2.使用ADC检测多个按键，通过电阻分压，使得不同按键电压值不同。</p>
 </li>
 </ul>
-<h3 id="15-menu">1.5 Menu 多级菜单</h3>
+<h3 id="16-menu">1.6 Menu 多级菜单</h3>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// 使用结构体定义菜单类，并且使用结构体指针跳转菜单层级</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cp">#define ARR_LEN(ARR)        (sizeof(ARR)/sizeof((ARR)[0]))</span>
@@ -4095,7 +4113,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="w">    </span><span class="n">show_menu</span><span class="p">(</span><span class="n">menu_ptr</span><span class="p">,</span><span class="w"> </span><span class="n">ARR_LEN</span><span class="p">(</span><span class="n">setting_page</span><span class="p">));</span>
 </span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="16-logger">1.6 Logger 日志模块</h3>
+<h3 id="logger">Logger 日志模块</h3>
 <p><a href="https://github.com/armink/EasyLogger">armink-EasyLogger</a></p>
 <p>在某些情况下，我们往往很难接入仿真器来调试MCU，例如高速运行的MCU程序，添加断点可能导致问题无法复现，又或是产品在某个环境下低概率复现的问题，无法通过短时间借入调试器查找bug。又或者是某些低端处理器不带有仿真器调试功能，例如Telink TLRS82xx的SWS接口。</p>
 <p>这个时候需要日志来查看MCU的运行情况，也就是让MCU实时给我们汇报状态。</p>
@@ -4180,11 +4198,12 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p>下面截取了STM32G030的时钟树，可以看见systick是8分频的，其他系列MCU也一样</p>
 <p><img alt="" src="../ast/stm32g030_systick.png" /></p>
 <p>基于Systick，我们可以实现delay_ms()与delay_us()。</p>
-<p><a href="https://shequ.stmicroelectronics.cn/thread-634418-1-1.html">【经验分享】STM32延时函数的四种方法</a></p>
+<p><a href="https://www.cnblogs.com/FBsharl/p/18087397">STM32延时函数的三种方法及各自的优缺点——最好掌握第三种</a></p>
+<p><a href="https://blog.csdn.net/qq_36553707/article/details/112095345">STM32入门：Systick（嘀嗒定时器）学习</a></p>
 <div class="language-c highlight"><span class="filename">delay.c</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// 以72Mhz的STM32F103举例，其SysTick 频率默认为 f = 9MHz（SysTick对HCLK进行8分频）</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">// 也就是T = 1/f = 1/9000000 s = 1/9 us 机器数减1</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// 因此其 fac_us = 9（fac_us代表每个us需要的systick时钟数）</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// 而fac_ms = 9000（代表每个ms需要的systick时钟数）</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// 故 fac_us = 9（fac_us代表每个us需要的systick时钟数）</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// 而 fac_ms = 9000（代表每个ms需要的systick时钟数）</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">fac_us</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">static</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">fac_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
@@ -4193,32 +4212,37 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="n">fac_us</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_RCC_GetSysClockFreq</span><span class="p">()</span><span class="o">/</span><span class="mi">1000000</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="n">fac_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_RCC_GetSysClockFreq</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>
 </span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="p">}</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">delay_us</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">nus</span><span class="p">)</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">{</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">LOAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fac_us</span><span class="o">*</span><span class="n">nus</span><span class="p">;</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="c1">//清空计数器</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0X01</span><span class="p">;</span><span class="c1">//使能，减到零是无动作，采用外部时钟源</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="k">do</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="n">temp</span><span class="o">=</span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="p">;</span><span class="c1">//读取当前倒计数值</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">((</span><span class="n">temp</span><span class="o">&amp;</span><span class="mh">0x01</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">temp</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="p">))));</span><span class="c1">//等待时间到达</span>
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0x00</span><span class="p">;</span><span class="w"> </span><span class="c1">//关闭计数器</span>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="w"> </span><span class="c1">//清空计数器</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="p">}</span>
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="kt">void</span><span class="w"> </span><span class="nf">delay_ms</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">nms</span><span class="p">)</span>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="p">{</span>
-</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
-</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">LOAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fac_ms</span><span class="o">*</span><span class="n">nms</span><span class="p">;</span>
-</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="c1">//清空计数器</span>
-</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0X01</span><span class="p">;</span><span class="c1">//使能，减到零是无动作，采用外部时钟源</span>
-</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">    </span><span class="k">do</span>
-</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">    </span><span class="n">temp</span><span class="o">=</span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="p">;</span><span class="c1">//读取当前倒计数值</span>
-</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">((</span><span class="n">temp</span><span class="o">&amp;</span><span class="mh">0x01</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">temp</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="p">))));</span><span class="c1">//等待时间到达</span>
-</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0x00</span><span class="p">;</span><span class="w"> </span><span class="c1">//关闭计数器</span>
-</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="w"> </span><span class="c1">//清空计数器</span>
-</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="p">}</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1">// LOAD 是 SysTick 的一个寄存器，为24位计数器，也就是它是有限制的</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1">// 因此 nms，nus 参数也是有上限的！！！</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1">// 即fac_us*nus &lt; 0xFFFFFF，fac_ms*nms &lt; 0xFFFFFF</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="kt">void</span><span class="w"> </span><span class="nf">delay_us</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">nus</span><span class="p">)</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="p">{</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">LOAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fac_us</span><span class="o">*</span><span class="n">nus</span><span class="p">;</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="c1">//清空计数器</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0X01</span><span class="p">;</span><span class="c1">//使能，减到零是无动作，采用外部时钟源</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">    </span><span class="n">temp</span><span class="o">=</span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="p">;</span><span class="c1">//读取当前倒计数值</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">((</span><span class="n">temp</span><span class="o">&amp;</span><span class="mh">0x01</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">temp</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="p">))));</span><span class="c1">//等待时间到达</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0x00</span><span class="p">;</span><span class="w"> </span><span class="c1">//关闭计数器</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="w"> </span><span class="c1">//清空计数器</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="p">}</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="kt">void</span><span class="w"> </span><span class="nf">delay_ms</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">nms</span><span class="p">)</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="p">{</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">LOAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fac_ms</span><span class="o">*</span><span class="n">nms</span><span class="p">;</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="c1">//清空计数器</span>
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0X01</span><span class="p">;</span><span class="c1">//使能，减到零是无动作，采用外部时钟源</span>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="k">do</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="w">    </span><span class="n">temp</span><span class="o">=</span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="p">;</span><span class="c1">//读取当前倒计数值</span>
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="p">}</span><span class="k">while</span><span class="p">((</span><span class="n">temp</span><span class="o">&amp;</span><span class="mh">0x01</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">temp</span><span class="o">&amp;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">16</span><span class="p">))));</span><span class="c1">//等待时间到达</span>
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span><span class="o">=</span><span class="mh">0x00</span><span class="p">;</span><span class="w"> </span><span class="c1">//关闭计数器</span>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">    </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="w"> </span><span class="o">=</span><span class="mh">0X00</span><span class="p">;</span><span class="w"> </span><span class="c1">//清空计数器</span>
+</span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>基于Systick，也可以作为一个定时器来使用，产生定时中断提供系统时基</p>
 <div class="language-c highlight"><span class="filename">SysTick_Handler</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// 1——滴答定时器配置 SysTick_Config</span>

@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1683,6 +1688,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    滤波算法
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1694,6 +1712,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      均方根滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      LPF低通滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      HPF高通滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      卡尔曼滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2939,6 +3019,59 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      均方根滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      LPF低通滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpf" class="md-nav__link">
+    <span class="md-ellipsis">
+      HPF高通滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      卡尔曼滤波
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2955,7 +3088,25 @@
 
   <h1>滤波算法</h1>
 
-
+<h2 id="_1">均方根滤波</h2>
+<p>有效值又叫均方根值，对数据的平方和取平均再开方所计算出来的值。所以通常情况下采用的计算方法是：将所有值平方求和，求其均值，再开平方，就得到均方根值。</p>
+<p><span class="arithmatex">\(X_{rms} = \sqrt{\frac{\sum_{i=1}^{N} X_i^2}{N}} = \sqrt{\frac{X_1^2 + X_2^2 + \cdots + X_N^2}{N}}\)</span></p>
+<p>本质：计算滑动窗口内信号的有效值（RMS），反映信号的能量 / 强度。</p>
+<p>相位 / 波形：严重失真，丢失正负与细节</p>
+<h2 id="lpf">LPF低通滤波</h2>
+<p>一阶低通滤波，又称为一阶滞后滤波法。一阶低通滤波算法是一种常用的信号处理技术，用于减少数据中的高频噪声，使信号平滑。这种滤波器通过软件编程实现，模拟传统硬件RC低通滤波器的功能。</p>
+<p>一阶低通滤波器的基本原理是使用当前采样值和上一次滤波输出值进行加权平均，从而得到新的滤波值。这种方法使输出对输入有反馈作用，能够有效地平滑数据。滤波器的核心公式为：</p>
+<p><span class="arithmatex">\(Y(n) = α X(n) + (1 - α) Y(n-1)\)</span></p>
+<p>其中，α 是滤波系数，X(n) 是当前采样值，Y(n-1) 是上一次滤波输出值，Y(n) 是本次滤波输出值。</p>
+<p>本质：频率筛选，保留低频成分，衰减高频噪声 / 毛刺。</p>
+<p>相位 / 波形：轻微失真（延迟），保留波形轮廓。当前采样值的权重越小，则滤波的滞后性越严重。</p>
+<p><img alt="" src="../ast/low_pass_filter.png" /></p>
+<h2 id="hpf">HPF高通滤波</h2>
+<h2 id="_2">卡尔曼滤波</h2>
+<h2 id="_3">参考资料</h2>
+<ul>
+<li><a href="https://blog.csdn.net/Ijerome/article/details/129203287">六种常用滤波算法代码实现及效果</a></li>
+</ul>
 
 
 

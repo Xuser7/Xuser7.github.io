@@ -1336,29 +1336,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E5%B7%A5%E7%A8%8B%E6%8A%80%E6%9C%AF/Linux/Chapter9%20LinuxC%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Chapter9 LinuxC应用开发
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2831,6 +2808,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      附：二叉树代码题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附：二叉树代码题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归遍历二叉树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      n个节点的完全二叉数组，构建树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计二叉树中度为1的结点个数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉树交换左右子树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉树输出每个节点的深度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出叶子结点所在的层数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3346,6 +3392,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      附：二叉树代码题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附：二叉树代码题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归遍历二叉树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      n个节点的完全二叉数组，构建树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计二叉树中度为1的结点个数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉树交换左右子树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉树输出每个节点的深度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出叶子结点所在的层数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3434,6 +3549,7 @@
 <li>
 <p>树的结点数n = 所有结点的度数之和 + 1</p>
 <p>除了根结点，所有结点都有唯一的双亲，因此一个度指向唯一的结点。再加上一个没被指向的根结点，就是树的所有结点</p>
+<p>度数与结点数：n-1 = 0<em> n0 + 1</em> n1 + 2* n2 ...</p>
 </li>
 <li>
 <p>度为m的树中第i层上至多有m^(i-1)个结点(i&gt;=1)</p>
@@ -3611,7 +3727,7 @@
 <li>
 <p>遍历序列倒推二叉树</p>
 <p>对于一颗给定的二叉树，其先序序列、中序序列、后序序列和层序序列都是唯一确定的。但任一序列对应的二叉树并不唯一。</p>
-<p>故给以上其中一个序列，无法倒推出二叉树，但若给出 中序序列 + 前序、后序、层序任一序列，则可以确定一颗二叉树。</p>
+<p>故给出单一序列，或前序 + 后序，都无法倒推出二叉树；但若给出 中序序列 + 前序、后序、层序任一序列，则可以确定一颗二叉树。</p>
 <p>技巧：使用前序、后序、层序找到根结点。在中序序列中可以确认该根结点，划分出左右子树，再对左右子树递归地使用该技巧，即可确定一颗二叉树。</p>
 </li>
 </ol>
@@ -3648,7 +3764,7 @@
 <h2 id="54">5.4   树、森林</h2>
 <h3 id="541">5.4.1   树的存储结构</h3>
 <p>树的存储方式有多种，即可采用顺序存储也可采用链式存储。但不论怎么存储，都要求能唯一地反映树中各结点之间的逻辑关系。</p>
-<p><img alt="tree" src="" /></p>
+<p><img alt="" src="" /></p>
 <ol>
 <li>
 <p>双亲表示法</p>
@@ -3695,8 +3811,7 @@
 </li>
 <li>
 <p>森林转为二叉树</p>
-<p>森林转二叉树的规则与树转二叉树的规则类似。先将森林中的每棵树转为二叉树，由于任意一颗树对应的二叉树的右子树必空，若把森林中的第二棵树<br />
-视为第一棵树根结点的右兄弟，即将第二棵树对应的二叉树当作第一颗二叉树根的右子树，将第三棵树对应的二叉树当作第二棵二叉树根的右子树，以此类推    </p>
+<p>森林转二叉树的规则与树转二叉树的规则类似。先将森林中的每棵树转为二叉树，由于任意一颗树对应的二叉树的右子树必空，若把森林中的第二棵树视为第一棵树根结点的右兄弟，即将第二棵树对应的二叉树当作第一颗二叉树根的右子树，将第三棵树对应的二叉树当作第二棵二叉树根的右子树，以此类推</p>
 <p><img alt="" src="" /></p>
 </li>
 <li>
@@ -3724,7 +3839,7 @@
 <p>哈夫曼树的定义</p>
 <p>路径长度：从树中一个结点到另一个结点之间的分支构成这两个结点之间的路径。路径上的分支数目即为路径长度</p>
 <p>权：在树的应用中，树中结点常赋予一个表示某种意义的数值，称为权</p>
-<p>带权路径长度：从树的根到一个结点的路径长度与该结点上的权值的乘积，即为带权路径长度，WPL = sum(n,i=i)w(i)l(i)</p>
+<p>带权路径长度：从树的根到一个结点的路径长度与该结点上的权值的乘积，即为带权路径长度，WPL = Σ(i=1~n)w(i)l(i)</p>
 <p>w(i)是第i个叶结点所带的权，l(i)是该叶结点到根结点的路径长度。</p>
 <p>哈夫曼树：在含有n个带权结点的二叉树中，其中带权路径长度(WPL)最小的二叉树称为哈夫曼树，也称为最优二叉树。</p>
 <p><img alt="" src="" /></p>
@@ -3733,8 +3848,8 @@
 <p>哈夫曼树的构造</p>
 <p>给定n个权值分别为w1，w2，。。。，wn的结点</p>
 <p>1 将这n个结点分别作为n棵仅有根结点的二叉树，构成森林F</p>
-<p>2 构造一个新结点，从F 中选取两个权值最小的树作为新结点的左右子树，新结点的权值为左、右子树上根结点的权值之和</p>
-<p>3 将得到的新的树加入F中，并且从F中删除刚才选出的两颗树</p>
+<p>2 构造一个新结点，从 F 中选取两个权值最小的树作为新结点的左右子树，新结点的权值为左、右子树上根结点的权值之和</p>
+<p>3 将得到的新的树加入 F 中，并且从 F 中删除刚才选出的两颗树</p>
 <p>4 重复步骤2和步骤3，直到F只剩下一颗树为止</p>
 </li>
 <li>
@@ -3764,6 +3879,120 @@
 <p><img alt="" src="" /></p>
 </li>
 </ol>
+<h2 id="_1">附：二叉树代码题</h2>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">//结点结构体</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TNode</span><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">lchild</span><span class="p">,</span><span class="o">*</span><span class="n">rchild</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span><span class="n">TNode</span><span class="p">,</span><span class="o">*</span><span class="n">Tree</span><span class="p">;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">//初始化申请</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">Tree</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Tree</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">TNode</span><span class="p">));</span><span class="c1">//树概念，已是指针形式</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TNode</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">TNode</span><span class="p">));</span><span class="c1">//节点概念，变量名定义指针</span>
+</span></code></pre></div>
+<h3 id="_2">递归遍历二叉树</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">//NLR 前序遍历 </span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TravelNLR</span><span class="p">(</span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="c1">//t根节点指针</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">TravelNLR</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="n">TravelNLR</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1">//LNR 中序遍历 </span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TravelLNR</span><span class="p">(</span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="c1">//t根节点指针</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">{</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">    </span><span class="n">TravelLNR</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">    </span><span class="n">TravelLNR</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="p">}</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="c1">//LRN 后序遍历 </span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TravelLRN</span><span class="p">(</span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="c1">//t根节点指针</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="p">{</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">    </span><span class="n">TravelLRN</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">    </span><span class="n">TravelLRN</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="n">n个节点的完全二叉数组，构建树</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Tree</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">ElemType</span><span class="w"> </span><span class="n">A</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">){</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="c1">//下标越界</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TNode</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">TNode</span><span class="p">));</span><span class="c1">//申请树节点</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Create</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Create</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="1">统计二叉树中度为1的结点个数</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Count</span><span class="p">(</span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">num</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="o">==</span><span class="nb">NULL</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="o">!=</span><span class="nb">NULL</span><span class="o">&amp;&amp;</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="o">==</span><span class="nb">NULL</span><span class="p">))</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="o">*</span><span class="n">num</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="n">Count</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">,</span><span class="n">num</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="n">Count</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">,</span><span class="n">num</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">}</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">Count</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="o">&amp;</span><span class="n">num</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="_3">二叉树交换左右子树</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Change</span><span class="p">(</span><span class="n">Tree</span><span class="w"> </span><span class="o">&amp;</span><span class="n">T</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">T</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="k">else</span><span class="p">{</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">temp</span><span class="o">=</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="o">=</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="n">Change</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="n">Change</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">}</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">Change</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="_4">二叉树输出每个节点的深度</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">NodeDepth</span><span class="p">(</span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="c1">//前序遍历</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="n">NodeDepth</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">,</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="n">NodeDepth</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">,</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">NodeDepth</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_5">输出叶子结点所在的层数</h3>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">//兄弟孩子表示法</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TNode</span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">firstchild</span><span class="p">,</span><span class="o">*</span><span class="n">nextsibling</span><span class="p">;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span><span class="n">TNode</span><span class="p">,</span><span class="o">*</span><span class="n">Tree</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">nodedepth</span><span class="p">(</span><span class="n">TNode</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">)</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">{</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="c1">//为叶子结点，直接输出</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">firstchild</span><span class="o">==</span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="c1">//左孩子，深度+1</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="n">nodedepth</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">firstchild</span><span class="p">,</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="c1">//右兄弟，深度不变</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="n">nodedepth</span><span class="p">(</span><span class="n">t</span><span class="o">-&gt;</span><span class="n">nextsibling</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 

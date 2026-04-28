@@ -1285,7 +1285,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      位域
+      结构体位域
     </span>
   </a>
   
@@ -1293,6 +1293,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4union" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.union 共用体
+    </span>
+  </a>
   
 </li>
       
@@ -1482,29 +1491,6 @@
   
   <span class="md-ellipsis">
     Chapter4 Linux驱动开发
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Linux/Chapter9%20LinuxC%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Chapter9 LinuxC应用开发
     
   </span>
   
@@ -3191,7 +3177,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      位域
+      结构体位域
     </span>
   </a>
   
@@ -3199,6 +3185,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4union" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.union 共用体
+    </span>
+  </a>
   
 </li>
       
@@ -3359,7 +3354,7 @@
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">Elemtype</span><span class="w"> </span><span class="n">member1</span><span class="p">;</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">Elemtype</span><span class="w"> </span><span class="n">member2</span><span class="p">;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">...</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="p">...</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="err">​</span><span class="p">}</span><span class="n">struct_type</span><span class="p">;</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="err">​</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">struct_type</span><span class="w"> </span><span class="n">s1</span><span class="p">;</span>
@@ -3489,7 +3484,7 @@
 <h3 id="_3">结构体面向对象</h3>
 <p>(C结构体)和(C++类)在使用上很类似，结构体甚至可以用面向对象的思想来形容一类对象。结构体具备着面向对象思想中封装的特性，但是它不具备继承和多态的特性，因此大大减少了它的使用频率</p>
 <p><a href="https://www.cnblogs.com/lknlfy/archive/2013/01/06/2848348.html">C语言结构体的“继承”</a></p>
-<h3 id="_4">位域</h3>
+<h3 id="_4">结构体位域</h3>
 <p>位域（bit-field）是一种特殊的结构体成员，允许我们按位对成员进行定义，指定其占用的位数</p>
 <p>在本质上就是一种结构类型，不过其成员是按二进位分配的。</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
@@ -3507,6 +3502,43 @@
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
 </span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1">//测试</span>
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="n">prinf</span><span class="p">(</span><span class="s">&quot;%x&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="c1">//0x39=00111001</span>
+</span></code></pre></div>
+<h2 id="4union">4.union 共用体</h2>
+<p>C语言中一种特殊的数据类型，它允许在同一内存位置存储不同类型的数据，从而节省内存空间。</p>
+<p>union的大小由其最大成员的大小决定，这确保了足够的空间来存储任何可能的成员。</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">union_name</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="n">elemtype1</span><span class="w"> </span><span class="n">member1</span><span class="p">;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">elemtype2</span><span class="w"> </span><span class="n">member2</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">elemtypen</span><span class="w"> </span><span class="n">membern</span><span class="p">;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">};</span>
+</span></code></pre></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">id_card</span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="k">struct</span><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">province_num</span><span class="p">;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">city_num</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_year</span><span class="p">;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_month</span><span class="p">;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_day</span><span class="p">;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">sequence</span><span class="p">;</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">check_sum</span><span class="p">;</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="p">}</span><span class="n">section</span><span class="p">;</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id_string</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="p">};</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="k">union</span><span class="w"> </span><span class="nc">id_card</span><span class="w"> </span><span class="n">xzq_id</span><span class="p">;</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">province_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">350</span><span class="p">;</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">city_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">321</span><span class="p">;</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span><span class="p">;</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">sequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span>
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">check_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;xzq id：%s&quot;</span><span class="p">,</span><span class="n">xzq_id</span><span class="p">.</span><span class="n">id_string</span><span class="p">);</span><span class="c1">//350321123411223310</span>
 </span></code></pre></div>
 
 

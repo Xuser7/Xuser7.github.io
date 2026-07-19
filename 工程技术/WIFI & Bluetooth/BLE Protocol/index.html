@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../vscode/">
+        <link rel="prev" href="../../MPU%20%26%20Linux/Chapter4%20Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
       
       
-        <link rel="next" href="../%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+        <link rel="next" href="../BLE%20Soc/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Windows - xzqDocs</title>
+        <title>BLE Protocol - xzqDocs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows-notes" class="md-skip">
+        <a href="#function-of-layer" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows
+              BLE Protocol
             
           </span>
         </div>
@@ -1903,6 +1903,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1913,11 +1915,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -1938,7 +1940,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1953,10 +1955,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../WIFI%20%26%20Bluetooth/BLE%20Protocol/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BLE Protocol
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1972,6 +1999,251 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-of-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function of Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gatt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GATT（通用属性规范）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GATT（通用属性规范）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UUID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAP（通用访问规范）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GAP（通用访问规范）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ad-commondata-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD CommonData Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adv_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADV_TYPE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#att" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATT（属性协议）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ATT（属性协议）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attribute-pdu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attribute PDU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMP（安全管理协议）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l2cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L2CAP（逻辑链路控制协议）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HCI（主机控制器接口）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LL（链路层）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHY（物理层）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本篇参考资料
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1984,7 +2256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WIFI%20%26%20Bluetooth/BLE%20Soc/" class="md-nav__link">
+      <a href="../BLE%20Soc/" class="md-nav__link">
         
   
   
@@ -2012,7 +2284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WIFI%20%26%20Bluetooth/ESP32/" class="md-nav__link">
+      <a href="../ESP32/" class="md-nav__link">
         
   
   
@@ -2131,8 +2403,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2143,11 +2413,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -2168,7 +2438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2186,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/agent/" class="md-nav__link">
         
   
   
@@ -2214,7 +2484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/git/" class="md-nav__link">
         
   
   
@@ -2242,7 +2512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../npm/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/npm/" class="md-nav__link">
         
   
   
@@ -2270,7 +2540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/python/" class="md-nav__link">
         
   
   
@@ -2298,7 +2568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vscode/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/" class="md-nav__link">
         
   
   
@@ -2323,35 +2593,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Windows
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/windows/" class="md-nav__link">
         
   
   
@@ -2367,213 +2612,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows Notes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        添加环境变量
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文件夹网络共享
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        自动任务
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        创建还原点
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        添加右键菜单
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows 脚本
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows 脚本">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cmd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cmd 终端
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .bat 批处理脚本
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows 工具
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows 工具">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#winget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WinGet
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preinstallation-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preinstallation Environment
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sysinternals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sysinternals
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows 杂项
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows 杂项">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-bash-make" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Git Bash 添加 make 指令
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2586,7 +2624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   
@@ -3840,22 +3878,144 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows-notes" class="md-nav__link">
+  <a href="#function-of-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows Notes
+        Function of Layer
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Windows Notes">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gatt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GATT（通用属性规范）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GATT（通用属性规范）">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UUID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procedures
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        添加环境变量
+        参考资料
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GAP（通用访问规范）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GAP（通用访问规范）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ad-commondata-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AD CommonData Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adv_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ADV_TYPE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#att" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATT（属性协议）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ATT（属性协议）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attribute-pdu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attribute PDU
       
     </span>
   </a>
@@ -3866,165 +4026,81 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文件夹网络共享
+        参考资料
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMP（安全管理协议）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l2cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L2CAP（逻辑链路控制协议）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HCI（主机控制器接口）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LL（链路层）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PHY（物理层）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动任务
+        本篇参考资料
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        创建还原点
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        添加右键菜单
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows 脚本
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows 脚本">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cmd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cmd 终端
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .bat 批处理脚本
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows 工具
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows 工具">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#winget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WinGet
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preinstallation-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preinstallation Environment
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sysinternals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sysinternals
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows 杂项
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows 杂项">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-bash-make" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Git Bash 添加 make 指令
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4045,135 +4121,181 @@
 
 
 
-  <h1>Windows</h1>
+  <h1>BLE Protocol</h1>
 
-<div class="admonition tip">
-<p class="admonition-title">脚本语言</p>
-<p>系统批处理脚本: batch file</p>
-<p>推荐其他脚本语言：python</p>
+<div class="admonition abstract">
+<p class="admonition-title">Bluetooth Low Energy</p>
+<p>低功耗蓝牙BLE是一种2.4G无线技术，始于蓝牙V4.0版本，旨在实现低功耗和短距离的通信。</p>
+<p>实战：选择一款芯片对照SDK Demo开发。重点关注 GATT/GAP/ATT。重点理解 广播 - 连接 - 服务/特征/描述 - UUID</p>
+<p>深化：研究开源栈（Zephyr/NimBLE）源码，理解协议栈实现细节</p>
+<hr />
+<p>核心开发逻辑：初始化蓝牙协议栈 - 配置广播(GAP) - 服务、特征值、数据收发回调函数(GATT) - 低功耗管理</p>
+<p>所谓开发蓝牙应用程序，其实就是开发 service 和 characteristic。通过API，添加自己需要的characteristic 和 service，一个蓝牙设备就诞生了。</p>
 </div>
-<h2 id="windows-notes">Windows Notes</h2>
-<h3 id="_1">添加环境变量</h3>
-<p><a href="https://baijiahao.baidu.com/s?id=1739693765201054630&amp;wfr=spider&amp;for=pc">百度-为什么开发程序要配置环境变量</a></p>
+<p><img alt="" src="../ast/ble_stack.svg" /></p>
+<h2 id="function-of-layer">Function of Layer</h2>
+<p><img alt="" src="../ast/ble_stack_function.png" /></p>
+<h2 id="gatt">GATT（通用属性规范）</h2>
+<p><strong>根据属性表中的基础属性定义称为服务、特征和描述符的高级数据类型。定义使用ATT处理属性表的高级过程。</strong></p>
+<p>通用属性概要（GATT）基于属性表中保存的属性定义了更高级的数据类型。这些数据类型称为 “服务”、“特征”、“描述符”。它还定义了通过属性协议（ATT）使用这些数据类型所涉及的一系列程序。应用程序通常会使用与这些程序相对应的平台 API 来进行操作。</p>
+<p><img alt="" src="../ast/gatt_service.png" /></p>
+<p><img alt="" src="../ast/gatt_service_characteristic_descriptor.svg" /></p>
 <ul>
 <li>
-<p>一、系统属性 -&gt; 环境变量 -&gt; PATH新建变量（用户变量 or 系统变量）</p>
-<p>需要注意的是：系统变量是作用系统全局的，用户变量只作用于当前用户</p>
+<p>Services（服务）是一种分组机制，它为利用其所包含的特定特性并具有明确类型的内容提供了一个环境。通常，服务对应于设备的一个主要功能或能力。</p>
 </li>
 <li>
-<p>二、cmd测试指令是否执行</p>
+<p>Characteristics（特征）是状态数据的个体项，具有类型、关联值以及一组属性，这些属性说明了在相关 GATT 程序集的框架下如何使用这些数据。例如，可以定义为：连接的对等设备可以读取特定特性的值，但不能对其进行写入操作。</p>
+</li>
+<li>
+<p>Descriptors（描述符）属于某些特性，并且可以包含诸如针对该特性的文本描述之类的元数据，或者可能提供一些控制该特性行为的方法。特性可以附带零个或多个描述符。例如，GATT 定义了一个名为“特征值通知”的操作，该操作涉及设备异步地向连接的对等设备发送包含特征值的 ATT 数据包，并且不需要对方设备的响应。如果一个特性支持通知，则通常会在特征值发生变化时或按照定时器控制的方式定期发送通知。但只有在对等设备请求时才会发送通知，这是通过在特定类型的描述符（称为“客户端特征配置描述符”）中设置一个标志来实现的，如果特性支持通知，则必须具有该描述符。</p>
 </li>
 </ul>
-<h3 id="_2">文件夹网络共享</h3>
-<p>在同一局域网内，可以通过文件夹网络共享分别地在设备间传递文件。</p>
+<p><img alt="" src="../ast/gatt_example.svg" /></p>
+<p><img alt="" src="../ast/gatt_example_nrfconnect.jpg" /></p>
+<h3 id="uuid">UUID</h3>
+<p>一些服务、特征和描述符是由蓝牙SIG定义的，并且具有标识其类型的16位UUID值。每种定义类型的蓝牙SIG列表可从规格/分配号码中获得。实现者可以购买16位uid和其他类型的分配号码</p>
+<p>可以定义自定义服务、特征和描述符。自定义服务、特征和描述符可以由实现者分配的128位UUID值标识，也可以由实现者从蓝牙SIG购买16位UUID值。16位UUID也有一个等价的128位值，格式为0000XXXX-0000-1000-8000-00805F9B34FB，其中XXXX是16位UUID值。实现者不能在这个范围内使用UUID，除非UUID是从蓝牙SIG购买的。</p>
+<p>图示为一个GATT服务器，它混合了蓝牙SIG定义的GATT属性和包含单个自定义特性的单个自定义服务。该自定义服务称为近距离监控服务，UUID类型标识值为0x 3E099910-293F-11E4-93BD-AFD0FE6D1DFD。其特性称为客户端邻近特性，UUID值为0x 3E099911-293F-11E4-93BD-AFD0FE6D1DFD。</p>
+<p><img alt="" src="../ast/gatt_custom_attributes.svg" /></p>
+<h3 id="procedures">Procedures</h3>
+<p>GATT 标准中定义了涵盖服务发现、特征发现、描述符发现、读取和写入特征值以及通知和指示特征值等内容的程序。此外，GATT 规范还提供了其程序与底层 ATT 协议之间的明确映射关系，这些程序必须遵循该协议。</p>
+<h3 id="_1">参考资料</h3>
+<p><a href="https://developer.aliyun.com/article/1071762">一文带你认识蓝牙 GATT 协议</a></p>
+<p><a href="https://blog.csdn.net/yuan_fang123/article/details/141888425">深入了解Bluetooth GATT服务、特征和描述符</a></p>
+<p><a href="https://www.cnblogs.com/simpleGao/p/17630670.html">BLE中GATT的服务和特征发现机制</a></p>
+<h2 id="gap">GAP（通用访问规范）</h2>
+<p><strong>规定了在非连接状态下可采用的操作模式和操作流程，例如如何利用广播进行无连接通信以及如何进行设备发现。还规定了安全级别和模式。还规定了一些用户界面标准。</strong></p>
+<p>蓝牙核心规范的通用访问配置文件（GAP）部分定义了与设备发现和在两个设备之间建立连接有关的过程。一般情况下如何进行数据的无连接通信，如何使用周期性广告以及如何设置同步通信也是GAP所涵盖的主题。</p>
+<p>广播包的传输和通过扫描的接收是GAP运作的核心。有许多不同的广告和扫描数据包类型，它们是由链路层定义的。需要注意的是，载荷字段称为AdvData，并不是在所有PDU类型中都存在该字段。当它存在时，它所包含的数据被编码为一系列一个或多个长度/标记/值结构，称为AD类型。</p>
+<p>应该注意的是，虽然像广告和扫描这样的活动与GAP具有中心相关性，但这些过程实际上是由链路层执行的，所涉及的PDU类型也是如此</p>
+<h3 id="ad-commondata-types">AD CommonData Types</h3>
+<p><a href="https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Assigned_Numbers/out/en/Assigned_Numbers.pdf">Assigned_Numbers - 2.3 CommonDataTypes</a></p>
+<h3 id="roles">Roles</h3>
+<ul>
+<li>
+<p>Broadcaster</p>
+<p>一种利用某种形式的广告来以无连接方式传输数据的设备。这包括传统广告、扩展广告和周期性广告。广播者还可以传输广播同步流。广播者拥有发射器，但接收器并非必须配备。广播者不会接受中央设备的连接（除非它同时也在执行外围设备的角色）。</p>
+</li>
+<li>
+<p>Observer</p>
+<p>一个观察者会接收广告数据包或广播同步流数据包。它不会与其他设备进行连接，包含一个接收器，可能还包含一个发射器。该观察者能够以无连接的方式接收广播数据。</p>
+</li>
+<li>
+<p>Peripheral</p>
+<p>外围设备可以通过中央设备连接。它包含一个发射器和一个接收器。</p>
+</li>
+<li>
+<p>Central</p>
+<p>中央设备能够主动建立与外围设备的连接。它包含一个发射器和一个接收器。</p>
+</li>
+</ul>
+<h3 id="discovery">Discovery</h3>
+<p>广播设备或外围设备要么处于不可发现模式，要么处于 GAP 定义的两种可发现模式之一。在不可发现模式下进行广告时，传输的数据包会在空中可见（这并非一项安全功能），但执行通用可发现流程或有限可发现流程的扫描设备将忽略这些数据包。</p>
+<p>可发现设备可以处于 “一般可发现模式” 或 “有限可发现模式”。当处于一般可发现模式时，设备可被发现的时间不确定，而在有限可发现模式下，设备可被发现的时间最多为三分钟。
+​
+当中心设备或观察者设备试图发现其他设备时，它可以使用被动扫描或主动扫描。两者中的哪一种被允许取决于设备是试图以一般可发现模式还是有限可发现模式发现设备。</p>
+<p>被动扫描是指仅接收广告数据包，而不发送任何扫描数据包。主动扫描则是指接收广告数据包，并通过发送扫描数据包来请求获取更多信息。</p>
+<p>广播设备可以通过所使用的PDU（传统广播）或AdvMode字段的值（扩展广播）来指示自己是否可以被连接。</p>
+<p><img alt="" src="../ast/gap_dicovery_connection.svg" /></p>
+<h3 id="adv_type">ADV_TYPE</h3>
+<ul>
+<li>
+<p>ADV_IND（可连接可扫描非定向广播）</p>
+<p>主要用于等待被连接的设备（如蓝牙手环、串口模块），一旦被其他设备发起连接，广播会立即停止，无法持续传输数据，仅作为连接前的信息附带。</p>
+</li>
+<li>
+<p>ADV_DIRECT_IND（可连接可扫描定向广播）</p>
+<p>仅用于和已配对设备的快速重连，几乎不携带业务数据，完全不适合广播数据传输。</p>
+</li>
+<li>
+<p>ADV_SCAN_IND（不可连接、可扫描、非定向广播）</p>
+<p>不可连接，但支持响应扫描器的SCAN_REQ请求，额外回复 1 个SCAN_RSP扫描响应包。</p>
+</li>
+<li>
+<p>ADV_NONCONN_IND（不可连接、不可扫描、非定向广播）</p>
+<p>纯单向广播，不响应任何扫描请求，也不接受连接请求；每个广播事件仅发送 1 个广播包，无额外交互。</p>
+</li>
+</ul>
+<h2 id="att">ATT（属性协议）</h2>
+<p><strong>ATT客户端和ATT服务器使用的一种协议，它允许发现和使用服务器属性表中的数据。</strong></p>
+<p>ATT由两个设备使用，一个作为客户端，另一个作为服务器。服务器公开一系列称为属性的复合数据项。属性由服务器组织在一个称为属性表(attribute_table)的索引列表中。</p>
+<p>每个属性(attribute)包含一个句柄(attribute_handle)、一个值(attribute_value)、一组权限(attribute_permission)和一个通用唯一标识符（UUID）。</p>
+<p>ATT客户端使用ATT来发现ATT服务器中属性表的详细信息，包括感兴趣的属性或属性类型的句柄值。当句柄值已知时，它们可以与某些PDU类型一起使用，以识别表中的特定属性，然后对其进行操作。</p>
+<p>例如，ATT_READ_BY_GROUP_TYPE_REQ PDU可用于查找主服务定义中所有属性的句柄和UUID。一种更简短的表达方式是，ATT_READ_BY_GROUP_TYPE_REQ PDU可以用来查找属性表定义的所有GATT主服务。当使用支持发现操作的pdu（如ATT_READ_BY_GROUP_TYPE_REQ）时，指定句柄范围并指示要搜索的属性表中条目的子集（这可能是整个表）和要查找的属性类型。</p>
+<h3 id="attribute-pdu">Attribute PDU</h3>
+<p>命令(Command)，客户端发送给服务端，不要求服务端回复</p>
+<p>请求(Requests)，客户端发送给服务端，要求服务端回复</p>
+<p>响应(Responses)，客户端发送了一个请求，服务端用此响应</p>
+<p>通知(Notifications)，服务端发给客户端的数据，不要求客户端回复</p>
+<p>指示(Indications)，服务端发给客户端的数据，要求客户端回复</p>
+<p>确认(Confirmations)，服务端发给客户端的数据，客户端用此进行回复</p>
 <ol>
-<li>右键文件夹-属性-共享-高级共享（共享此文件夹）</li>
-<li>共享-共享-添加everyone或特定用户，并且添加 读取/写入权限</li>
-<li>若想文件夹不需要密码访问，控制面板\网络和 Internet\网络和共享中心-更改高级共享设置（密码保护的共享）</li>
-<li>手机访问电脑的共享文件夹——下载带网络访问的文件管理器（CX，ES）等等，找到网络选项即可</li>
+<li>
+<p>Commands</p>
+<p><img alt="" src="../ast/att_commands.svg" /></p>
+</li>
+<li>
+<p>Requests and Responses</p>
+<p>ATT请求PDU由客户端发送给服务器。服务器应该在30秒内回复一个相应类型的响应PDU或一个错误响应PDU （ATT_ERROR_RSP）。未能在30秒内响应将构成超时。</p>
+<p><img alt="" src="../ast/att_request_response.svg" /></p>
+</li>
+<li>
+<p>Notifications</p>
+<p>通知是由服务器发送给客户机的类型为ATT_HANDLE_VALUE_NTF的未经请求的pdu。没有定义应答PDU。</p>
+<p><img alt="" src="../ast/att_notifications.svg" /></p>
+</li>
+<li>
+<p>Indications and Confirmations</p>
+<p>ATT指示PDU由服务器发送给客户端。客户端应在30秒内回复一个相应类型的确认PDU或一个错误响应PDU （ATT_ERROR_RSP）。未能在30秒内响应将构成超时。</p>
+<p><img alt="" src="../ast/att_indication_confirmations.svg" /></p>
+</li>
 </ol>
-<h3 id="_3">自动任务</h3>
+<h3 id="_2">参考资料</h3>
+<ul>
+<li><a href="https://yuxxxxxxxxxx.github.io/2024/11/05/BLE-%E5%8D%8F%E8%AE%AE%E4%B9%8BATT/">BLE 协议之 ATT_</a></li>
+</ul>
+<h2 id="smp">SMP（安全管理协议）</h2>
+<p><strong>在执行安全过程（如配对）期间使用的一种协议。</strong></p>
+<p>安全管理器协议（SMP）是堆栈的安全管理器组件的一部分。它支持执行与安全相关的过程，如配对、绑定和密钥分发。</p>
+<p>安全管理器组件为其他层可以使用的安全功能提供了一个加密工具箱，并定义了配对算法。</p>
+<h2 id="l2cap">L2CAP（逻辑链路控制协议）</h2>
+<p><strong>L2CAP负责协议多路复用、流量控制、业务数据单元sdu的分段和重组</strong></p>
+<p>充当Host Layer的协议多路复用器，确保协议由适当的主机组件提供服务。在L2CAP上下层之间对 PDU/SDU 进行分段和重组。</p>
 <ol>
 <li>
-<p>设置Windows开机启动项</p>
-<ul>
-<li>1.win+R调出运行 输入<code>shell:startup</code>，进入开机启动项</li>
-<li>2.将你的exe快捷方式放在这里</li>
-<li>3.打开任务管理器-启动，找到你的程序，以确认添加成功(此处也可禁用启动程序)  </li>
-</ul>
+<p>Protocol Multiplexing 协议复用</p>
+<p>L2CAP之上的层使用不同的协议，如属性协议（ATT）和安全管理协议（SMP）。L2CAP协议多路复用确保将sdu从堆栈向上传递到适当的层进行处理。</p>
 </li>
 <li>
-<p>自动任务——设置Windows定时自动任务</p>
-<ul>
-<li>1.win+R调出运行 输入compmgmt.msc/或者右键左下角Windows LOGO打开计算机管理</li>
-<li>2.系统工具-任务计划程序-创建基本任务,（添加任务名称，添加触发，添加启动程序、脚本，完成）</li>
-</ul>
+<p>Flow Control 流量控制</p>
+<p>流量控制关注的是确保堆栈中的一层产生数据包的速率不超过同一堆栈中的另一层或远程设备上处理这些数据包的速率。（即控制入栈速度小于出栈速度，避免溢出）如果没有流量控制，就有出现缓冲区溢出等问题的风险。</p>
+</li>
+<li>
+<p>Segmentation and Reassembly 分段和重组</p>
+<p>L2CAP以上和以下的层都受最大传输单元（Maximum Transmission Unit， MTU）大小的限制，该大小规定了该层创建的PDU类型所允许的最大大小。例如，ATT_MTU参数定义了ATT PDU的最大大小。</p>
+<p>L2CAP本身和它上面或下面的层在堆栈中可能有不同的MTU大小，因此，可能有必要将一些 pdu / sdu分成一系列相邻层可以处理的较小的部分，或者相反，将一系列相关的较小的部分重新组装成完整的 pdu / sdu</p>
 </li>
 </ol>
-<h3 id="_4">创建还原点</h3>
-<p>系统还原点，即在指定的日期和时间内收集重要系统文件（如驱动程序、注册表、系统文件、已安装程序等），可用于将计算机还原到该位置。如果系统文件损坏，可以将计算机恢复到还原点备份的节点。</p>
-<p>搜索"创建还原点"——配置——启用系统保护，最大使用量可以在10%内——创建</p>
-<h3 id="_5">添加右键菜单</h3>
-<p><a href="https://github.com/BluePointLilac/ContextMenuManager">右键菜单管理程序</a></p>
-<p><a href="https://segmentfault.com/a/1190000041622181">Gitbash添加到右键菜单</a></p>
-<ol>
-<li>win+R，输regedit进入注册表</li>
-<li>依次进入HKEY_CLASSES_ROOT —-》 Directory —-》Background —-》 shell</li>
-<li>右键点击shell，选择新建，然后选择项，命名为 Git Bash Here，成功后进入桌面右键发现多了 Git Bash Here.</li>
-<li>添加图标：右键点击shell中你刚刚新建的这个项(Git Bash Here)，选择新建，然后选择字符串值，将名称设置为Icon；找到Git的文件夹，我安装在了D盘，D:\Git\mingw64\share\git，进到里面有个git-for-windows.ico；然后将刚刚新建的字符串值的数据设置为D:\Git\mingw64\share\git\git-for-windows.ico</li>
-<li>在 Git Bash Here 下面新建一个项名字为command
-将数据设置成 D:\Git\bin\bash.exe，这个也和你安装Git的路径有关</li>
-</ol>
-<h2 id="windows">Windows 脚本</h2>
-<h3 id="cmd">cmd 终端</h3>
+<h2 id="hci">HCI（主机控制器接口）</h2>
+<p><strong>为主机组件和控制器之间的命令和数据的双向通信提供定义良好的功能接口。</strong></p>
+<p>HCI表示Host与Controller之间的逻辑接口，但不是物理组件。就底层物理传输而言，HCI可以以多种不同的方式实现，但逻辑或功能接口总是相同的。</p>
+<p>值得注意的是，蓝牙LE栈跨越了OSI参考模型的所有层，而许多其他无线系统只跨越了OSI层的一个子集，例如物理层和数据链路层。作为全栈通信系统，蓝牙技术的一个优势是不依赖于其他标准体。这种依赖关系会限制技术的发展。</p>
+<p><img alt="" src="../ast/hci_active_scanning.svg" /></p>
+<h2 id="ll">LL（链路层）</h2>
+<h2 id="phy">PHY（物理层）</h2>
+<h2 id="_3">本篇参考资料</h2>
 <ul>
 <li>
-<p>ipconfig</p>
-<p>ipconfig - 查看类目下可用指令</p>
-<p>ipconfig -all 显示完整详细信息（控制面板可禁用网卡）</p>
+<p><a href="https://www.bluetooth.com/bluetooth-le-primer/">The Bluetooth® Low Energy Primer</a></p>
 </li>
 <li>
-<p>ping</p>
-<p>ping + ip 测试对该地址的网络情况</p>
-<p>ping -a + ip 将地址解析成主机名。（获取IP主机的主机名）</p>
+<p><a href="https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Assigned_Numbers/out/en/Assigned_Numbers.pdf">Assigned Numbers</a></p>
 </li>
 <li>
-<p>where</p>
-<p>where 是 Windows 命令行中的一个工具，用于查找指定文件的路径。它会在当前目录和环境变量 PATH 中搜索匹配的文件，非常适合快速定位可执行文件或调试开发环境。</p>
-</li>
-<li>
-<p>arp -a查看局域网内所有设备</p>
-<p>（物理地址为 ff-ff-ff-ff-ff-ff 的条目是广播地址，不指向真实设备。）</p>
-<p>（224.0.0.0 到 239.255.255.255 的 IP 地址是组播地址，也不是物理设备）</p>
-</li>
-<li>
-<p>tree</p>
-<p>tree 打印当前路径下的文件夹树</p>
-<p>tree /f 打印当前路径下完整树，包含文件和文件夹</p>
+<p><a href="https://blog.csdn.net/yrx020307/article/details/158575041">第一章低功耗蓝牙ble入门（一）-----蓝牙框架和常见概念</a></p>
 </li>
 </ul>
-<h3 id="bat">.bat 批处理脚本</h3>
-<p>在DOS,OS/2和微软Windows操作系统中，批处理文件(batch file)是包含一系列命令的文本文件，由命令解释器解释执行。批处理文件是一种简单的程序，可以通过条件语句(if)和流程控制语句(goto)来控制命令运行的流程，在批处理中也可以使用循环语句(for)来循环执行一条命令。</p>
-<ul>
-<li><strong>@echo off表示执行了这条命令后关闭所有命令(包括本身这条命令)的回显</strong></li>
-<li><strong>如果需要显示中文，请让.bat以ASNI编码保存</strong></li>
-<li><strong>自动息屏，可以设置时间 timeout /t &lt; time &gt;</strong></li>
-</ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@echo<span class="w"> </span>off
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">echo</span><span class="w"> </span>1分钟后自动熄灭屏幕
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>::显示时间
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">echo</span><span class="w"> </span>%time%
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>::延时
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>timeout<span class="w"> </span>/t<span class="w"> </span><span class="m">60</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>::显示时间
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nb">echo</span><span class="w"> </span>%time%
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>::息屏
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>start<span class="w">  </span>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\r</span>undll32.exe<span class="w"> </span>powrprof.dll,SetSuspendState<span class="w"> </span>Hibemate
-</span></code></pre></div>
-<h2 id="windows_1">Windows 工具</h2>
-<h3 id="winget">WinGet</h3>
-<p>Windows 系统的官方支持的软件包管理器 —— Windows 软件包管理器（Windows Package Manager），也就是 WinGet 软件包管理器</p>
-<p>类似linux中的apt（Advanced Packaging Tool），apt是一个在 Debian 和 Ubuntu 中的 Shell 前端软件包管理器。</p>
-<h3 id="preinstallation-environment">Preinstallation Environment</h3>
-<p>维基百科：Windows预先安装环境（Microsoft Windows Preinstallation Environment，简称Windows PE或WinPE）是简化版的Windows XP、Windows Server 2003、Windows Vista、Windows 7、Windows 8、Windows 8.1。WinPE是以光盘或其他可携设备作媒介。WinPE作用是方便大企业作出工作站和服务器的企划、给“原始设备制造商”（OEM）制造自定义的Windows操作系统、替换MS-DOS的磁片。Windows PE可理解为Windows的LiveCD</p>
-<p>简单来说，Windows PE系统就是直接光盘或U盘运行的、功能强大的、精简了的Windows系统。</p>
-<p>使用U盘制作PE系统：<a href="https://github.com/VirtualHotBar/HotPEToolBox">HotPE</a></p>
-<h3 id="sysinternals">Sysinternals</h3>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/sysinternals/">en-us/sysinternals</a></li>
-</ul>
-<h2 id="windows_2">Windows 杂项</h2>
-<h3 id="git-bash-make">Git Bash 添加 make 指令</h3>
-<p><a href="https://www.cnblogs.com/WLCYSYS/p/16715366.html">GIT BASH支持make</a></p>
-<p>git的bash实际上也就是一个mingw，是可以支持部分linux指令的，但是只有少部分。在编译代码的时候经常会使用make命令反而在bash下默认是不支持的。</p>
-<p>当然是有办法可以解决的：</p>
-<p>到 https://sourceforge.net/projects/ezwinports/files/ 去下载 make-4.1-2-without-guile-w32-bin.zip 文件。
-把该文件进行解压把出来的文件全部拷贝的git的安装目录下： . \Program Files\Git\mingw64 ,把文件夹进行合并，如果跳出来需要替换的文件要选择不替换</p>
-<p>这样在git bash窗口下就可以执行make了（编译的时候编译器还是需要另外安装的）</p>
 
 
 

@@ -536,6 +536,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CS2/%E6%9E%AA%E6%B3%95%26%E8%BA%AB%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    枪法&身法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3508,6 +3536,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考资料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%90%86%E8%AE%BA/" class="md-nav__link">
         
   
@@ -4001,7 +4057,9 @@ hard： armhf架构（对应的编译器 arm-linux-gnueabihf-gcc ）采用的默
 <h3 id="03">0.3 编译器特性</h3>
 <p><a href="https://blog.csdn.net/weaiken/article/details/88085360"><strong>attribute</strong> 机制详解</a></p>
 <p>__attribute__实际上是GCC的一种编译器命令，用来指示编译器执行实现某些高级操作。__attribute__可以设置函数属性（Function Attribute）、变量属性（Variable Attribute）和类型属性（Type Attribute）。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">at</span><span class="p">(</span><span class="mh">0x08001000</span><span class="p">)))</span><span class="w"> </span><span class="c1">//MCU中常用于指定变量存放在绝对位置</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">at</span><span class="p">(</span><span class="mh">0x08001000</span><span class="p">)))</span><span class="w"> </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">//MCU中常用于变量指定存放在绝对位置</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">//变量指定的地址只能位于RAM区；常量和代码只能位于Flash区</span>
 </span></code></pre></div>
 <h2 id="1">1. 命名规范</h2>
 <table>

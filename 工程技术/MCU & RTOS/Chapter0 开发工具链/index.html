@@ -536,34 +536,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS2/%E6%9E%AA%E6%B3%95%26%E8%BA%AB%E6%B3%95/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    枪法&身法
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1680,10 +1652,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#segger-rtt-viewer" class="md-nav__link">
+  <a href="#segger-rtt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SEGGER RTT Viewer
+        SEGGER RTT
       
     </span>
   </a>
@@ -2471,34 +2443,6 @@
     
   
     Git
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/npm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Npm
   
 
     
@@ -3947,10 +3891,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#segger-rtt-viewer" class="md-nav__link">
+  <a href="#segger-rtt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SEGGER RTT Viewer
+        SEGGER RTT
       
     </span>
   </a>
@@ -4097,7 +4041,7 @@
 </li>
 </ul>
 <h2 id="3-debug-tools">3. Debug Tools</h2>
-<h3 id="segger-rtt-viewer">SEGGER RTT Viewer</h3>
+<h3 id="segger-rtt">SEGGER RTT</h3>
 <p><a href="https://www.cnblogs.com/snowsad/p/12076740.html">调试备忘录-J-Link RTT的使用（原理 + 教程 + 应用 + 代码）</a></p>
 <p><a href="https://kb.segger.com/RTT">RTT(Real Time Transfer)</a>是一种用于嵌入式中与用户进行交互的I/O技术，它结合了SWO和半主机的优点，具有极高的性能。</p>
 <p>使用RTT可以从MCU非常快速输出调试信息和数据，且不影响MCU实时性。这个功能可以用于很多支持J-Link的设备和MCU，兼容性强。</p>
@@ -4108,6 +4052,13 @@
 <li>文件添加入工程后，在想要用到RTT的文件中包含#include "SEGGER_RTT.h",然后直接调用SEGGER_RTT_printf()即可</li>
 <li>打开J-Link RTT Viewer 选择好你的芯片型号后，点击确认，开始查看打印</li>
 </ol>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//封装为log形式</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#if LOG_ENABLE</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#define log(term, ...) (SEGGER_RTT_SetTerminal(term), SEGGER_RTT_printf(0,__VA_ARGS__))</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#else</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cp">#define log(term, ...) </span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">#endif</span>
+</span></code></pre></div>
 <h3 id="segger-jscope">SEGGER JScope</h3>
 <p><a href="https://blog.csdn.net/qq_23852045/article/details/108837881">调试神器-JScope</a></p>
 <p>J-Scope、可以在目标MCU运行时，实时分析数据并图形化显示的软件。</p>

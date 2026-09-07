@@ -536,34 +536,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS2/%E6%9E%AA%E6%B3%95%26%E8%BA%AB%E6%B3%95/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    枪法&身法
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2463,34 +2435,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/npm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Npm
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/python/" class="md-nav__link">
         
   
@@ -4021,7 +3965,7 @@
 <li>栈/堆空间冲突风险：MCU 内存极小，栈向下生长、堆向上生长，动态分配一不小心就互相覆盖 → 数据被踩烂。</li>
 <li>调试困难：内存泄漏、重复释放、野指针…… 裸机没有工具检测，出问题根本找不到原因</li>
 </ol>
-<p>裸机开发的正确做法：全部使用静态内存 / 预分配内存，这是工业级裸机开发的铁律</p>
+<p>裸机开发的正确做法：全部使用静态内存 / 预分配内存。裸机若要使用malloc，也最好只在系统初始化时申请，程序运行过程不再使用任何动态申请操作</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//1 静态数组</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">uart_rx_buf</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span><span class="c1">//编译时就确定内存，绝对安全</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>

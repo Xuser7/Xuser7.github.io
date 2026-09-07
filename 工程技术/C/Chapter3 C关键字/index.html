@@ -536,34 +536,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../CS2/%E6%9E%AA%E6%B3%95%26%E8%BA%AB%E6%B3%95/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    枪法&身法
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1585,7 +1557,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        结构体面向对象
+        结构体内存对齐
       
     </span>
   </a>
@@ -1594,6 +1566,17 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结构体面向对象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         结构体位域
@@ -2465,34 +2448,6 @@
     
   
     Git
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/npm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Npm
   
 
     
@@ -3988,7 +3943,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        结构体面向对象
+        结构体内存对齐
       
     </span>
   </a>
@@ -3997,6 +3952,17 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结构体面向对象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         结构体位域
@@ -4307,64 +4273,132 @@
 </span></code></pre></div>
 </li>
 </ul>
-<h3 id="_3">结构体面向对象</h3>
+<h3 id="_3">结构体内存对齐</h3>
+<p>结构体内存对齐是指在内存中分配结构体成员变量时，按照一定的规则对齐到特定的地址位置。
+（编译器通过空间换时间，通过适当增加padding，使每个成员的访问都在一个指令里完成，而不需要两次访问再拼接。）</p>
+<p>这种机制可以提高内存访问效率。（CPU按字读取内存。所以内存对齐的话，不会出现某个类型的数据读一半的情况，需要再二次读取内存。可以提升访问效率。）</p>
+<p><a href="https://stackoverflow.com/questions/381244/purpose-of-memory-alignment">Purpose of memory alignment</a></p>
+<ul>
+<li>
+<p>对齐规则</p>
+<ol>
+<li>
+<p>在所有结构体成员的字节长度都没有超出操作系统基本字节单位(32位操作系统是4,64位操作系统是8)的情况下，按照结构体中字节最大的变量长度来对齐； </p>
+</li>
+<li>
+<p>若结构体中某个变量字节超出操作系统基本字节单位，那么就按照系统字节单位来对齐。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>编码规则</p>
+<ol>
+<li>
+<p>协议报文：使用 <code>#pragma pack(1)</code>，但是拷贝数据时不要直接指针强转，建议 memcpy，规避非对齐访问 fault。</p>
+</li>
+<li>
+<p>MCU 内部结构体：尽量大类型放前面，减少 padding，节约 RAM。</p>
+</li>
+<li>
+<p>对接硬件寄存器结构体：<strong>严禁 pack (1)</strong>，硬件寄存器都是硬件对齐好的。</p>
+</li>
+</ol>
+</li>
+</ul>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">//case 1</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kt">char</span><span class="w">  </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">// 1字节</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kt">int</span><span class="w">   </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="c1">// 4字节</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">   </span><span class="c1">// 2字节</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">};</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">// a:0[char] pad:1‑3 填充3字节，总大小凑到最大成员4的倍数</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="c1">// b:4‑7[int]</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="c1">// c:8‑9[short] pad:10‑11 填充2字节，总大小凑到最大成员4的倍数</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="c1">// sizeof(struct A) = 12 Byte</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c1">//case 2</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="k">struct</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="kt">int</span><span class="w">   </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="kt">char</span><span class="w">  </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="p">};</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="c1">// b:0‑3[int]</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="c1">// c:4‑5[short] a:6[char] pad:7 填充1字节，总大小凑到最大成员4的倍数</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="c1">// sizeof(struct B) = 8 Byte</span>
+</span></code></pre></div>
+<p><strong>结构体同样三个变量，顺序改一改，从 12 字节降到 8 字节。</strong></p>
+<p><strong>嵌入式非常看重这点，会手动排布结构体成员减少 RAM 占用。</strong></p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">//#pragma pack 压缩对齐（嵌入式常用）</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#pragma pack(1) </span><span class="c1">// 1字节对齐，不填充</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">};</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="cp">#pragma pack() </span><span class="c1">// 恢复默认</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1">// 没有任何 padding。</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1">// sizeof(struct C) = 5 Byte</span>
+</span></code></pre></div>
+<p><strong>x86 可以访问非对齐地址，只是速度变慢；</strong></p>
+<p><strong>ARM/RISC‑V 很多外设寄存器、DMA，遇到非对齐访问直接 HardFault 死机</strong>。</p>
+<h3 id="_4">结构体面向对象</h3>
 <p>(C结构体)和(C++类)在使用上很类似，结构体甚至可以用面向对象的思想来形容一类对象。结构体具备着面向对象思想中封装的特性，但是它不具备继承和多态的特性，因此大大减少了它的使用频率</p>
 <p><a href="https://www.cnblogs.com/lknlfy/archive/2013/01/06/2848348.html">C语言结构体的“继承”</a></p>
-<h3 id="_4">结构体位域</h3>
+<h3 id="_5">结构体位域</h3>
 <p>位域（bit-field）是一种特殊的结构体成员，允许我们按位对成员进行定义，指定其占用的位数</p>
 <p>在本质上就是一种结构类型，不过其成员是按二进位分配的。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nl">int</span><span class="w">  </span><span class="p">:</span><span class="mi">2</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 该 2 位不能使用 */</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="o">:</span><span class="mi">3</span><span class="p">;</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="o">:</span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span><span class="n">Device</span><span class="p">;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">//上述结构体的值就是status为低1位，隔两位为mode占3位，最高两位temp</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="n">Device</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="n">d</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//1</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">d</span><span class="p">.</span><span class="n">mode</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span><span class="c1">//111 </span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="n">d</span><span class="p">.</span><span class="n">temp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//00</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1">//测试</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="n">prinf</span><span class="p">(</span><span class="s">&quot;%x&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="c1">//0x39=00111001</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nl">int</span><span class="w">  </span><span class="p">:</span><span class="mi">2</span><span class="p">;</span><span class="w">    </span><span class="cm">/* 该 2 位不能使用 */</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="o">:</span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="o">:</span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span><span class="n">Device</span><span class="p">;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1">//上述结构体的值就是status为低1位，隔两位为mode占3位，最高两位temp</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">Device</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="n">d</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="c1">//1</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="n">d</span><span class="p">.</span><span class="n">mode</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span><span class="c1">//111 </span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="n">d</span><span class="p">.</span><span class="n">temp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//00</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="c1">//测试</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="n">prinf</span><span class="p">(</span><span class="s">&quot;%x&quot;</span><span class="p">,</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="c1">//0x39=00111001</span>
 </span></code></pre></div>
 <h2 id="4union">4.union 共用体</h2>
 <p>C语言中一种特殊的数据类型，它允许在同一内存位置存储不同类型的数据，从而节省内存空间。</p>
 <p>union的大小由其最大成员的大小决定，这确保了足够的空间来存储任何可能的成员。</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">union_name</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="n">elemtype1</span><span class="w"> </span><span class="n">member1</span><span class="p">;</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">elemtype2</span><span class="w"> </span><span class="n">member2</span><span class="p">;</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="p">...</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">elemtypen</span><span class="w"> </span><span class="n">membern</span><span class="p">;</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">};</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">union_name</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="n">elemtype1</span><span class="w"> </span><span class="n">member1</span><span class="p">;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">elemtype2</span><span class="w"> </span><span class="n">member2</span><span class="p">;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="n">elemtypen</span><span class="w"> </span><span class="n">membern</span><span class="p">;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">};</span>
 </span></code></pre></div>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">id_card</span><span class="p">{</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="k">struct</span><span class="p">{</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">province_num</span><span class="p">;</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">city_num</span><span class="p">;</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_year</span><span class="p">;</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_month</span><span class="p">;</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_day</span><span class="p">;</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">sequence</span><span class="p">;</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">check_sum</span><span class="p">;</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="p">}</span><span class="n">section</span><span class="p">;</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id_string</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="p">};</span>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="k">union</span><span class="w"> </span><span class="nc">id_card</span><span class="w"> </span><span class="n">xzq_id</span><span class="p">;</span>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">province_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">350</span><span class="p">;</span>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">city_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">321</span><span class="p">;</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span><span class="p">;</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
-</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">sequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span>
-</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">check_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>
-</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;xzq id：%s&quot;</span><span class="p">,</span><span class="n">xzq_id</span><span class="p">.</span><span class="n">id_string</span><span class="p">);</span><span class="c1">//350321123411223310</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">id_card</span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="k">struct</span><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">province_num</span><span class="p">;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">city_num</span><span class="p">;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_year</span><span class="p">;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_month</span><span class="p">;</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">birth_day</span><span class="p">;</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">sequence</span><span class="p">;</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">check_sum</span><span class="p">;</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="p">}</span><span class="n">section</span><span class="p">;</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id_string</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="p">};</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="k">union</span><span class="w"> </span><span class="nc">id_card</span><span class="w"> </span><span class="n">xzq_id</span><span class="p">;</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">province_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">350</span><span class="p">;</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">city_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">321</span><span class="p">;</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span><span class="p">;</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">birth_day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">sequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="n">xzq_id</span><span class="p">.</span><span class="n">section</span><span class="p">.</span><span class="n">check_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;xzq id：%s&quot;</span><span class="p">,</span><span class="n">xzq_id</span><span class="p">.</span><span class="n">id_string</span><span class="p">);</span><span class="c1">//350321123411223310</span>
 </span></code></pre></div>
 
 

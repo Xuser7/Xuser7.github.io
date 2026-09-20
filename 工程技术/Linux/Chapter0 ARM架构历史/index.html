@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Chapter2%20ARM%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/">
+        <link rel="prev" href="../../C/%E7%BB%8F%E9%AA%8C%E7%B4%AF%E7%A7%AF/">
       
       
-        <link rel="next" href="../Chapter4%20Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">
+        <link rel="next" href="../Chapter1%20Linux%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Chapter3 Linux系统移植 - xzqDocs</title>
+        <title>Chapter0 ARM架构历史 - xzqDocs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-u-boot" class="md-skip">
+        <a href="#1" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter3 Linux系统移植
+              Chapter0 ARM架构历史
             
           </span>
         </div>
@@ -1479,6 +1479,326 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter0 ARM架构历史
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter0 ARM架构历史
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 起源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-armv3v4-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ARMv3~v4（经典 32 位 ）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-armv5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ARMv5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-armv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ARMv6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-armv7-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ARMv7（最重要一代 32 位）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-armv8-64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ARMv8（划时代 64 位）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-armv9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ARMv9（新时代处理器）
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter1%20Linux%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter1 Linux操作入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter2%20ARM%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter2 ARM裸机开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter3%20Linux%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter3 Linux系统移植
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter4%20Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter4 Linux驱动开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     
@@ -1493,10 +1813,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
@@ -1514,8 +1834,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1616,14 +1936,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MCU%20%26%20RTOS/Chapter9%20MCU%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../../MCU%20%26%20RTOS/Chapter3%20MCU%E5%AD%98%E5%82%A8%E6%9E%B6%E6%9E%84/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter9 MCU存储架构
+    Chapter3 MCU存储架构
   
 
     
@@ -1644,14 +1964,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MCU%20%26%20RTOS/GUI%E2%80%94LVGL/" class="md-nav__link">
+      <a href="../../MCU%20%26%20RTOS/Chapter9%20%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    GUI—LVGL
+    Chapter9 调试方法
   
 
     
@@ -1749,66 +2069,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MPU & Linux
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    MPU & Linux
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -1816,246 +2076,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chapter1%20Linux%E6%93%8D%E4%BD%9C%E5%85%A5%E9%97%A8/" class="md-nav__link">
+      <a href="../../MCU%20%26%20RTOS/x%E2%80%94LVGL/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter1 Linux操作入门
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter2%20ARM%E8%A3%B8%E6%9C%BA%E5%BC%80%E5%8F%91/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter2 ARM裸机开发
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter3 Linux系统移植
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter3 Linux系统移植
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-u-boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. U-Boot介绍
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. U-Boot介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        环境变量命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        网络操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mmc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MMC设备操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fatext" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAT/EXT 格式文件系统操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        boot操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        其他命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-u-bootmakefile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. U-Boot顶层Makefile
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chapter4%20Linux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter4 Linux驱动开发
+    x—LVGL
   
 
     
@@ -2362,6 +2390,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/VSCode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VSCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/agent/" class="md-nav__link">
         
   
@@ -2426,34 +2482,6 @@
     
   
     Python
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/vscode/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vscode
   
 
     
@@ -2672,14 +2700,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6/Chapter3%20FOC%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6/Chapter3%20PMSM%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter3 FOC控制算法
+    Chapter3 PMSM控制方式
   
 
     
@@ -3784,104 +3812,76 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-u-boot" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. U-Boot介绍
+        1. 起源
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. U-Boot介绍">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        环境变量命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        网络操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mmc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MMC设备操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fatext" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAT/EXT 格式文件系统操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        boot操作命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        其他命令
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-u-bootmakefile" class="md-nav__link">
+  <a href="#2-armv3v4-32" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. U-Boot顶层Makefile
+        2. ARMv3~v4（经典 32 位 ）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-armv5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ARMv5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-armv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ARMv6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-armv7-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. ARMv7（最重要一代 32 位）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-armv8-64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ARMv8（划时代 64 位）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-armv9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. ARMv9（新时代处理器）
       
     </span>
   </a>
@@ -3905,71 +3905,128 @@
 
 
 
-  <h1>Chapter3 Linux系统移植</h1>
+  <h1>Chapter0 ARM架构历史</h1>
 
 <div class="admonition abstract">
-<p class="admonition-title">移植Linux</p>
-<p>在进行 Linux 驱动开发之前肯定需要先将 Linux 系统移植到开发板上去。但和 MCU 上移植 RTOS 不同，Linux 的移植要复杂一些。</p>
-<p>在移植 Linux 之前我们需要先移植一个 bootloader 代码，这个 bootloader 代码用于启动 Linux 内核，bootloader有很多，常用的就是 U-Boot。移植好 U-Boot 以后再移植 Linux 内核，移植完 Linux 内核以后 Linux 还不能正常启动，还需要再移植一个根文件系统(rootfs)，根文件系统里面包含了一些最常用的命令和文件。</p>
-<p>所以 U-Boot、Linux kernel 和 rootfs 这三者一起构成了一个完整的 Linux 系统，一个可以正常使用、功能完善的 Linux 系统。</p>
+<p class="admonition-title">ARM</p>
+<p><strong>ARMvX = 指令集架构 ISA</strong>（规则、指令）；</p>
+<p><strong>ARM9 / Cortex-A7/A55 = 具体内核（微架构实现）</strong>，同一个 v 版本可以有多个内核。</p>
+<p>ARM 商业模式：<strong>不卖芯片，只卖 IP 内核授权</strong>，厂商拿到 IP 自己做 SoC。</p>
 </div>
-<h2 id="1-u-boot">1. U-Boot介绍</h2>
-<p><a href="https://www.cnblogs.com/clnchanpin/p/19393470">U-Boot 深度解析：从原理到实践</a></p>
-<p>U-Boot（Universal Boot Loader）是嵌入式系统领域中最流行、功能最完善的 BootLoader 软件之一. 作为嵌入式 Linux 系统的"引导者", U-Boot 负责在操作系统运行之前完成关键的硬件初始化和系统引导工作. 其名称"Universal"体现了它的设计目标——支持多种架构、多种平台和多种操作系统</p>
-<p>从历史角度看, U-Boot 起源于 2000 年的 PPCBoot 项目, 由德国 DENX 软件工程中心的 Wolfgang Denk 主导开发. 它后来融合了 8xxROM 和 FADSROM 的功能, 逐步发展成为今天支持 ARM、PowerPC、MIPS、x86、RISC-V 等多种处理器架构的"通用"BootLoader. 根据 2023 年嵌入式开源峰会上的数据, U-Boot 项目每年有约 6000 次提交, 拥有约 300 万行 C 代码, 支持超过 21 种 RISC-V 开发板以及大量的 ARM 平台</p>
-<p>在嵌入式系统中, U-Boot 的地位相当于 PC 系统中的 BIOS 或 UEFI. 如同 PC 启动时首先运行 BIOS 一样, 嵌入式系统上电后首先执行 U-Boot. U-Boot 负责初始化处理器、设置时钟、配置内存控制器、检测 DRAM, 然后初始化必要的硬件设备如串口、网络、存储设备等, 最后加载操作系统内核并将控制权转交给内核</p>
-<p>对于一块开发板而言，通常有3种uboot。1 uboot 官方的 uboot 代码：由 uboot 官方维护开发的 uboot 版本，版本更新快，基本包含所有常用的芯片。2 半导体厂商的 uboot 代码：半导体厂商维护的一个 uboot，专门针对自家的芯片，在对自家芯片支持上要比 uboot 官方的好。 3开发板厂商的 uboot 代码：开发板厂商在半导体厂商提供的 uboot 基础上加入了对自家开发板的支持。</p>
-<p>uboot 官方的基本是不会用的，因为支持太弱了。最常用的就是半导体厂商或者开发板厂商的 uboot，如果你用的半导体厂商的评估板，那么就使用半导体厂商的 uboot，如果你是购买的第三方开发板，比如正点原子的 I.MX6ULL 开发板，那么就使用正点原子提供的 uboot 源码（也是在半导体厂商的 uboot 上修改的）。当然了，你也可以在购买了第三方开发板以后使用半导体厂商提供的 uboot，只不过有些外设驱动可能不支持，需要自己移植，这个就是我们常说的 uboot 移植。</p>
-<h3 id="_1">环境变量命令</h3>
+<table>
+<thead>
+<tr>
+<th>架构版本</th>
+<th>发布</th>
+<th>代表内核</th>
+<th>关键特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARMv4</td>
+<td>1993</td>
+<td>ARM7TDMI</td>
+<td>Thumb16 位指令，经典老 MCU</td>
+</tr>
+<tr>
+<td>ARMv5TE</td>
+<td>1998</td>
+<td>ARM968E-S、ARM926EJ-S</td>
+<td>DSP 乘法；968 无 MMU、TCM 硬实时</td>
+</tr>
+<tr>
+<td>ARMv6</td>
+<td>2001</td>
+<td>ARM11</td>
+<td>早期多媒体 SIMD，iPhone 初代</td>
+</tr>
+<tr>
+<td>ARMv7</td>
+<td>2005</td>
+<td>Cortex‑A7/A8/A9、R5、M4</td>
+<td>Thumb2、NEON、VFP；手机 / 工控黄金一代</td>
+</tr>
+<tr>
+<td>ARMv8‑A</td>
+<td>2011</td>
+<td>Cortex‑A53/A55</td>
+<td>64 位 AArch64，兼容 32 位，现代移动端</td>
+</tr>
+<tr>
+<td>ARMv9‑A</td>
+<td>2021</td>
+<td>A710/A715/X 系列</td>
+<td>SVE2、硬件 AI、机密计算，新一代旗舰</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. 起源</h2>
+<p>1985：Acorn 计算机（英国剑桥大学团队）造出<strong>ARM1（ARMv1）</strong>，26 位寻址，原型实验芯片，没有大规模商用，名字含义：<strong>Acorn RISC Machine</strong>。</p>
+<p>1986：ARMv2，增加硬件乘法。</p>
+<p>1990：独立拆分成立 <strong>ARM Ltd</strong>，苹果、VLSI、Acorn 共同出资，转向 IP 授权模式。</p>
+<h2 id="2-armv3v4-32">2. ARMv3~v4（经典 32 位 ）</h2>
 <ul>
-<li>查看支持的命令 help / ? </li>
-<li>打印环境变量 print </li>
-<li>修改（包括新建与删除）环境变量 setenv</li>
-<li>保存环境变量 saveenv</li>
+<li>
+<p>ARMv3：<strong>完整 32 位寻址空间 + MMU</strong>，支持 4GB 地址，ARM6/ARM8 内核。</p>
+</li>
+<li>
+<p>ARMv4（1993）里程碑：加入 <strong>Thumb 16 位压缩指令集</strong>，代码体积减半。</p>
+</li>
 </ul>
-<h3 id="_2">内存操作命令</h3>
+<blockquote>
+<p>TDMI 含义：T=Thumb、D=Debug、M = 乘法、I=ICE 在线调试。
+  - 代表内核：<strong>ARM7TDMI</strong>（嵌入式圣经，大量工业、老 MCU）</p>
+</blockquote>
+<h2 id="3-armv5">3. ARMv5</h2>
+<p><strong>ARMv5TE</strong>，重点新增：DSP 增强乘法指令、Jazelle Java 硬件加速。</p>
+<blockquote>
+<p>✅ <strong>ARM968E-S 就是 ARMv5TE</strong>！</p>
+</blockquote>
 <ul>
-<li>查看内存地址值 md[.b, .w, .l] address [# of objects] </li>
-<li>修改内存地址值 nm [.b, .w, .l] address </li>
-<li>拷贝数据值 cp [.b, .w, .l] source target count </li>
-<li>比较内存数据是否相等 cmp [.b, .w, .l] addr1 addr2 count </li>
+<li>ARM9 分两类：</li>
+<li>ARM926EJ-S：带 MMU+Cache，可以跑 Linux</li>
+<li>ARM968E-S：<strong>无 MMU，无 Cache，靠 ITCM/DTCM 紧耦合内存，硬实时</strong>（电机、传感器闭环控制，你前面看的触觉传感器可用）</li>
 </ul>
-<h3 id="_3">网络操作命令</h3>
+<blockquote>
+<p>ARM9 系列大量工业设备、早期车载、MP3 使用，2000 年代出货爆炸。</p>
+</blockquote>
+<h2 id="4-armv6">4. ARMv6</h2>
+<p>增加：SIMD 多媒体指令、Thumb-2 雏形、多核支持。
+代表内核：<strong>ARM11</strong>（初代 iPhone、早期智能手机）。</p>
+<blockquote>
+<p>很少新项目使用，属于过渡一代。</p>
+</blockquote>
+<h2 id="5-armv7-32">5. ARMv7（最重要一代 32 位）</h2>
+<p>ARM 放弃 “ARMX” 命名，全新<strong>Cortex 品牌</strong>，分成 3 条产品线：</p>
 <ul>
-<li>查看是否与ip地址建立连接 ping ip_address</li>
-<li>从路由器获取ip地址 dhcp</li>
-<li>通过nfs传输 nfs [loadAddress] [[hostIPaddr:]filename] </li>
-<li>通过tftp传输 tftp [loadAddress] [filename] </li>
+<li><strong>Cortex‑A：应用核，带 MMU，跑 Linux / 安卓</strong>
+A8、A9、<strong>A7</strong>（ARMv7-A，32 位，VFP 浮点 + NEON）</li>
+<li><strong>Cortex‑R：实时核，高确定性，用于汽车、电机、硬盘控制器</strong>（R4/R5/R7）</li>
+<li><strong>Cortex‑M：超低功耗 MCU，MPU 无 MMU，RTOS / 裸机</strong>（M3/M4/M0+）</li>
 </ul>
-<h3 id="mmc">MMC设备操作命令</h3>
+<p>v7 关键特性：<strong>Thumb2 混合 16/32 位指令集、NEON 向量 SIMD、VFP 硬件浮点、TrustZone 安全扩展</strong>。</p>
+<blockquote>
+<p>安卓手机、大量工控 SoC 全是 ARMv7，至今存量巨大。</p>
+</blockquote>
+<h2 id="6-armv8-64">6. ARMv8（划时代 64 位）</h2>
+<p><strong>ARMv8-A：AArch64（全新 64 位指令集） + AArch32（兼容老 32 位 v7 代码）</strong></p>
 <ul>
-<li>输出当前选中的mmc设备的信息 mmc info</li>
-<li>扫描当前开发板上所有的MMC 设备 mmc rescan </li>
-<li>来查看当前开发板一共有几个MMC设备 mmc list</li>
-<li>切换当前选中的mmc设备 mmc dev</li>
-<li>查看mmc设备分区 mmc part</li>
-<li>写MMC设备 mmc write</li>
-<li>擦除MMC设备 mmc erase</li>
+<li>2013 苹果 A7（iPhone5s）全球首款商用 64 位 ARM 芯片，引爆移动市场。</li>
+<li>代表内核：Cortex‑A53、<strong>Cortex‑A55</strong>（大小核主力，车载、边缘网关、轻薄本）</li>
+<li>新增：FP16、Crypto 加密、SVE 向量，支持服务器级高性能计算。</li>
 </ul>
-<h3 id="fatext">FAT/EXT 格式文件系统操作命令</h3>
+<blockquote>
+<p>注意：A55 依然可以运行 32 位程序，但原生是 64 位架构。</p>
+</blockquote>
+<h2 id="7-armv9">7. ARMv9（新时代处理器）</h2>
+<p>在 v8 基础上升级，重点：</p>
 <ul>
-<li>查看MMC设备某个分区的文件系统格式 fstype</li>
-<li>查询FAT/EXT格式设备的目录和文件信息 fatls ext2ls ext4ls</li>
-<li>将指定的文件读取到DRAM fatload ext2load ext4load</li>
+<li>SVE2 向量（AI、DSP 信号处理）</li>
+<li>CCA 机密计算架构，硬件级安全隔离</li>
+<li>更强安全、虚拟化、机器学习指令
+代表：Cortex-A710/A715/A720、Cortex-X 超大性能核，手机、车载、云服务器。</li>
 </ul>
-<h3 id="boot">boot操作命令</h3>
-<ul>
-<li>启动zImage镜像文件 bootz</li>
-<li>启动uImage镜像文件 bootm</li>
-<li>读取环境变量bootcm来启动(运行bootcm脚本启动) boot </li>
-</ul>
-<h3 id="_4">其他命令</h3>
-<ul>
-<li>可复位重启 reset</li>
-<li>跳到指定的地址处执行应用 go addr [arg ...] </li>
-<li>于运行环境变量中定义的命令(运行自定义脚本) run</li>
-</ul>
-<h2 id="2-u-bootmakefile">2. U-Boot顶层Makefile</h2>
 
 
 

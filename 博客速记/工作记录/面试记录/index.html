@@ -1254,17 +1254,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2408" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2408 忘记了——嵌软开
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#2408-h3c" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3270,6 +3259,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/Chapter6%20%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter6 图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/chapter1%20%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
         
   
@@ -3845,17 +3862,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2408" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2408 忘记了——嵌软开
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#2408-h3c" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3946,6 +3952,9 @@
 <p>信号量，消息队列，邮箱，事件组。</p>
 </li>
 <li>
+<p><strong>线程间同步的方式？</strong></p>
+</li>
+<li>
 <p><strong>在串口中断中需要线程通信，FreeRTOS如何实现？</strong></p>
 <ol>
 <li>开启串口的接收中断（UART_IT_RXNE）和空闲中断（UART_IT_IDLE）
@@ -3954,27 +3963,6 @@
 <li>每当接收中断时（即接收一个字符），将获取的字符送入消息队列 xQueueSendFromISR</li>
 <li>当完成一个串口传输时（即本次传输完成），释放信号（通知任务传输完成）xSemaphoreGiveFromISR</li>
 </ol>
-</li>
-</ul>
-<h2 id="2408">2408 忘记了——嵌软开</h2>
-<ul>
-<li>
-<p><strong>什么是野指针？野指针是怎么产生的？</strong></p>
-<p>野指针就是指针指向的位置不可知。（随机的、不正确的、没有明确限制的）</p>
-<p>指针未定义，未初始化。默认随机值</p>
-<p>指针越界访问</p>
-<p>指针指向的空间被释放</p>
-</li>
-<li>
-<p><strong>线程间同步的方式？</strong></p>
-<p>信号量，互斥量，临界区，事件。</p>
-<p>线程间同步与线程间通信的区别：</p>
-<p>线程间通信的目的是交换信息、数据和事件；
-而线程间同步的目的是控制线程的执行顺序和资源的访问顺序。
-虽然有些机制（如信号量和事件）既可以用于通信也可以用于同步，但它们的侧重点和使用方式有所不同。
-例如，信号量在同步中主要用于控制资源的访问，而在通信中则可能用于传递简单的信号或事件信息。</p>
-<p>线程间通信和同步往往是相辅相成的。在多线程编程中，线程之间既需要交换信息以实现协作，又需要同步以确保资源的正确访问和线程的有序执行。</p>
-<p>共同目标：它们的共同目标是提高程序的并发性和可靠性，确保多线程程序能够正确、高效地运行。</p>
 </li>
 </ul>
 <h2 id="2408-h3c">2408 H3C——外包嵌软开</h2>

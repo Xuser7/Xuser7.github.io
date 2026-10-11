@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter6" class="md-skip">
+        <a href="#chapter7" class="md-skip">
           跳转至
         </a>
       
@@ -3150,6 +3150,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Chapter6%20%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter6 图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../chapter1%20%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
         
   
@@ -3344,17 +3372,6 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#chapter6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chapter6 图
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#chapter7" class="md-nav__link">
@@ -3768,17 +3785,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chapter6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chapter6 图
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#chapter7" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3819,44 +3825,6 @@
 
   <h1>数据结构与算法</h1>
 
-<h2 id="chapter6">Chapter6 图</h2>
-<ul>
-<li>
-<p>图的存储</p>
-<div class="language-text highlight"><pre><span></span><code>邻接矩阵与邻接表存储
-</code></pre></div>
-</li>
-<li>
-<p>有向图的拓扑排序</p>
-<div class="language-text highlight"><pre><span></span><code>1找到入度为0的顶点，该点指向的其他点入度减一（擦去指向）
-2这些入度减一（擦去指向）的顶点中，选取入度为0的顶点
-重复，直到找不到入度为0的顶点。
-</code></pre></div>
-</li>
-<li>
-<p>图的遍历</p>
-<div class="language-text highlight"><pre><span></span><code>深度优先DFS：从一个节点开始，向下层遍历，直到无法向下，回退至可向下遍历的点，直到所有节点被访问
-
-广度优先BFS：从一个节点开始，遍历它的所有邻接点，再从第一个邻接点开始，如此循环
-</code></pre></div>
-</li>
-<li>
-<p>最小生成树（不唯一）</p>
-<div class="language-text highlight"><pre><span></span><code>Prim求最小生成树(顶点开始发散)
-
-    1从顶点开始，选取权值最小的边，最小边顶点加入生成树。
-    2再寻找生成树内权值最小的边，最小边顶点加入生成树，循环。
-
-Kruskal求最小生成树（加入最小边）
-
-    1将所有的边按照权值从小到大排序
-    2依次将边从小到大加入生成树
-    3若加入的边使树形成回路，则舍去
-    直至所有定点加入生成树
-</code></pre></div>
-</li>
-</ul>
-<hr />
 <h2 id="chapter7">Chapter7 查找算法</h2>
 <ul>
 <li>

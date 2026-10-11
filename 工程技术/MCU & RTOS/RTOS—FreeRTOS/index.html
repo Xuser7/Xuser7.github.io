@@ -3792,6 +3792,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/Chapter6%20%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter6 图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/chapter1%20%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
         
   
@@ -4953,7 +4981,10 @@
 
 <div class="admonition abstract">
 <p class="admonition-title"><a href="https://www.freertos.org/zh-cn-cmn-s">FreeRTOS</a></p>
-<p>FreeRTOS 是 开源 的实时操作系统（Real-time operating system, RTOS）</p>
+<p>FreeRTOS 是开源的实时操作系统（Real-time operating system, RTOS）</p>
+<p>RTOS 的意义在于 —— 多线程，同步与互斥主要用于解决多线程产生的资源竞争问题</p>
+<p>譬如通过全局变量来实现信息共享。不过这种便捷的共享是有代价的，必须确保多个线程不会同时修改同一变量、或者某一线程不会读取正由其它线程修改的变量，也就是必须确保不会出现对共享资源的并发访问。</p>
+<p>RTOS场景：试想一下，某段程序是外部中断触发的，但该函数处理耗时非常长，我们又希望中断产生时，服务函数的响应时间尽可能地短。按照裸机的编写思维，首先该函数肯定不能放在中断服务函数里运行，不满足快进快出。其次裸机的程序是串行运行的，该函数较长运行时间肯定会影响后面排队函数的响应时间。那么此时多线程的RTOS就显得极为重要。</p>
 <ul>
 <li>
 <p>RAM资源占用</p>
@@ -5391,12 +5422,18 @@
 </span></code></pre></div>
 <h3 id="_11">互斥信号量</h3>
 <p>互斥锁是包含优先级继承机制的二进制信号量。 二进制信号量能更好实现实现同步（任务间或任务与中断之间）， 而互斥锁有助于更好实现简单互斥（即相互排斥）。</p>
-<p>优先级继承算法是指：<mark>暂时提高某个占有某种资源的低优先级任务的优先级，使之与在所有等待该资源的任务中优先级最高那个任务的优先级相等，而当这个低优先级任务执行完毕释放该资源时，优先级重新回到初始设定值。因此，继承优先级的任务避免了系统资源被任何中 间优先级的任务抢占。（例如：低优先级持有资源，高优先级任务等待资源释放进入阻塞态，中途出现中等优先级唤醒低优先级释放资源，抢夺了高优先级任务的位置）</p>
 <p>用于互斥时， 互斥锁就像用于保护资源的令牌。 任务希望访问资源时，必须首先 获取 ('take') 令牌。 使用资源后，必须“返回”令牌，这样其他任务就有机会访问 相同的资源。</p>
+<p>优先级继承是指：<mark>暂时提高某个占有某种资源的低优先级任务的优先级，使之与在所有等待该资源的任务中优先级最高那个任务的优先级相等，而当这个低优先级任务执行完毕释放该资源时，优先级重新回到初始设定值。因此，继承优先级的任务避免了系统资源被任何中 间优先级的任务抢占。（例如：低优先级持有资源，高优先级任务等待资源释放进入阻塞态，中途出现中等优先级唤醒低优先级释放资源，抢夺了高优先级任务的位置）</p>
+<p><a href="https://zhuanlan.zhihu.com/p/1936715713097233673">火星上出现的优先级反转</a></p>
+<p><img alt="" src="../ast/%E4%BC%98%E5%85%88%E7%BA%A7%E7%BB%A7%E6%89%BF.jpg" /></p>
 <p>不应在中断中使用互斥锁，因为：</p>
 <ul>
-<li>互斥锁使用的优先级继承机制要求 从任务中（而不是从中断中）拿走和放入互斥锁。</li>
-<li>中断无法保持阻塞来等待一个被互斥锁保护的资源 由互斥锁保护的资源变为可用</li>
+<li>
+<p>互斥锁使用的优先级继承机制要求 从任务中（而不是从中断中）拿走和放入互斥锁。</p>
+</li>
+<li>
+<p>中断无法保持阻塞来等待一个被互斥锁保护的资源 由互斥锁保护的资源变为可用</p>
+</li>
 </ul>
 <div class="language-C highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">//创建互斥量</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">SemaphoreHandle_t</span><span class="w"> </span><span class="n">xSemaphoreCreateMutex</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">)</span>
@@ -5911,7 +5948,8 @@
 <p><mark> 自 FreeRTOS V8.2.0  起可用  自 V10.4.0 起支持单任务多条通知</p>
 <p>每个任务都有一个 32 位的通知 值，在大多数情况下，任务通知可以替代二值信号量、计数信号量、事件组，也可以替代长度为 1 的队列（可以保存一个32位整数或指针值）。</p>
 <p>相对于以前使用 FreeRTOS 内核通信的资源，必须创建队列、二进制信号量、计数信 号量或事件组的情况，使用任务通知显然更灵活。</p>
-<p>使用任务 通知比通过信号量等 ICP 通信方式解除阻塞的任务要快 45%，并且更加省 RAM 内存空间 （使用 GCC 编译器，-o2 优化级别），任务通知的使用无需创建队列。想要使用任务通知， 必须将 FreeRTOSConfig.h 中的宏定义 configUSE_TASK_NOTIFICATIONS 设置为 1，其实 FreeRTOS 默认是为 1 的，所以任务通知是默认使能的。</p>
+<p>使用任务 通知比通过信号量等 ICP 通信方式解除阻塞的任务要快 45%，并且更加省 RAM 内存空间 （使用 GCC 编译器，-o2 优化级别），任务通知的使用无需创建队列。</p>
+<p>想要使用任务通知， 必须将 FreeRTOSConfig.h 中的宏定义 configUSE_TASK_NOTIFICATIONS 设置为 1，其实 FreeRTOS 默认是为 1 的，所以任务通知是默认使能的。</p>
 <ul>
 <li>
 <p>FreeRTOS 提供以下几种方式发送通知给任务 ：</p>

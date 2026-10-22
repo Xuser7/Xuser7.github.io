@@ -2179,6 +2179,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CAN 通信协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN物理层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN数据链路层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmanda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非破坏性逐位仲裁(CSMA/NDA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN错误检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3586,14 +3636,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/Chapter6%20%E5%9B%BE/" class="md-nav__link">
+      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/Chapter7%20%E6%9F%A5%E6%89%BE/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter6 图
+    Chapter7 查找
   
 
     
@@ -3734,6 +3784,34 @@
     
   
     Chapter5 树与二叉树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E8%AE%A1%E7%A7%91%E7%90%86%E8%AE%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/chapter6%20%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter6 图
   
 
     
@@ -4519,6 +4597,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CAN 通信协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN物理层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN数据链路层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmanda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非破坏性逐位仲裁(CSMA/NDA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN错误检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4824,7 +4952,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p><a href="https://github.com/murphyzhao/FlexibleButton">murphyzhao-FlexibleButton</a></p>
 <p>MultiButton与FlexibleButton：通过阅读源码可以发现，MultiButton与FlexibleButton架构类似，都是 轮询+状态机 识别按键状态，通过 扫描-设置事件-触发对应事件callback，并不存在架构上的区别，只不过FlexibleButton代码看起来更精简一些</p>
 <p><mark>另外附上个人总结出来的，一套按键扫描与处理流程，处理思想</p>
-<p>0/1 bitmap 全按键键值位图 + 键值事件判断状态机 + 事件缓存消息队列 + 取队列执行对应回调函数</p>
+<p><mark>0/1 bitmap 全按键键值位图 + 键值事件判断状态机 + 事件缓存消息队列 + 取队列执行对应回调函数</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;keyscan.h&quot;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">#define KEY_NUM             2 </span><span class="c1">// 按键实例总数量</span>
@@ -5977,9 +6105,112 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <h3 id="can">CAN 通信协议</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>半双工：双数据线CANH，CANL，但为差分信号（相同信号），故为半双工（收发无法同时进行只能选其一）</p>
+<p>半双工：双数据线CANH，CANL，但为差分信号，故为半双工（收发无法同时进行只能选其一）</p>
 <p>异步：无同步时钟线CLK，故为异步信号，差分信号，双绞线抗干扰，数据稳定、可靠。</p>
+<p>网络拓扑：多主，任意节点随时发报文（按 ID 优先级）</p>
+<p>硬件仲裁：非破坏性位仲裁，优先级高的报文自动抢占，低优先级自动退避</p>
+<p>错误检测：内置位错误、填充错误、CRC 错误、ACK 错误、格式错误；可自动重发、错误计数、节点离线保护</p>
 </div>
+<p><a href="https://www.cnblogs.com/fuzidage/p/18210385">CAN总线协议和应用示例</a></p>
+<h4 id="can_1">CAN物理层</h4>
+<p>双线差分信号：CAN_H、CAN_L</p>
+<ul>
+<li>
+<p>隐性电平 (1)：CAN_H≈2.5V，CAN_L≈2.5V，差分≈0V；多个节点发隐性，总线保持隐性。</p>
+</li>
+<li>
+<p>显性电平 (0)：CAN_H 拉高、CAN_L 拉低，差分＞0.9V；<strong>只要任意一个节点输出显性，总线就变成显性。0（显性）覆盖 1（隐性）</strong>。</p>
+</li>
+<li>
+<p>终端电阻：总线两端各 120Ω，中间节点不加，匹配阻抗减少信号反射。</p>
+</li>
+</ul>
+<h4 id="can_2">CAN数据链路层</h4>
+<p>CAN帧分为：<strong>数据帧</strong>、远程帧、错误帧、过载帧、间隔帧</p>
+<p>数据帧主要字段：<code>SOF(帧起始) → 仲裁场 → 控制场 → 数据场 → CRC场 → ACK场 → EOF帧结束</code></p>
+<ul>
+<li>
+<p>仲裁场：<strong>11 位 ID（标准帧）/29 位 ID（扩展帧） + RTR 远程请求位</strong>（<strong>仲裁只在仲裁场执行</strong>，进入数据段后不再仲裁。）</p>
+</li>
+<li>
+<p>RTR 位：0 = 数据帧（显性，优先级更高）；1 = 远程帧（隐性）。</p>
+</li>
+<li>
+<p>CRC：硬件自动计算校验。</p>
+</li>
+</ul>
+<h4 id="csmanda">非破坏性逐位仲裁(CSMA/NDA)</h4>
+<ul>
+<li>
+<p>逐位仲裁：<strong>ID 数值越小，二进制高位 0 越多 → 优先级越高。</strong> 高位优先比较，高位更早出现 0，更容易抢占总线。(例：ID 0x01 优先级 &gt; ID 0x02) ；多节点同时竞争也没问题，逐位比较，优先级最低的逐个退出，最后只剩最高优先级节点继续发送</p>
+</li>
+<li>
+<p>非破坏性：仲裁赢家的报文从头到尾没有被打断，没有重传开销，这是和以太网 CSMA/CD 最大区别。以太网一旦冲突，两边都要停发，等待随机时间重发。</p>
+</li>
+<li>
+<p>仲裁实现原理：<strong>多个节点同时发隐性，总线还是隐性</strong>。<strong>只要有任意一个节点发显性，总线就强制变成显性</strong>。</p>
+</li>
+<li>
+<p>仲裁流程举例（两个节点同时开始发）：</p>
+<p>节点 A：ID = <code>0x10</code>（二进制 <code>0001 0000 000</code>）优先级高</p>
+<p>节点 B：ID = <code>0x20</code>（二进制 <code>0010 0000 000</code>）优先级低</p>
+<p>1.两个节点先监听总线，总线空闲，同时开始发送报文</p>
+<p>2.从 ID 最高位开始，一边发，一边回读总线电平（节点发出去什么，同时采样总线）</p>
+<ul>
+<li>bit10：A 发 0，B 发 0 → 总线 0，两边读到 0，继续</li>
+<li>bit9：A 发 0，B 发 0 → 总线 0，两边读到 0，继续</li>
+<li>bit8：A 发 0，B 发 1<ul>
+<li>A 输出 0（显性），B 输出 1（隐性）</li>
+<li>总线被 A 拉成显性 0</li>
+<li>B：我发的是 1，但总线读到是 0 → 仲裁失败！</li>
+</ul>
+</li>
+</ul>
+<p>3.B 立刻停止发送，关闭发送驱动器，退出本次竞争，转为只接收；A 不受影响，继续完整发送剩下所有比特。</p>
+<p>4.B 等待总线空闲后，再重新尝试发送。</p>
+</li>
+<li>
+<p>仲裁的局限</p>
+<p>1.低优先级报文可能被饿死：持续高优先级报文占用总线，低优先级永远抢不到总线，工程需要 ID 规划、总线负载调度。</p>
+<p>2.仲裁只在 ID 段（仲裁场）生效，一旦过了 ID+RTR 位，进入控制场、数据场，就不再仲裁。如果后面出现电平冲突，直接判定为错误，发送错误帧。</p>
+</li>
+</ul>
+<h4 id="can_3">CAN错误检测</h4>
+<p>CAN 控制器硬件自动完成错误检测，<strong>软件不需要手动校验</strong>；检测到错误后，节点会主动发送<strong>错误帧</strong>通知总线上所有节点。</p>
+<ul>
+<li>
+<p>一、错误类型</p>
+<p>1.位错误（Bit Error）：节点发送比特的同时采样总线，如果发送的值和读到的总线值不一致 → 位错误。</p>
+<p>例：自己发 0，总线读到 1 → 位错误。</p>
+<p>例外：仲裁段发送隐性（1）读到显性（0）属于<strong>仲裁失败</strong>，不算位错误。</p>
+<hr />
+<p>2.位填充错误（Stuff Error）：CAN 规定：<strong>连续 5 个相同电平之后，必须插入 1 个相反电平的填充位</strong>。接收方检测：如果收到连续 6 个相同比特，判定填充错误。</p>
+<p>目的：保证总线上有足够跳变沿，用于同步时钟。</p>
+<hr />
+<p>3.CRC 错误（CRC Error）:发送方根据数据场计算 CRC 校验序列，放在 CRC 场。接收方接收完数据，重新计算 CRC，和收到的 CRC 不匹配 → CRC 错误。</p>
+<hr />
+<p>4.ACK 错误（ACK Error）发送节点发送完 CRC 场后，进入 ACK 时隙：发送节点在此位发隐性 1；<strong>任意接收正确的节点，会把 ACK 位拉成显性 0 做应答</strong>。发送方采样 ACK 位仍然是隐性，没有收到应答 → ACK 错误。</p>
+<hr />
+<p>5.格式错误（Form Error）:帧中固定保留位（EOF、ACK、控制场等）出现非法电平。这些位置是协议规定固定电平，一旦不符合规范，判定格式错误。</p>
+<hr />
+</li>
+<li>
+<p>二、错误帧（Error Frame）</p>
+<p>检测到错误的节点，立刻中止当前帧，发送<strong>错误帧</strong>，通知全部节点。发送错误帧会破坏正在传输的报文，报文需要重传。</p>
+<p>错误帧由两部分组成：</p>
+<p><strong>错误标志段</strong>：（主动错误：6 个连续显性位 被动错误：6 个连续隐性位）</p>
+<p><strong>错误界定符</strong>：8 个连续隐性位。</p>
+</li>
+<li>
+<p>三、错误计数器 &amp; 节点状态（核心故障隔离机制）</p>
+<p>每个 CAN 节点内部维护两个计数器：检测到错误，计数器 +；成功发送 / 接收一帧，计数器减。</p>
+<p><strong>TEC：发送错误计数器</strong></p>
+<p><strong>REC：接收错误计数器</strong></p>
+<p><strong>主动错误状态（Error Active）</strong>：TEC、REC 都＜128，正常工作；出错时发送主动错误标志（6 个显性）</p>
+<p><strong>被动错误状态（Error Passive）</strong>:TEC ≥ 128 或 REC ≥ 128，还能收发报文；出错只能发被动错误标志（6 个隐性），不会强行拉坏总线。</p>
+<p><strong>总线离线（Bus-Off）</strong>：TEC ≥256，关闭发送功能，不再往总线发任何东西，只监听。（作用：故障节点自动把自己从总线隔离，<strong>不会拖垮整条 CAN 网络</strong>，这是 CAN 最大优势。）</p>
+</li>
+</ul>
 <h3 id="usb">USB 通信协议</h3>
 <ol>
 <li>

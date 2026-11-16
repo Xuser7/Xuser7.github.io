@@ -2131,14 +2131,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MCU%20%26%20RTOS/Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../../MCU%20%26%20RTOS/Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter2 状态机软件架构
+    Chapter2 状态机&事件驱动
   
 
     
@@ -4387,13 +4387,13 @@
 <p>注意这里的ARM裸机指的是可以运行Linux操作系统的ARM架构，MCU常见的也是ARM架构（也有RISC-V等等架构），如何区架构能不能运行Linux呢？————看芯片架构是否存在MMU（memory management unit）单元。MMU的存在使得Linux可以运行在处理器上。例如MCU常见内核为Cortex-M，不带MMU；MPU、SoC常见内核为Cortex-A，带MMU。</p>
 <hr />
 <p>从ARM裸机开发入手，而非ARM移植Linux下开发，原因如下。</p>
-<p>1、裸机开发是了解所使用的 CPU 最直接、最简单的方法，比如 I.MX6U，跟STM32一样，裸机开发是直接操作 CPU 的寄存器。Linux 驱动开发最终也是操作的寄存器，但是在操作寄存器之前要先编写一个符合 Linux 驱动的框架。同样一个点灯驱动，裸机可能只需要十几行代码，但是 Linux 下的驱动就需要几十行代码。</p>
+<p>1、裸机开发是了解所使用的 CPU 最直接、最简单的方法，比如 I.MX6U 的裸机开发跟 STM32 一样，是直接操作 CPU 的寄存器。Linux 驱动开发最终也是操作的寄存器，但是在操作寄存器之前要先编写一个符合 Linux 驱动的框架。由于移植Linux相比于移植RTOS是复杂得多的，所以先通过最直接的寄存器操作进行开发</p>
 <p>2、大部分Linux驱动初学者都是从MCU转过来的，Linux驱动开发和MCU开发区别很大，比如没有 MDK、IAR 这样的集成开发环境，需要我们自己在Ubuntu下搭建交叉编译环境。直接上手Linux驱动开发可能会因为较大的差异而无从下手。</p>
 <p>3、裸机开发是连接 Cortex-M 单片机和 Cortex-A 处理器的桥梁，通过ARM裸机开发也可以反哺MCU，掌握很多集成开发环境没有告诉你的“干货”。</p>
 <hr />
-<p>MCU(STM32、GD32、ESP32)：控制为主，CortexM 或 RISC-V。CPU 核心 + 小容量 RAM/ROM + 常用外设 全部集成在一颗芯片上，无需外接核心元器件即可工作。 bearmental / RTOS</p>
+<p>MCU(STM32、GD32、ESP32)：控制为主，CortexM 或 RISC-V。CPU 核心 + 小容量 RAM/ROM + 常用外设 全部集成在一颗芯片上，无需外接核心元器件即可工作</p>
 <p>MPU(STM32MP1、NXP i.MX6ULL)：运算为主，Cortex‑A 带 MMU。单纯的 CPU 核心，只负责数据运算，没有内置 RAM、ROM、外设，必须外接内存（DDR）、存储（Flash/EMMC）、外设芯片（如网卡、串口）才能工作。</p>
-<p>SoC(RV1106、RK3566、RK3588、H618)：芯片上集成完整系统（片上系统）。高度集成的芯片，把 多核CPU + GPU + NPU + 内存控制器 + 存储控制器 + 通信模块（WiFi / 蓝牙 / 4G/5G） + 外设（USB/HDMI） 等整个系统的核心元器件全部集成在一颗芯片上，跑 Linux/Android</p>
+<p>SoC(RV1106、RK3566、RK3588、H618)：芯片上集成完整系统（片上系统）。高度集成的芯片，把 多核CPU + GPU + NPU + 内存控制器 + 存储控制器 + 通信模块（WiFi / 蓝牙 / 4G/5G） + 外设（USB/HDMI） 等整个系统的核心元器件全部集成在一颗芯片上</p>
 </div>
 <h2 id="1">1. 交叉编译工具链</h2>
 <p>交叉编译器 是一种在 主机平台（X86架构等主流架构）上运行，但用于生成 目标平台（如 ARM、MIPS 等架构）可执行文件的编译工具。</p>

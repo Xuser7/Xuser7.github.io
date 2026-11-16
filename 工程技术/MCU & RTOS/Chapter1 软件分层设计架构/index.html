@@ -12,7 +12,7 @@
         <link rel="prev" href="../Chapter0%20%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E9%93%BE/">
       
       
-        <link rel="next" href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/">
+        <link rel="next" href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
       
       
         
@@ -2205,10 +2205,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#csmanda" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        非破坏性逐位仲裁(CSMA/NDA)
+        非破坏性逐位仲裁
       
     </span>
   </a>
@@ -2220,6 +2220,17 @@
     <span class="md-ellipsis">
       
         CAN错误检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN参考资料
       
     </span>
   </a>
@@ -2248,7 +2259,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -2274,14 +2285,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter2 状态机软件架构
+    Chapter2 状态机&事件驱动
   
 
     
@@ -4595,10 +4606,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#csmanda" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        非破坏性逐位仲裁(CSMA/NDA)
+        非破坏性逐位仲裁
       
     </span>
   </a>
@@ -4610,6 +4621,17 @@
     <span class="md-ellipsis">
       
         CAN错误检测
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN参考资料
       
     </span>
   </a>
@@ -4638,7 +4660,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         参考资料
@@ -6073,6 +6095,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p class="admonition-title">Serial Peripheral interface</p>
 <p>全双工：双数据线，MOSI（Master Out Slave In），MISO（Master In Slave Out），故为全双工（收发同时进行）</p>
 <p>同步：有同步时钟线CLK，故为同步信号，数据传输稳定、可靠。</p>
+<p>分为标准CAN与CANFD，标准CAN只支持8字节数据，CANFD支持64字节数据并且支持更高通信速率</p>
 </div>
 <h3 id="can">CAN 通信协议</h3>
 <div class="admonition note">
@@ -6098,7 +6121,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 </li>
 </ul>
 <h4 id="can_2">CAN数据链路层</h4>
-<p>CAN帧分为：<strong>数据帧</strong>、远程帧、错误帧、过载帧、间隔帧</p>
+<p>CAN帧分为：数据帧、远程帧、错误帧、过载帧、间隔帧</p>
 <p>数据帧主要字段：<code>SOF(帧起始) → 仲裁场 → 控制场 → 数据场 → CRC场 → ACK场 → EOF帧结束</code></p>
 <ul>
 <li>
@@ -6111,7 +6134,7 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p>CRC：硬件自动计算校验。</p>
 </li>
 </ul>
-<h4 id="csmanda">非破坏性逐位仲裁(CSMA/NDA)</h4>
+<h4 id="_1">非破坏性逐位仲裁</h4>
 <ul>
 <li>
 <p>逐位仲裁：<strong>ID 数值越小，二进制高位 0 越多 → 优先级越高。</strong> 高位优先比较，高位更早出现 0，更容易抢占总线。(例：ID 0x01 优先级 &gt; ID 0x02) ；多节点同时竞争也没问题，逐位比较，优先级最低的逐个退出，最后只剩最高优先级节点继续发送</p>
@@ -6183,6 +6206,10 @@ MCU的内核资源 Systick、NVIC / 片上资源 GPIO、UART、FLASH、ADC等等
 <p><strong>总线离线（Bus-Off）</strong>：TEC ≥256，关闭发送功能，不再往总线发任何东西，只监听。（作用：故障节点自动把自己从总线隔离，<strong>不会拖垮整条 CAN 网络</strong>，这是 CAN 最大优势。）</p>
 </li>
 </ul>
+<h4 id="can_4">CAN参考资料</h4>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/435746053">使用stm32cubemx在stm32中应用CAN通讯</a></li>
+</ul>
 <h3 id="usb">USB 通信协议</h3>
 <ol>
 <li>
@@ -6228,10 +6255,11 @@ Audio（音频设备）：麦克风、耳机。
 </ol>
 <p><a href="https://blog.csdn.net/qq_73648789/article/details/149139634">USB通讯方式的学习笔记以及基于CubeMX HAL库的例程验证</a></p>
 <p><a href="https://blog.csdn.net/m0_51220742/article/details/123865182">stm32-USB使用记录（一）</a></p>
-<h2 id="_1">参考资料</h2>
+<h2 id="_2">参考资料</h2>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/593242261">嵌入式软件分层框架设计，举了个例子 - 知乎</a></li>
 <li><a href="https://www.cnblogs.com/const-zpc/p/16364443.html">嵌入式软件架构设计-程序分层</a></li>
+<li><a href="https://www.uml.org.cn/embeded/202109141.asp">嵌入式软件架构设计 模块化 &amp; 分层设计</a></li>
 </ol>
 
 

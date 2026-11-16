@@ -1641,10 +1641,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-vmware" class="md-nav__link">
+  <a href="#12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 VMware虚拟机
+        1.2 物理机本地安装
       
     </span>
   </a>
@@ -1652,10 +1652,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
+  <a href="#13-vmware" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.3 物理机本地安装
+        1.3 VMware虚拟机
       
     </span>
   </a>
@@ -1701,6 +1701,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        添加环境变量
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1719,7 +1730,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         更换软件源
@@ -1730,7 +1741,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         拼音输入法
@@ -2020,14 +2031,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MCU%20%26%20RTOS/Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../../MCU%20%26%20RTOS/Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter2 状态机软件架构
+    Chapter2 状态机&事件驱动
   
 
     
@@ -3975,10 +3986,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-vmware" class="md-nav__link">
+  <a href="#12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 VMware虚拟机
+        1.2 物理机本地安装
       
     </span>
   </a>
@@ -3986,10 +3997,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
+  <a href="#13-vmware" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.3 物理机本地安装
+        1.3 VMware虚拟机
       
     </span>
   </a>
@@ -4035,6 +4046,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        添加环境变量
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4053,7 +4075,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         更换软件源
@@ -4064,7 +4086,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         拼音输入法
@@ -4169,14 +4191,16 @@
 <h3 id="11-linux">1.1 Linux发行版镜像</h3>
 <p><a href="https://cn.ubuntu.com/download">Ubuntu-获取镜像</a></p>
 <p><a href="https://msdn.itellyou.cn/">MSDN-获取镜像</a></p>
-<h3 id="12-vmware">1.2 VMware虚拟机</h3>
-<p>使用VMware安装Ubuntu虚拟机，软件密匙网上可以找到。安装后，使用镜像文件安装虚拟机即可。</p>
-<p>网络：不需要担心网络问题，虚拟机将使用虚拟网卡进行网络连接</p>
-<h3 id="13">1.3 物理机本地安装</h3>
+<h3 id="12">1.2 物理机本地安装</h3>
 <p>将iso文件刻录在U盘（UltraISO），并且进入电脑BIOS作为启动盘进行安装。</p>
 <p>推荐使用自动安装，而不是手动分区，手动容易产生不必要的麻烦和无法解决的问题，消耗时间。所以建议单独出一个硬盘来安装</p>
 <p>网络：需要网络适配器。先用以太网有线网络连接，或者USB热点。再更新需要的网路适配器，才能使用无线网络</p>
+<h3 id="13-vmware">1.3 VMware虚拟机</h3>
+<p>使用VMware安装Ubuntu虚拟机，软件密匙网上可以找到。安装后，使用镜像文件安装虚拟机即可。</p>
+<p>虚拟机网络：不需要担心网络问题，虚拟机将使用虚拟网卡进行网络连接</p>
+<p>虚拟机分区扩容：1<code>编辑虚拟机设置-硬盘-扩展</code> 2<code>Ubuntu - utilities - disks - resize</code> 3<code>df -h</code></p>
 <h2 id="2-linux-terminal">2. Linux Terminal</h2>
+<p>terminal中，单机tab补全命令，双击tab查看当前前缀的全部命令</p>
 <h3 id="_1">基础指令</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">pwd</span><span class="w"> </span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># 显示终端当前路径</span>
@@ -4184,11 +4208,14 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>ls<span class="w"> </span>-l<span class="w"> </span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 列出全部文件以及权限</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>uname<span class="w"> </span>-m
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 查看系统架构，以便于下载对应架构的软件包</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>df<span class="w"> </span>-h
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 以人类可读格式 显示文件系统的磁盘空间使用情况</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span><span class="o">(</span>pkg<span class="w"> </span>name<span class="o">)</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 使用最高权限(sudo)，安装deb包</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>uname<span class="w"> </span>-a
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 查看系统各种信息，包括内核版本，系统架构等</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span><span class="o">(</span>pkg<span class="w"> </span>name<span class="o">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># 使用最高权限(sudo)，安装deb包</span>
 </span></code></pre></div>
 <h3 id="_2">文件操作</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod<span class="w"> </span>xxx
@@ -4196,61 +4223,70 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># xxx分别为 owner权限 group权限 others权限</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 例如777，即-rwxrwxrwx，7表示二进制111，分别使rwx置为1有权限</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>service<span class="w"> </span>network-manager<span class="w"> </span>restart
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># 重启网卡</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>touch<span class="w"> </span>file.txt<span class="w"> </span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># 修改文件或者目录的属性，若文件不存在，系统会建立一个新的文件。</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>find<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;filename&quot;</span><span class="w"> </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># 当前目录下查找文件</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>service<span class="w"> </span>network-manager<span class="w"> </span>restart
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># 重启网卡</span>
+</span></code></pre></div>
+<h3 id="_3">添加环境变量</h3>
+<p>bashrc 文件用于配置函数或别名。bashrc 文件有两种级别：1系统级 2用户级</p>
+<p>bashrc 文件只会对指定的 shell 类型起作用。</p>
+<p>系统级位于/etc/bashrc，对所有用户生效。</p>
+<p>用户级位于~/.bashrc，仅对当前用户生效。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>code<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="c1"># 使用code或nano编辑bashrc</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/VSCode-linux-x64/bin:<span class="nv">$PATH</span><span class="w"> </span><span class="c1"># 添加变量路径</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="c1"># 使环境变量生效</span>
 </span></code></pre></div>
 <h2 id="3-linux-tools">3. Linux Tools</h2>
 <p><a href="https://mobaxterm.mobatek.net/">MobaXterm</a></p>
-<h3 id="_3">更换软件源</h3>
+<h3 id="_4">更换软件源</h3>
 <p>Setting -&gt; about -&gt; Software updates -&gt; Download From-Other </p>
-<h3 id="_4">拼音输入法</h3>
-<ol>
-<li>
-<p>设置 → 区域和语言 → 管理已安装语言，安装【中文（简体）】语言包</p>
-</li>
-<li>
-<p>重启系统</p>
-</li>
-<li>
-<p>设置 → 键盘 → 输入源 → 点 + → 中文（中国）→ 智能拼音、、</p>
-</li>
-</ol>
+<h3 id="_5">拼音输入法</h3>
+<p>1 设置 → 区域和语言 → 管理已安装语言，安装【中文（简体）】语言包</p>
+<p>2 重启系统</p>
+<p>3 设置 → 键盘 → 输入源 → 点 + → 中文（中国）→ 智能拼音</p>
 <h3 id="vscode">VSCode</h3>
 <p>注意：从应用商城安装的无法输入中文，请到官网下载linux版本</p>
 <h2 id="4-linux">4. Linux 连接与传输</h2>
 <h3 id="ssh">SSH远程连接</h3>
 <p>windows下使用MobaXterm的SSH客户端连接</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ifconfig
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># 获取host地址，若是请打开虚拟机所有网卡，确保windows可以ping成功</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openssh-server
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># 使用SSH和虚拟机ip登录，如果refuse ，请安装openssh-server。</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="o">[</span>pid<span class="o">]</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># apt安装如果报错，请尝试重启，或者后台终结进程</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ifconfig
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># 获取host地址，若是请打开虚拟机所有网卡，确保windows可以ping成功</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openssh-server
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 使用SSH和虚拟机ip登录，如果refuse ，请安装openssh-server。</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="o">[</span>pid<span class="o">]</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># apt安装如果报错，请尝试重启，或者后台终结进程</span>
 </span></code></pre></div>
 <h3 id="sftp">SFTP传输</h3>
 <p>SFTP既有加密安全，又可以像 FTP 一样浏览目录、FileZilla 图形拖拽，嵌入式 / 服务器开发最常用。</p>
 <p>传输场景若需要文件共享站点、需要浏览目录</p>
 <p>使用linux下安装OpenSSH Server服务，windows下使用MobaXterm的FTP传输</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ubuntu 通常自带 SSH 客户端，但 SFTP 服务需要 SSH 服务端</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>sshd
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># 检查服务状态</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 安装 OpenSSH 后，SFTP 默认可用</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ubuntu 通常自带 SSH 客户端，但 SFTP 服务需要 SSH 服务端</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>sshd
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 检查服务状态</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># 安装 OpenSSH 后，SFTP 默认可用</span>
 </span></code></pre></div>
 <h3 id="scp">SCP传输</h3>
 <p>服务器之间脚本传文件、临时拷贝</p>
 <p>客户端自带，只需要远端装 ssh-server</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>scp<span class="w"> </span><span class="o">[</span>选项<span class="o">]</span><span class="w"> </span><span class="o">[</span>源文件<span class="o">]</span><span class="w"> </span><span class="o">[</span>目标路径<span class="o">]</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># 上传本地文件到远程</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>scp<span class="w"> </span>local.txt<span class="w"> </span>user@192.168.1.100:/home/user/
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 下载远程到本地</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>scp<span class="w"> </span>user@192.168.1.100:/home/user/file.txt<span class="w"> </span>./
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 传文件夹 -r</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>scp<span class="w"> </span>-r<span class="w"> </span>dir<span class="w"> </span>user@ip:/path
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>scp<span class="w"> </span><span class="o">[</span>选项<span class="o">]</span><span class="w"> </span><span class="o">[</span>源文件<span class="o">]</span><span class="w"> </span><span class="o">[</span>目标路径<span class="o">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 上传本地文件到远程</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>scp<span class="w"> </span>local.txt<span class="w"> </span>user@192.168.1.100:/home/user/
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 下载远程到本地</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>scp<span class="w"> </span>user@192.168.1.100:/home/user/file.txt<span class="w"> </span>./
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># 传文件夹 -r</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>scp<span class="w"> </span>-r<span class="w"> </span>dir<span class="w"> </span>user@ip:/path
 </span></code></pre></div>
 
 

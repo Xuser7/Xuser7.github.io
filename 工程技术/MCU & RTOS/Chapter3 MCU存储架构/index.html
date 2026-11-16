@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/">
+        <link rel="prev" href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/">
       
       
         <link rel="next" href="../Chapter9%20MCU%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95/">
@@ -1788,14 +1788,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter2 状态机软件架构
+    Chapter2 状态机&事件驱动
   
 
     
@@ -4037,8 +4037,31 @@
 <h2 id="_2">程序与存储关系</h2>
 <p><img alt="" src="../ast/memory_struct.webp" /></p>
 <h3 id="ram">栈区、堆区、静态区（RAM）</h3>
+<ul>
+<li>
+<p>stack</p>
+</li>
+<li>
+<p>heap</p>
+</li>
+<li>
+<p>.bss </p>
+</li>
+<li>
+<p>.data</p>
+</li>
+</ul>
 <h3 id="flash">常量区、代码区（Flash）</h3>
+<ul>
+<li>
+<p>.rodata</p>
+</li>
+<li>
+<p>.text</p>
+</li>
+</ul>
 <h3 id="mcu">MCU不建议使用堆区动态分配</h3>
+<p><a href="https://mp.weixin.qq.com/s/RL8w75YfXQrRubSLJHnSVA">给导弹写代码，为什么严禁使用动态内存分配？</a></p>
 <p>malloc是一种动态分配内存的操作，该操作将会从系统的堆区（heap）中寻找一片大小符合的内存空间分配给程序。对于编程而言显然是有好处的，可以根据程序状态变化动态地申请空间，而不必初始固定一块区域来编程使用。</p>
 <p>但对于MCU而言这种操作带来的风险是高于便捷性的。只有极少数特殊场景可以谨慎使用(系统启动时一次性分配，之后永远不释放、不重新申请。需要算好初始化RAM占用，malloc代码必须判断返回值是否为NULL)</p>
 <p>malloc 天生不适合 MCU 裸机：没有操作系统、没有内存管理单元（MMU）、资源极度有限。</p>

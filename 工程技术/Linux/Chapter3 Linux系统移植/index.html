@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-u-boot" class="md-skip">
+        <a href="#1-u-boot-makefile" class="md-skip">
           跳转至
         </a>
       
@@ -1674,22 +1674,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-u-boot" class="md-nav__link">
+  <a href="#1-u-boot-makefile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. U-Boot 是什么
+        1. U-Boot 顶层 Makefile
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. U-Boot 是什么">
+    <nav class="md-nav" aria-label="1. U-Boot 顶层 Makefile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-u-boot" class="md-nav__link">
+  <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 U-Boot 简介
+        1.1 工程目录分析
       
     </span>
   </a>
@@ -1697,10 +1697,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-u-boot" class="md-nav__link">
+  <a href="#12-makefile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 U-Boot 命令
+        1.2 Makefile分析
       
     </span>
   </a>
@@ -1713,33 +1713,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-u-boot-makefile" class="md-nav__link">
+  <a href="#2-u-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. U-Boot 顶层Makefile
+        2. U-Boot 启动流程
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. U-Boot 顶层Makefile">
+    <nav class="md-nav" aria-label="2. U-Boot 启动流程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#21-u-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 工程目录分析
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-makefile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 顶层Makefile分析
+        2.1 U-Boot启动流程详解
       
     </span>
   </a>
@@ -1755,27 +1744,65 @@
   <a href="#3-u-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. U-Boot 启动流程
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. U-Boot 启动流程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-u-boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 U-Boot启动流程详解
+        3. U-Boot 移植
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#4-linux-kernel-makefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Linux Kernel 顶层 Makefile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Linux Kernel 启动流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Linux Kernel 移植
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-rootfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Rootfs 根文件系统构建
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buildroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他：buildroot
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1937,14 +1964,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MCU%20%26%20RTOS/Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+      <a href="../../MCU%20%26%20RTOS/Chapter2%20%E7%8A%B6%E6%80%81%E6%9C%BA%26%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chapter2 状态机软件架构
+    Chapter2 状态机&事件驱动
   
 
     
@@ -3869,22 +3896,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-u-boot" class="md-nav__link">
+  <a href="#1-u-boot-makefile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. U-Boot 是什么
+        1. U-Boot 顶层 Makefile
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. U-Boot 是什么">
+    <nav class="md-nav" aria-label="1. U-Boot 顶层 Makefile">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-u-boot" class="md-nav__link">
+  <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 U-Boot 简介
+        1.1 工程目录分析
       
     </span>
   </a>
@@ -3892,10 +3919,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-u-boot" class="md-nav__link">
+  <a href="#12-makefile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 U-Boot 命令
+        1.2 Makefile分析
       
     </span>
   </a>
@@ -3908,33 +3935,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-u-boot-makefile" class="md-nav__link">
+  <a href="#2-u-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. U-Boot 顶层Makefile
+        2. U-Boot 启动流程
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. U-Boot 顶层Makefile">
+    <nav class="md-nav" aria-label="2. U-Boot 启动流程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#21-u-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 工程目录分析
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-makefile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 顶层Makefile分析
+        2.1 U-Boot启动流程详解
       
     </span>
   </a>
@@ -3950,27 +3966,65 @@
   <a href="#3-u-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. U-Boot 启动流程
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. U-Boot 启动流程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-u-boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1 U-Boot启动流程详解
+        3. U-Boot 移植
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#4-linux-kernel-makefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Linux Kernel 顶层 Makefile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Linux Kernel 启动流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-linux-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Linux Kernel 移植
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-rootfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Rootfs 根文件系统构建
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buildroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他：buildroot
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3996,87 +4050,17 @@
 <div class="admonition abstract">
 <p class="admonition-title">移植Linux</p>
 <p>在进行 Linux 驱动开发之前肯定需要先将 Linux 系统移植到开发板上去。但和 MCU 上移植 RTOS 不同，Linux 的移植要复杂一些。</p>
-<p>在移植 Linux 之前我们需要先移植一个 bootloader 代码，这个 bootloader 代码用于启动 Linux 内核，bootloader有很多，常用的就是 U-Boot。移植好 U-Boot 以后再移植 Linux 内核，移植完 Linux 内核以后 Linux 还不能正常启动，还需要再移植一个根文件系统(rootfs)，根文件系统里面包含了一些最常用的命令和文件。</p>
-<p>所以 U-Boot、Linux kernel 和 rootfs 这三者一起构成了一个完整的 Linux 系统，一个可以正常使用、功能完善的 Linux 系统。</p>
+<p>在移植 Linux 之前我们需要先移植一个 bootloader 代码，这个 bootloader 代码用于启动 Linux 内核，bootloader有很多，常用的就是 U-Boot。移植好 U-Boot 以后再移植 Linux 内核，移植完 Linux 内核以后 Linux 还不能正常启动，还需要再移植一个Rootfs根文件系统，根文件系统里面包含了一些最常用的命令和文件。</p>
+<p>所以  Bootloader、Linux kernel、Rootfs 这三者一起构成了一个完整的 Linux 系统，一个可以正常使用、功能完善的 Linux 系统。</p>
 </div>
-<h2 id="1-u-boot">1. U-Boot 是什么</h2>
-<h3 id="11-u-boot">1.1 U-Boot 简介</h3>
+<h2 id="1-u-boot-makefile">1. U-Boot 顶层 Makefile</h2>
 <p><a href="https://www.cnblogs.com/clnchanpin/p/19393470">U-Boot 深度解析：从原理到实践</a></p>
 <p>U-Boot（Universal Boot Loader）是嵌入式系统领域中最流行、功能最完善的 BootLoader 软件之一. 作为嵌入式 Linux 系统的"引导者", U-Boot 负责在操作系统运行之前完成关键的硬件初始化和系统引导工作. 其名称"Universal"体现了它的设计目标——支持多种架构、多种平台和多种操作系统</p>
 <p>从历史角度看, U-Boot 起源于 2000 年的 PPCBoot 项目, 由德国 DENX 软件工程中心的 Wolfgang Denk 主导开发. 它后来融合了 8xxROM 和 FADSROM 的功能, 逐步发展成为今天支持 ARM、PowerPC、MIPS、x86、RISC-V 等多种处理器架构的"通用"BootLoader. 根据 2023 年嵌入式开源峰会上的数据, U-Boot 项目每年有约 6000 次提交, 拥有约 300 万行 C 代码, 支持超过 21 种 RISC-V 开发板以及大量的 ARM 平台</p>
 <p>在嵌入式系统中, U-Boot 的地位相当于 PC 系统中的 BIOS 或 UEFI. 如同 PC 启动时首先运行 BIOS 一样, 嵌入式系统上电后首先执行 U-Boot. U-Boot 负责初始化处理器、设置时钟、配置内存控制器、检测 DRAM, 然后初始化必要的硬件设备如串口、网络、存储设备等, 最后加载操作系统内核并将控制权转交给内核</p>
 <p>对于一块开发板而言，通常有3种uboot。1 uboot 官方的 uboot 代码：由 uboot 官方维护开发的 uboot 版本，版本更新快，基本包含所有常用的芯片。2 半导体厂商的 uboot 代码：半导体厂商维护的一个 uboot，专门针对自家的芯片，在对自家芯片支持上要比 uboot 官方的好。 3开发板厂商的 uboot 代码：开发板厂商在半导体厂商提供的 uboot 基础上加入了对自家开发板的支持。</p>
-<p>uboot 官方的基本是不会用的，因为支持太弱了。最常用的就是半导体厂商或者开发板厂商的 uboot，如果你用的半导体厂商的评估板，那么就使用半导体厂商的 uboot，如果你是购买的第三方开发板，比如正点原子的 I.MX6ULL 开发板，那么就使用正点原子提供的 uboot 源码（也是在半导体厂商的 uboot 上修改的）。当然了，你也可以在购买了第三方开发板以后使用半导体厂商提供的 uboot，只不过有些外设驱动可能不支持，需要自己移植，这个就是我们常说的 uboot 移植。</p>
-<h3 id="12-u-boot">1.2 U-Boot 命令</h3>
-<ol>
-<li>
-<p>环境变量命令</p>
-<ul>
-<li>查看支持的命令 help / ? </li>
-<li>打印环境变量 print </li>
-<li>修改（包括新建与删除）环境变量 setenv</li>
-<li>保存环境变量 saveenv</li>
-</ul>
-</li>
-<li>
-<p>内存操作命令</p>
-<ul>
-<li>查看内存地址值 md[.b, .w, .l] address [# of objects] </li>
-<li>修改内存地址值 nm [.b, .w, .l] address </li>
-<li>拷贝数据值 cp [.b, .w, .l] source target count </li>
-<li>比较内存数据是否相等 cmp [.b, .w, .l] addr1 addr2 count </li>
-</ul>
-</li>
-<li>
-<p>网络操作命令</p>
-<ul>
-<li>查看是否与ip地址建立连接 ping ip_address</li>
-<li>从路由器获取ip地址 dhcp</li>
-<li>通过nfs传输 nfs [loadAddress] [[hostIPaddr:]filename] </li>
-<li>通过tftp传输 tftp [loadAddress] [filename] </li>
-</ul>
-</li>
-<li>
-<p>MMC设备操作命令</p>
-<ul>
-<li>输出当前选中的mmc设备的信息 mmc info</li>
-<li>扫描当前开发板上所有的MMC 设备 mmc rescan </li>
-<li>来查看当前开发板一共有几个MMC设备 mmc list</li>
-<li>切换当前选中的mmc设备 mmc dev</li>
-<li>查看mmc设备分区 mmc part</li>
-<li>写MMC设备 mmc write</li>
-<li>擦除MMC设备 mmc erase</li>
-</ul>
-</li>
-<li>
-<p>FAT/EXT 格式文件系统操作命令 </p>
-<ul>
-<li>查看MMC设备某个分区的文件系统格式 fstype</li>
-<li>查询FAT/EXT格式设备的目录和文件信息 fatls ext2ls ext4ls</li>
-<li>将指定的文件读取到DRAM fatload ext2load ext4load</li>
-</ul>
-</li>
-<li>
-<p>boot操作命令</p>
-<ul>
-<li>启动zImage镜像文件 bootz</li>
-<li>启动uImage镜像文件 bootm</li>
-<li>读取环境变量bootcm来启动(运行bootcm脚本启动) boot </li>
-</ul>
-</li>
-<li>
-<p>其他命令</p>
-<ul>
-<li>可复位重启 reset</li>
-<li>跳到指定的地址处执行应用 go addr [arg ...] </li>
-<li>于运行环境变量中定义的命令(运行自定义脚本) run</li>
-</ul>
-</li>
-</ol>
-<h2 id="2-u-boot-makefile">2. U-Boot 顶层Makefile</h2>
-<p>学会 uboot 使用以后就可以尝试移植 uboot 到自己的开发板上了，但是在移植之前需要我们得先分析一遍 uboot
-的启动流程源码，得捋一下 uboot 的启动流程，否则移植的时候都不知道该修改那些文件。</p>
-<h3 id="21">2.1 工程目录分析</h3>
+<p>uboot 官方的基本是不会用的，因为支持太弱了。最常用的就是半导体厂商或者开发板厂商的 uboot，如果你用的半导体厂商的评估板，那么就使用半导体厂商的 uboot，如果你是购买的第三方开发板，比如正点原子的 I.MX6ULL 开发板，那么就使用正点原子提供的 uboot 源码（也是在半导体厂商的 uboot 上修改的）。当然了，你也可以在购买了第三方开发板以后使用半导体厂商提供的 uboot，只不过有些外设驱动可能不支持，需要自己移植，这个就是常说的 uboot 移植。</p>
+<h3 id="11">1.1 工程目录分析</h3>
 <ol>
 <li>
 <p>arch文件夹：与架构体系有关的代码</p>
@@ -4109,7 +4093,7 @@ u-boot.sym：uboot 符号文件。
 u-boot-nodtb.bin：和 u-boot.bin 一样，u-boot.bin 就是 u-boot-nodtb.bin 的复制文件。</p>
 </li>
 </ol>
-<h3 id="22-makefile">2.2 顶层Makefile分析</h3>
+<h3 id="12-makefile">1.2 Makefile分析</h3>
 <ol>
 <li>
 <p>版本号</p>
@@ -4162,16 +4146,20 @@ u-boot-nodtb.bin：和 u-boot.bin 一样，u-boot.bin 就是 u-boot-nodtb.bin �
 <p><img alt="" src="../ast/make.jpeg" /></p>
 </li>
 </ol>
-<h2 id="3-u-boot">3. U-Boot 启动流程</h2>
+<h2 id="2-u-boot">2. U-Boot 启动流程</h2>
 <p>分析uboot的启动流程，首先要找到“入口”，找到第一行程序在哪里。程序的链接是由链接脚本来决定的，所以通过链接脚本可以找到程序的入口。如果没有编译过uboot的话链接脚本为arch/arm/cpu/u-boot.lds。但是这个不是最终使用的链接脚本，最终的链接脚本是在这个
 链接脚本的基础上生成的。编译一下uboot，编译完成以后就会在uboot根目录下生成u-boot.lds文件</p>
-<h3 id="31-u-boot">3.1 U-Boot启动流程详解</h3>
+<h3 id="21-u-boot">2.1 U-Boot启动流程详解</h3>
 <ul>
-<li>
-<p>reset函数源码</p>
-</li>
-<li></li>
+<li>reset函数源码</li>
 </ul>
+<h2 id="3-u-boot">3. U-Boot 移植</h2>
+<h2 id="4-linux-kernel-makefile">4. Linux Kernel 顶层 Makefile</h2>
+<h2 id="5-linux-kernel">5. Linux Kernel 启动流程</h2>
+<h2 id="6-linux-kernel">6. Linux Kernel 移植</h2>
+<h2 id="7-rootfs">7. Rootfs 根文件系统构建</h2>
+<h2 id="buildroot">其他：buildroot</h2>
+<p><a href="https://buildroot.org/">​buildroot</a>这个工具提供了一种更加高效的管理方法，它把bootloader，linux和rootfs集成在一起，可以非常方便的去定制，管理，编译和组装一个自己需要的，针对自己的设备的一个完整的软件系统。</p>
 
 
 

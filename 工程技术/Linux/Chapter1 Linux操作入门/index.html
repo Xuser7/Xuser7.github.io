@@ -1812,6 +1812,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#android-scrcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android scrcpy
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4157,6 +4168,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#android-scrcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android scrcpy
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4287,6 +4309,18 @@
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>scp<span class="w"> </span>user@192.168.1.100:/home/user/file.txt<span class="w"> </span>./
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># 传文件夹 -r</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>scp<span class="w"> </span>-r<span class="w"> </span>dir<span class="w"> </span>user@ip:/path
+</span></code></pre></div>
+<h3 id="android-scrcpy">Android scrcpy</h3>
+<p><a href="https://github.com/Genymobile/scrcpy">Genymobile/scrcpy</a></p>
+<p>该应用程序可镜像通过USB或TCP/IP连接的安卓设备（视频和音频），并支持使用电脑的键盘和鼠标进行控制。无需root权限，也无需在设备上安装任何应用程序。仅需通过ADB工具即可连接，Android设备需要开启USB调试或者无线调试功能。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># adb shell connect</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>.<span class="se">\a</span>db.exe<span class="w"> </span>shell
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># connect via tcpip</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>adb<span class="w"> </span>connect<span class="w"> </span>&lt;ip<span class="w"> </span>addr&gt;<span class="w"> </span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Select a device via -s (--serial), -d (--select-usb) or -e (--select-tcpip)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>scrcpy<span class="w"> </span>-s<span class="w"> </span><span class="o">(</span>--serial<span class="o">)</span>,<span class="w"> </span>-d<span class="w"> </span><span class="o">(</span>--select-usb<span class="o">)</span><span class="w"> </span>or<span class="w"> </span>-e<span class="w"> </span><span class="o">(</span>--select-tcpip<span class="o">)</span>
 </span></code></pre></div>
 
 

@@ -2700,29 +2700,29 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理论学习：优秀课程 / 优秀书籍
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        技术学习：官方文档 / 标准文档
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         学习方法论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        理论学习：优秀课程 / 优秀书籍 / AI提问
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技术学习：官方文档 / 标准文档 / AI提问
       
     </span>
   </a>
@@ -3795,29 +3795,29 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        理论学习：优秀课程 / 优秀书籍
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        技术学习：官方文档 / 标准文档
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         学习方法论
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        理论学习：优秀课程 / 优秀书籍 / AI提问
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技术学习：官方文档 / 标准文档 / AI提问
       
     </span>
   </a>
@@ -3843,47 +3843,39 @@
 
   <h1>方法论概述</h1>
 
-<h2 id="_1">理论学习：优秀课程 / 优秀书籍</h2>
-<p>因为理论是抽象的，是一种思维，是一种看待问题的角度。理论具有通用性，可以推广应用。应当深刻思考，多花一些时间琢磨。</p>
-<p>人的能力也在于抽象能力，简单来说就是提炼看似无关事物特性，共性，而形成新思想，新理论。</p>
-<p>单论计算能力，便利店计算器完爆人脑了。所以人要做的，是寻找一套好方法，然后抛给机器，让它算地更快更好。</p>
+<h2 id="_1">学习方法论</h2>
+<p>主学思想，副学技术；先看框架，后看细节</p>
+<pre class="mermaid"><code>graph LR
+
+    系统框架 --&gt; 学习实践
+    学习实践 --&gt; 部分细节
+    部分细节 --&gt; 系统框架</code></pre>
+<ol>
+<li>掌握系统框架，清晰系统部分间大致联系，画出理论骨架</li>
+<li>再尝试细入解决问题，过程中带着问题找答案。过程中会有细节经验产生</li>
+<li>带着经验结合章节的细节知识，补齐框架中的细节，也就是骨架的血肉</li>
+</ol>
+<p>具体例子：</p>
+<p>查看rtthread架构（框架） → 编写项目运用（实践）→ 细致了解rtthread机制（细节）</p>
+<p>查看高等数学总框架，章节框架（框架） → 做题（实践） → 掌握各章节的具体细节方法（细节）</p>
+<h2 id="ai">理论学习：优秀课程 / 优秀书籍 / AI提问</h2>
+<p>因为理论是抽象的，是一种思维，是一种看待问题的角度。理论具有通用性，可以推广应用。应当多花一些时间琢磨。</p>
+<p>理论能力也在于抽象能力，简单来说就是提炼看似无关事物特性，共性，而形成新思想，新理论。</p>
 <ol>
 <li>
 <p>国外教材/国外课程/名校名师</p>
 </li>
 <li>
-<p>做笔记，理论框架，再填补框架内容</p>
+<p>形成系统框架，做系统性的笔记</p>
 </li>
 <li>
-<p>整理笔记成型，反复实践，反复反馈，</p>
+<p>反复实践知识点，实践的反馈来填补框架内容</p>
 </li>
 </ol>
-<h2 id="_2">技术学习：官方文档 / 标准文档</h2>
+<h2 id="ai_1">技术学习：官方文档 / 标准文档 / AI提问</h2>
 <p>技术看文档学习，因为技术是快速迭代更替的，浏览文档的时间成本最小。</p>
 <p>另外标准文档可能是英文的，​英文很重要</p>
-<ol>
-<li>
-<p>学习优秀的源代码/Github项目，最好带着问题导向学习源码，而不是硬生生阅读代码。</p>
-</li>
-<li>
-<p>实践你在优秀源码上学到的方法，思想，甚至是编码规范（例如linux源码编码规范）。</p>
-</li>
-</ol>
-<h2 id="_3">学习方法论</h2>
-<p>主学思想，副学技术；先看框架，后看细节</p>
-<pre class="mermaid"><code>graph LR
-
-    整体框架 --&gt; 具体细节
-    具体细节 --&gt; 学习实践
-    学习实践 --&gt; 整体框架</code></pre>
-<ol>
-<li>阅读系统框架，清晰系统部分间大致联系，把握总脉络</li>
-<li>再第一步的基础下，对每个系统部分进行细致了解</li>
-<li>强化学习，动手实践，费曼学习法。</li>
-</ol>
-<p>具体例子：</p>
-<p>查看rtthread架构（框架） → 学习rtthread源码（细节）→ 编写项目（实践）</p>
-<p>查看高等数学总框架，章节框架 → 学习各章节的具体细节方法 → 做题</p>
+<p>学习优秀的技术项目，最好运用起来，或者模仿起来，带着问题去找答案，这样学习技术效率比较高。</p>
 
 
 
